@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".preDiv[data-v-91dad3f2]{left:10%}.nextDiv[data-v-91dad3f2],.preDiv[data-v-91dad3f2]{position:fixed;top:300px;cursor:pointer;color:#58b7ff;text-align:center}.nextDiv[data-v-91dad3f2]{right:0;margin-right:10px}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/socialOrganizationManage/addSocialOrg.vue"],"names":[],"mappings":"AACA,yBAGE,QAAU,CAKX,AACD,mDARE,eAAgB,AAChB,UAAW,AAEX,eAAgB,AAChB,cAAe,AACf,iBAAmB,CAWpB,AARD,0BAGE,QAAS,AAIT,iBAAmB,CACpB","file":"addSocialOrg.vue","sourcesContent":["\n.preDiv[data-v-91dad3f2] {\n  position: fixed;\n  top: 300px;\n  left: 10%;\n  cursor: pointer;\n  color: #58b7ff;\n  text-align: center;\n  /* margin-left: 10px; */\n}\n.nextDiv[data-v-91dad3f2] {\n  position: fixed;\n  top: 300px;\n  right: 0;\n  cursor: pointer;\n  color: #58b7ff;\n  text-align: center;\n  margin-right: 10px;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-91dad3f2","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/socialOrganizationManage/addSocialOrg.vue
+// module id = Pfti
+// module chunks = 132

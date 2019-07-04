@@ -1,0 +1,253 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-form', {
+    attrs: {
+      "model": _vm.StayedPerson,
+      "label-width": "170px",
+      "label-position": "left",
+      "label-suffix": ":"
+    }
+  }, [_c('el-form-item', [_c('h2', [_vm._v("留守人口")])]), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "身份证"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.StayedPerson.certifID),
+      callback: function($$v) {
+        _vm.StayedPerson.certifID = $$v
+      },
+      expression: "StayedPerson.certifID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "个人年收入"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0
+    },
+    model: {
+      value: (_vm.StayedPerson.personalAnualEarnings),
+      callback: function($$v) {
+        _vm.StayedPerson.personalAnualEarnings = $$v
+      },
+      expression: "StayedPerson.personalAnualEarnings"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "人户一致标识"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择"
+    },
+    model: {
+      value: (_vm.StayedPerson.consistforPersonHouseTypeValue),
+      callback: function($$v) {
+        _vm.StayedPerson.consistforPersonHouseTypeValue = $$v
+      },
+      expression: "StayedPerson.consistforPersonHouseTypeValue"
+    }
+  }, _vm._l((_vm.ConsistforPersonHouseTypes), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.consistforPersonHouseTypeName,
+        "value": v.consistforPersonHouseTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "留守人员类型"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.StayedPerson.stayedPersonValue),
+      callback: function($$v) {
+        _vm.StayedPerson.stayedPersonValue = $$v
+      },
+      expression: "StayedPerson.stayedPersonValue"
+    }
+  }, _vm._l((_vm.StayedPersonType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.stayedPersonName,
+        "value": v.stayedPersonValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "健康状况"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.StayedPerson.healthStatusTypeValue),
+      callback: function($$v) {
+        _vm.StayedPerson.healthStatusTypeValue = $$v
+      },
+      expression: "StayedPerson.healthStatusTypeValue"
+    }
+  }, _vm._l((_vm.HealthStatusType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.healthStatusTypeName,
+        "value": v.healthStatusTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "家庭主要成员姓名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.StayedPerson.familyHeadName),
+      callback: function($$v) {
+        _vm.StayedPerson.familyHeadName = $$v
+      },
+      expression: "StayedPerson.familyHeadName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "家庭主要成员身份证"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.StayedPerson.familyHeadCertID),
+      callback: function($$v) {
+        _vm.StayedPerson.familyHeadCertID = $$v
+      },
+      expression: "StayedPerson.familyHeadCertID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "家庭主要成员联系方式"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.StayedPerson.familyHeadContact),
+      callback: function($$v) {
+        _vm.StayedPerson.familyHeadContact = $$v
+      },
+      expression: "StayedPerson.familyHeadContact "
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "家庭主要成员工作地址"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.StayedPerson.jobAddressofFamilyHead),
+      callback: function($$v) {
+        _vm.StayedPerson.jobAddressofFamilyHead = $$v
+      },
+      expression: "StayedPerson.jobAddressofFamilyHead "
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "家庭主要成员健康状况"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.StayedPerson.familyHeadHealthStatusTypeValue),
+      callback: function($$v) {
+        _vm.StayedPerson.familyHeadHealthStatusTypeValue = $$v
+      },
+      expression: "StayedPerson.familyHeadHealthStatusTypeValue"
+    }
+  }, _vm._l((_vm.HealthStatusType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.healthStatusTypeName,
+        "value": v.healthStatusTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "家庭主要成员与留守人员关系"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.StayedPerson.familyHeadRelationWithStayedPersonTypeID),
+      callback: function($$v) {
+        _vm.StayedPerson.familyHeadRelationWithStayedPersonTypeID = $$v
+      },
+      expression: "StayedPerson.familyHeadRelationWithStayedPersonTypeID"
+    }
+  }, _vm._l((_vm.options), function(item) {
+    return _c('el-option', {
+      key: item.value,
+      attrs: {
+        "label": item.label,
+        "value": item.value
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "家庭年收入"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0,
+      "max": 999999999
+    },
+    model: {
+      value: (_vm.StayedPerson.familyAnualEarnings),
+      callback: function($$v) {
+        _vm.StayedPerson.familyAnualEarnings = $$v
+      },
+      expression: "StayedPerson.familyAnualEarnings"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "困难及诉求"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea",
+      "rows": _vm.rowsNum
+    },
+    model: {
+      value: (_vm.StayedPerson.difficultiesandAppeals),
+      callback: function($$v) {
+        _vm.StayedPerson.difficultiesandAppeals = $$v
+      },
+      expression: "StayedPerson.difficultiesandAppeals"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "帮扶情况"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea",
+      "rows": _vm.rowsNum
+    },
+    model: {
+      value: (_vm.StayedPerson.helpingSituation),
+      callback: function($$v) {
+        _vm.StayedPerson.helpingSituation = $$v
+      },
+      expression: "StayedPerson.helpingSituation"
+    }
+  })], 1), _vm._v(" "), (_vm.showButton) ? _c('el-row', [_c('el-col', [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.onSubmit
+    }
+  }, [_vm._v(_vm._s(_vm.usepath == 'save' ? '保存' : '更新'))])], 1)], 1)], 1) : _vm._e()], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-4ba867a4","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/ZzOrgManage/extendStayedPerson.vue
+// module id = lVEp
+// module chunks = 3 5 6 7 8 10 11 14 15 16

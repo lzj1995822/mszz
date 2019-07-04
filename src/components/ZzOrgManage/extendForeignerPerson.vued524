@@ -1,0 +1,213 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-form', {
+    attrs: {
+      "model": _vm.Foreigner,
+      "label-width": "140px",
+      "label-position": "left",
+      "label-suffix": ":"
+    }
+  }, [_c('el-form-item', [_c('h2', [_vm._v("境外人员")])]), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "外文名(FamliyName)"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Foreigner.familyName),
+      callback: function($$v) {
+        _vm.Foreigner.familyName = $$v
+      },
+      expression: "Foreigner.familyName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "外文名(FirstName)"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Foreigner.firstName),
+      callback: function($$v) {
+        _vm.Foreigner.firstName = $$v
+      },
+      expression: "Foreigner.firstName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "中文名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Foreigner.chineseName),
+      callback: function($$v) {
+        _vm.Foreigner.chineseName = $$v
+      },
+      expression: "Foreigner.chineseName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "性别"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.Foreigner.sex),
+      callback: function($$v) {
+        _vm.Foreigner.sex = $$v
+      },
+      expression: "Foreigner.sex"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": _vm.yes
+    }
+  }, [_vm._v("男")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": _vm.no
+    }
+  }, [_vm._v("女")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "出生日期"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    model: {
+      value: (_vm.Foreigner.birthDate),
+      callback: function($$v) {
+        _vm.Foreigner.birthDate = $$v
+      },
+      expression: "Foreigner.birthDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "国籍"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.Foreigner.nationality),
+      callback: function($$v) {
+        _vm.Foreigner.nationality = $$v
+      },
+      expression: "Foreigner.nationality"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "宗教信仰"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.Foreigner.religiousBelief),
+      callback: function($$v) {
+        _vm.Foreigner.religiousBelief = $$v
+      },
+      expression: "Foreigner.religiousBelief"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "证件代码"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.Foreigner.certificateCode),
+      callback: function($$v) {
+        _vm.Foreigner.certificateCode = $$v
+      },
+      expression: "Foreigner.certificateCode"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "证件号码"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Foreigner.certificateNumber),
+      callback: function($$v) {
+        _vm.Foreigner.certificateNumber = $$v
+      },
+      expression: "Foreigner.certificateNumber"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "证件有效期"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Foreigner.certificateDueDate),
+      callback: function($$v) {
+        _vm.Foreigner.certificateDueDate = $$v
+      },
+      expression: "Foreigner.certificateDueDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "联系方式"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Foreigner.contact),
+      callback: function($$v) {
+        _vm.Foreigner.contact = $$v
+      },
+      expression: "Foreigner.contact"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "来华目的"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择"
+    },
+    model: {
+      value: (_vm.Foreigner.purposeTypeValue),
+      callback: function($$v) {
+        _vm.Foreigner.purposeTypeValue = $$v
+      },
+      expression: "Foreigner.purposeTypeValue"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "职业类别"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择"
+    },
+    model: {
+      value: (_vm.Foreigner.careerType),
+      callback: function($$v) {
+        _vm.Foreigner.careerType = $$v
+      },
+      expression: "Foreigner.careerType"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "职业"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Foreigner.career),
+      callback: function($$v) {
+        _vm.Foreigner.career = $$v
+      },
+      expression: "Foreigner.career"
+    }
+  })], 1), _vm._v(" "), (_vm.showButton) ? _c('el-row', [_c('el-col', [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.onSubmit
+    }
+  }, [_vm._v("保存")])], 1)], 1)], 1) : _vm._e()], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-320cf776","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/ZzOrgManage/extendForeignerPerson.vue
+// module id = hh0K
+// module chunks = 6 7 8 14 15 16 93 96 97

@@ -1,0 +1,233 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-form', {
+    ref: "DrugAddicts",
+    attrs: {
+      "model": _vm.AIDSdisease,
+      "rules": _vm.rules,
+      "label-width": "150px",
+      "label-position": "right",
+      "label-suffix": ":"
+    }
+  }, [_c('el-form-item', [_c('h2', [_vm._v("艾滋病感染者")])]), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "身份证",
+      "prop": "certifID"
+    }
+  }, [(_vm.usePath == 'update') ? _c('el-input', {
+    attrs: {
+      "disabled": ""
+    },
+    model: {
+      value: (_vm.AIDSdisease.certifID),
+      callback: function($$v) {
+        _vm.AIDSdisease.certifID = $$v
+      },
+      expression: "AIDSdisease.certifID"
+    }
+  }) : _c('el-input', {
+    model: {
+      value: (_vm.AIDSdisease.certifID),
+      callback: function($$v) {
+        _vm.AIDSdisease.certifID = $$v
+      },
+      expression: "AIDSdisease.certifID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "感染途径类型编码"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择案件类型编码"
+    },
+    model: {
+      value: (_vm.AIDSdisease.infectedWayTypeValue),
+      callback: function($$v) {
+        _vm.AIDSdisease.infectedWayTypeValue = $$v
+      },
+      expression: "AIDSdisease.infectedWayTypeValue"
+    }
+  }, _vm._l((_vm.InfectedWayType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.infectedWayTypeName,
+        "value": v.infectedWayTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "艾滋病关注类型编码"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择艾滋病关注类型编码"
+    },
+    model: {
+      value: (_vm.AIDSdisease.aidsattentionTypeValue),
+      callback: function($$v) {
+        _vm.AIDSdisease.aidsattentionTypeValue = $$v
+      },
+      expression: "AIDSdisease.aidsattentionTypeValue"
+    }
+  }, _vm._l((_vm.AIDSAttentionType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.aidsattentionTypeName,
+        "value": v.aidsattentionTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "帮扶人姓名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.AIDSdisease.helperName),
+      callback: function($$v) {
+        _vm.AIDSdisease.helperName = $$v
+      },
+      expression: "AIDSdisease.helperName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "帮扶人联系方式"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.AIDSdisease.helperContact),
+      callback: function($$v) {
+        _vm.AIDSdisease.helperContact = $$v
+      },
+      expression: "AIDSdisease.helperContact"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "帮扶情况"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea",
+      "rows": _vm.areaRows
+    },
+    model: {
+      value: (_vm.AIDSdisease.helpingInf),
+      callback: function($$v) {
+        _vm.AIDSdisease.helpingInf = $$v
+      },
+      expression: "AIDSdisease.helpingInf"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否有犯罪史"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.AIDSdisease.isCrime),
+      callback: function($$v) {
+        _vm.AIDSdisease.isCrime = $$v
+      },
+      expression: "AIDSdisease.isCrime"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": _vm.yes
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": _vm.no
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), (_vm.AIDSdisease.isCrime == 1) ? _c('el-form-item', {
+    attrs: {
+      "label": "犯罪情况描述"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea",
+      "rows": _vm.areaRows
+    },
+    model: {
+      value: (_vm.AIDSdisease.crimeInf),
+      callback: function($$v) {
+        _vm.AIDSdisease.crimeInf = $$v
+      },
+      expression: "AIDSdisease.crimeInf"
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.AIDSdisease.isCrime == 1) ? _c('el-form-item', {
+    attrs: {
+      "label": "案件类型"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择案件类型"
+    },
+    model: {
+      value: (_vm.AIDSdisease.caseType),
+      callback: function($$v) {
+        _vm.AIDSdisease.caseType = $$v
+      },
+      expression: "AIDSdisease.caseType"
+    }
+  }, _vm._l((_vm.CaseType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.caseTypeName,
+        "value": v.caseTypeValue
+      }
+    })
+  }))], 1) : _vm._e(), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "艾滋病收治情况类型"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择艾滋病收治情况类型编码"
+    },
+    model: {
+      value: (_vm.AIDSdisease.aidsreceiveCTypeValue),
+      callback: function($$v) {
+        _vm.AIDSdisease.aidsreceiveCTypeValue = $$v
+      },
+      expression: "AIDSdisease.aidsreceiveCTypeValue"
+    }
+  }, _vm._l((_vm.AIDSReceiveCType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.aidsreceiveCTypeName,
+        "value": v.aidsreceiveCTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "收治机构名称"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.AIDSdisease.receiveCOrganization),
+      callback: function($$v) {
+        _vm.AIDSdisease.receiveCOrganization = $$v
+      },
+      expression: "AIDSdisease.receiveCOrganization"
+    }
+  })], 1), _vm._v(" "), (_vm.showButton) ? _c('el-row', [_c('el-col', [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.onSubmit
+    }
+  }, [_vm._v(_vm._s(_vm.usePath == 'save' ? "保存" : "更新"))])], 1)], 1)], 1) : _vm._e()], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-39f9eff4","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/ZzOrgManage/extendAIDsdisease.vue
+// module id = 1jUL
+// module chunks = 0 1 2 3 4 5 9 10 11 12

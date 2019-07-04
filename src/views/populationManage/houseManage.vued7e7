@@ -1,0 +1,205 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 24,
+      "align": "right"
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "margin-top": "10px"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.addNewRecord
+    }
+  }, [_vm._v("添加房屋")]), _vm._v(" "), _c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    attrs: {
+      "placeholder": "请输入屋主姓名"
+    },
+    model: {
+      value: (_vm.filters.name),
+      callback: function($$v) {
+        _vm.filters.name = $$v
+      },
+      expression: "filters.name"
+    }
+  }), _vm._v(" "), _c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    attrs: {
+      "placeholder": "请输入房屋地址"
+    },
+    model: {
+      value: (_vm.filters.address),
+      callback: function($$v) {
+        _vm.filters.address = $$v
+      },
+      expression: "filters.address"
+    }
+  }), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "icon": "search"
+    },
+    on: {
+      "click": _vm.getHouseInfo
+    }
+  }, [_vm._v("搜索")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.flushAll
+    }
+  }, [_vm._v("刷新")])], 1), _vm._v(" "), _c('el-row', {
+    staticStyle: {
+      "margin-top": "20px"
+    }
+  }, [_c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-table', {
+    attrs: {
+      "data": _vm.list
+    }
+  }, [_vm._l((_vm.props), function(v, k, i) {
+    return _c('el-table-column', {
+      key: v.id,
+      attrs: {
+        "label": _vm.labels[i],
+        "align": "center"
+      },
+      scopedSlots: _vm._u([{
+        key: "default",
+        fn: function(scope) {
+          return [(k == 'isRental') ? _c('span', [_vm._v("\n                  " + _vm._s(scope.row[k] == 1 ? '是' : '否') + "\n                ")]) : _c('span', [_vm._v("\n                  " + _vm._s(scope.row[k]) + "\n                ")])]
+        }
+      }])
+    })
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "width": "200",
+      "align": "center"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.ckDetail(scope.row.houseID)
+            }
+          }
+        }, [_vm._v("查看详情")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.editHouse(scope.row.houseID)
+            }
+          }
+        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.deleteHouse(scope.row.houseID)
+            }
+          }
+        }, [_vm._v("删除")])]
+      }
+    }])
+  })], 2)], 1), _vm._v(" "), _c('el-col', {
+    staticStyle: {
+      "margin-top": "10px"
+    },
+    attrs: {
+      "span": 24,
+      "align": "right"
+    }
+  }, [_c('el-pagination', {
+    attrs: {
+      "layout": "prev, pager, next",
+      "total": _vm.totalInfo
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1)], 1)], 1)], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "id": "houseInfo",
+      "top": "5%",
+      "visible": _vm.visible
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.visible = $event
+      }
+    }
+  }, [_c('table', {
+    staticClass: "userInfoEditTable",
+    staticStyle: {
+      "border-collapse": "collapse",
+      "background-color": "white"
+    },
+    attrs: {
+      "width": "100%",
+      "cellspacing": "0"
+    }
+  }, [_vm._l((_vm.houseForm), function(v, k, i) {
+    return _c('tr', {
+      key: v
+    }, [_c('td', {
+      staticClass: "tb_label"
+    }, [_vm._v(_vm._s(_vm.labels2[i]))]), _vm._v(" "), _c('td', [(k == 'isRental') ? _c('span', [_vm._v("\n            " + _vm._s(v == 1 ? '是' : '否') + "\n          ")]) : _c('span', [_vm._v("\n            " + _vm._s(v) + "\n          ")])])])
+  }), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "colspan": "2",
+      "align": "center"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "text",
+      "size": "large"
+    },
+    on: {
+      "click": function($event) {
+        _vm.printTable('houseInfo')
+      }
+    }
+  }, [_vm._v("[打印]")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "text",
+      "size": "large"
+    },
+    on: {
+      "click": function($event) {
+        _vm.visible = false
+      }
+    }
+  }, [_vm._v("关闭")])], 1)])], 2)])], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-ba91a9de","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/populationManage/houseManage.vue
+// module id = wjA5
+// module chunks = 150

@@ -1,0 +1,218 @@
+<template>
+  <div>
+    <el-form :model="StayedPerson" label-width="170px" label-position="left" label-suffix=":">
+      <el-form-item>
+        <h2>留守人口</h2>
+      </el-form-item>
+      <el-form-item label="身份证">
+        <el-input v-model="StayedPerson.certifID">
+        </el-input>
+      </el-form-item>
+      <el-form-item label="个人年收入">
+        <el-input-number :min="0" v-model="StayedPerson.personalAnualEarnings"></el-input-number>
+      </el-form-item>
+      <el-form-item label="人户一致标识">
+        <el-select v-model="StayedPerson.consistforPersonHouseTypeValue" placeholder="请选择">
+          <el-option v-for="v of ConsistforPersonHouseTypes" :key="v.id" :label="v.consistforPersonHouseTypeName" :value="v.consistforPersonHouseTypeValue">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="留守人员类型">
+        <el-select v-model="StayedPerson.stayedPersonValue">
+          <el-option v-for="v of StayedPersonType" :key="v.id" :label="v.stayedPersonName" :value="v.stayedPersonValue">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="健康状况">
+        <el-select v-model="StayedPerson.healthStatusTypeValue">
+          <el-option v-for="v of HealthStatusType" :key="v.id" :label="v.healthStatusTypeName" :value="v.healthStatusTypeValue">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="家庭主要成员姓名">
+        <el-input v-model="StayedPerson.familyHeadName"></el-input>
+      </el-form-item>
+      <el-form-item label="家庭主要成员身份证">
+        <el-input v-model="StayedPerson.familyHeadCertID"></el-input>
+      </el-form-item>
+      <el-form-item label="家庭主要成员联系方式">
+        <el-input v-model="StayedPerson.familyHeadContact "></el-input>
+      </el-form-item>
+      <el-form-item label="家庭主要成员工作地址">
+        <el-input v-model="StayedPerson.jobAddressofFamilyHead "></el-input>
+      </el-form-item>
+      <el-form-item label="家庭主要成员健康状况">
+        <el-select v-model="StayedPerson.familyHeadHealthStatusTypeValue">
+          <el-option v-for="v of HealthStatusType" :key="v.id" :label="v.healthStatusTypeName" :value="v.healthStatusTypeValue">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="家庭主要成员与留守人员关系">
+        <el-select v-model="StayedPerson.familyHeadRelationWithStayedPersonTypeID">
+          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="家庭年收入">
+        <el-input-number :min="0" :max="999999999" v-model="StayedPerson.familyAnualEarnings"></el-input-number>
+      </el-form-item>
+      <el-form-item label="困难及诉求">
+        <el-input type="textarea" :rows="rowsNum" v-model="StayedPerson.difficultiesandAppeals">
+        </el-input>
+      </el-form-item>
+      <el-form-item label="帮扶情况">
+        <el-input type="textarea" :rows="rowsNum" v-model="StayedPerson.helpingSituation">
+        </el-input>
+      </el-form-item>
+      <el-row v-if="showButton">
+        <el-col>
+          <el-form-item>
+            <el-button type="primary" @click="onSubmit">{{usepath=='save'?'保存':'更新'}}</el-button>
+            <!-- <el-button @click="onCancel">取消</el-button> -->
+          </el-form-item>
+        </el-col>
+      </el-row>
+    </el-form>
+  </div>
+</template>
+
+<script>
+import * as api from '@/api/zonghezhili/duiwujianshe'
+
+export default {
+  data(){
+    return{
+      rowsNum:5,
+       options: [
+        {
+          label: '配偶',
+          value: 1
+        },
+        {
+          label: '子',
+          value: 2
+        },
+        {
+          label: '女',
+          value: 3
+        },
+        {
+          label: '孙子',
+          value: 4
+        },
+        {
+          label: '孙女',
+          value: 5
+        },
+        {
+          label: '外孙子',
+          value: 6
+        },
+        {
+          label: '外孙女',
+          value: 7
+        },
+        {
+          label: '父亲',
+          value: 8
+        },
+        {
+          label: '母亲',
+          value: 9
+        },
+        {
+          label: '祖父母',
+          value:10
+        },
+        {
+          label: '外祖父母',
+          value:11
+        },
+        {
+          label: '兄弟',
+          value:12
+        },
+        {
+          label: '姐妹',
+          value:13
+        },
+        {
+          label: '其他',
+          value:14
+        },
+      ]
+    }
+  },
+  props:{
+    usepath:{
+      type:String,
+      default:'save'
+    },
+    StayedPerson:{
+      type:Object,
+      default:{}
+    },
+    ConsistforPersonHouseTypes:{
+      type: Array
+    },
+    StayedPersonType:{
+      type: Array
+    },
+    HealthStatusType:{
+      type: Array
+    },
+    showButton:{
+      type:Boolean,
+      default:true
+    }
+  },
+  methods: {
+    onSubmit() {
+      if(this.usepath=='save'){
+        api.addStayedServedPersonInfo(this.StayedPerson).then(res=>{
+          if(res.code==200){
+            this.$notify({
+              title: '成功',
+              message: '保存成功',
+              type: 'success'
+            })
+          }else{
+            this.$notify({
+              title: '失败',
+              message: res.message,
+              type: 'error'
+            })
+          }
+        })
+      }else{
+        api.updateServedMemberInfo('03',this.StayedPerson).then(res=>{
+          if(res.code==200){
+            this.$notify({
+              title: '成功',
+              message: '更新成功',
+              type: 'success'
+            })
+          }else{
+            this.$notify({
+              title: '失败',
+              message: '更新失败！',
+              type: 'error'
+            })
+          }
+        })
+      }
+    },
+    onCancel() {
+      
+    }
+  }
+}
+</script>
+
+<style>
+</style>
+
+
+
+// WEBPACK FOOTER //
+// src/components/ZzOrgManage/extendStayedPerson.vue?5a8676e4

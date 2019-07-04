@@ -1,0 +1,17 @@
+import SpriteSymbol from "svg-baker-runtime/browser-symbol";
+import sprite from "svg-sprite-loader/runtime/browser-sprite.build";
+var symbol = new SpriteSymbol({
+  "id": "icon-shouce",
+  "use": "icon-shouce-usage",
+  "viewBox": "0 0 1024 1024",
+  "content": "<symbol class=\"icon\" viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"icon-shouce\"><defs><style type=\"text/css\"></style></defs><path d=\"M896 192v704H256.8c-71.2 0-128.8-57.6-128.8-128.8V256.8C128 185.6 185.6 128 256.8 128H768v512H257.6c-36 0-65.6 29.6-65.6 65.6v60.8c0 36 29.6 65.6 65.6 65.6H832V192h64zM768 704H256v64h512v-64z\" p-id=\"8326\" /></symbol>"
+});
+var result = sprite.add(symbol);
+export default symbol
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/icons/svg/shouce.svg
+// module id = 1wdh
+// module chunks = 172

@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".avatar-uploader .el-upload{border:1px dashed #000;border-radius:6px;cursor:pointer;position:relative;overflow:hidden}.avatar-uploader .el-upload:hover{border-color:#20a0ff}.avatar-uploader-icon{font-size:28px;color:#8c939d;width:178px;height:178px;line-height:178px;text-align:center}.avatar{width:178px;height:178px;display:block}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/components/common/addPopulation.vue"],"names":[],"mappings":"AACA,4BACE,uBAAyB,AACzB,kBAAmB,AACnB,eAAgB,AAChB,kBAAmB,AACnB,eAAiB,CAClB,AACD,kCACE,oBAAsB,CACvB,AACD,sBACE,eAAgB,AAChB,cAAe,AACf,YAAa,AACb,aAAc,AACd,kBAAmB,AACnB,iBAAmB,CACpB,AACD,QACE,YAAa,AACb,aAAc,AACd,aAAe,CAChB","file":"addPopulation.vue","sourcesContent":["\n.avatar-uploader .el-upload {\n  border: 1px dashed black;\n  border-radius: 6px;\n  cursor: pointer;\n  position: relative;\n  overflow: hidden;\n}\n.avatar-uploader .el-upload:hover {\n  border-color: #20a0ff;\n}\n.avatar-uploader-icon {\n  font-size: 28px;\n  color: #8c939d;\n  width: 178px;\n  height: 178px;\n  line-height: 178px;\n  text-align: center;\n}\n.avatar {\n  width: 178px;\n  height: 178px;\n  display: block;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-f2afab6a","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/components/common/addPopulation.vue
+// module id = rKIl
+// module chunks = 4 14 15

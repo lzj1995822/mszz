@@ -1,0 +1,25 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', {
+    staticClass: "app-main",
+    staticStyle: {
+      "padding": "10px"
+    }
+  }, [_c('transition', {
+    attrs: {
+      "name": "fade",
+      "mode": "out-in"
+    }
+  }, [_c('router-view', {
+    key: _vm.key
+  })], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-87c3d2c4","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/layout/AppMain.vue
+// module id = 9VaP
+// module chunks = 172

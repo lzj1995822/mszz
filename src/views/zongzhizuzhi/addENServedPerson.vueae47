@@ -1,0 +1,277 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-steps', {
+    attrs: {
+      "space": 200,
+      "active": 1
+    }
+  }, [_c('el-step', {
+    attrs: {
+      "title": "步骤 1",
+      "description": "添加基本信息"
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "width": "100%"
+    }
+  })]), _vm._v(" "), _c('el-step', {
+    attrs: {
+      "title": "步骤 2",
+      "description": "添加外籍信息"
+    }
+  })], 1), _vm._v(" "), _c('el-form', {
+    ref: "form",
+    staticStyle: {
+      "margin-left": "10%"
+    },
+    attrs: {
+      "model": _vm.form,
+      "label-width": "160px"
+    }
+  }, [_c('fieldset', {
+    staticStyle: {
+      "width": "80%"
+    }
+  }, [_c('legend', {
+    staticStyle: {
+      "margin-left": "40px"
+    }
+  }, [_c('h1', [_vm._v("基本信息")])]), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "display": "inline-block",
+      "width": "40%",
+      "padding": "10px"
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "头像上传"
+    }
+  }, [_c('el-upload', {
+    staticClass: "avatar-uploader",
+    attrs: {
+      "action": "https://jsonplaceholder.typicode.com/posts/",
+      "show-file-list": false,
+      "on-success": _vm.handleAvatarSuccess
+    }
+  }, [(_vm.imageUrl) ? _c('img', {
+    staticClass: "avatar",
+    attrs: {
+      "src": _vm.imageUrl
+    }
+  }) : _c('i', {
+    staticClass: "el-icon-plus avatar-uploader-icon"
+  })])], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "姓名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.name),
+      callback: function($$v) {
+        _vm.form.name = $$v
+      },
+      expression: "form.name"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "人口类型"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "disabled": ""
+    },
+    model: {
+      value: (_vm.foreigner),
+      callback: function($$v) {
+        _vm.foreigner = $$v
+      },
+      expression: "foreigner"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "出生日期"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    model: {
+      value: (_vm.form.birthDate),
+      callback: function($$v) {
+        _vm.form.birthDate = $$v
+      },
+      expression: "form.birthDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "婚姻状况"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.maritalStatus),
+      callback: function($$v) {
+        _vm.form.maritalStatus = $$v
+      },
+      expression: "form.maritalStatus"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "学历"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.education),
+      callback: function($$v) {
+        _vm.form.education = $$v
+      },
+      expression: "form.education"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "宗教信仰"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.religiousBelief),
+      callback: function($$v) {
+        _vm.form.religiousBelief = $$v
+      },
+      expression: "form.religiousBelief"
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "display": "inline-block",
+      "width": "40%"
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "职业类别"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.careerType),
+      callback: function($$v) {
+        _vm.form.careerType = $$v
+      },
+      expression: "form.careerType"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "职业"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.career),
+      callback: function($$v) {
+        _vm.form.career = $$v
+      },
+      expression: "form.career"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "移动电话"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.mobileTel),
+      callback: function($$v) {
+        _vm.form.mobileTel = $$v
+      },
+      expression: "form.mobileTel"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "固定电话"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.fixedTel),
+      callback: function($$v) {
+        _vm.form.fixedTel = $$v
+      },
+      expression: "form.fixedTel"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "服务处所:"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.servedPlace),
+      callback: function($$v) {
+        _vm.form.servedPlace = $$v
+      },
+      expression: "form.servedPlace"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "现住地:"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.PresentAddress),
+      callback: function($$v) {
+        _vm.form.PresentAddress = $$v
+      },
+      expression: "form.PresentAddress"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "现住地门(楼)详细地址:"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.presentAddressDetail),
+      callback: function($$v) {
+        _vm.form.presentAddressDetail = $$v
+      },
+      expression: "form.presentAddressDetail"
+    }
+  })], 1)], 1)])]), _vm._v(" "), _c('fieldset', {
+    staticStyle: {
+      "width": "72%",
+      "margin-left": "10%"
+    }
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%"
+    }
+  }, [_c('foreigner-form', {
+    attrs: {
+      "Foreigner": _vm.foreignerForm
+    }
+  })], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+    attrs: {
+      "align": "center",
+      "span": 18
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.onSubmit
+    }
+  }, [_vm._v("保存")]), _vm._v(" "), _c('el-button', {
+    on: {
+      "click": _vm.onCancel
+    }
+  }, [_vm._v("取消")])], 1)], 1)], 1)], 1)
+}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('legend', {
+    staticStyle: {
+      "margin-left": "40px"
+    }
+  }, [_c('h1', [_vm._v("人口类型")])])
+}]
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-733a1121","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/zongzhizuzhi/addENServedPerson.vue
+// module id = 17JY
+// module chunks = 96

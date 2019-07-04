@@ -1,0 +1,93 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticStyle: {
+      "pupdateing": "3%"
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form', {
+    ref: "videoForm",
+    attrs: {
+      "model": _vm.form,
+      "label-width": "200px"
+    }
+  }, [_vm._l((_vm.form), function(v, k, i) {
+    return (k !== 'id') ? _c('el-form-item', {
+      key: i,
+      attrs: {
+        "label": _vm.labels[i],
+        "prop": k
+      }
+    }, [(k == 'inspectionArea') ? _c('el-select', {
+      attrs: {
+        "filterable": ""
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.Types), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.id,
+          "label": v.regionName
+        }
+      })
+    })) : (k == 'processionNumbers') ? _c('el-input-number', {
+      attrs: {
+        "min": 0
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }) : _c('el-input', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    })], 1) : _vm._e()
+  }), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "align": "center"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.updateNewRecord
+    }
+  }, [_vm._v("更新")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "warning"
+    },
+    on: {
+      "click": function($event) {
+        _vm.$router.push('index')
+      }
+    }
+  }, [_vm._v("返回")])], 1)], 2)], 1)], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-2007724a","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/skynet/editSkyRanks.vue
+// module id = FzRI
+// module chunks = 135

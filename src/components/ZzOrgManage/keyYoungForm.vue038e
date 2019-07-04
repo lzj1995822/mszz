@@ -1,0 +1,139 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticStyle: {
+      "margin-left": "1%"
+    }
+  }, [_c('el-form', {
+    attrs: {
+      "model": _vm.MyForm,
+      "label-width": "160px",
+      "rules": _vm.rules
+    }
+  }, [_c('el-form-item', [_c('h2', [_vm._v("重点青少年")])]), _vm._v(" "), _vm._l((_vm.props), function(v, k, i) {
+    return (k !== 'keyYoungersID') ? _c('el-form-item', {
+      key: i,
+      attrs: {
+        "label": _vm.Labels[i],
+        "prop": k
+      }
+    }, [(k == 'populationTypeValue' || k == 'familySituationTypeValue' || k == 'relatedtoGuardianTypeValue' || k == 'helpingSolutionTypeValue') ? _c('el-select', {
+      model: {
+        value: (_vm.MyForm[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.MyForm, k, $$v)
+        },
+        expression: "MyForm[k]"
+      }
+    }, [(k == 'populationTypeValue') ? _vm._l((_vm.PopulationType), function(v1) {
+      return _c('el-option', {
+        key: v1.populationTypeValue,
+        attrs: {
+          "value": v1.populationTypeValue,
+          "label": v1.populationTypeName
+        }
+      })
+    }) : (k == 'familySituationTypeValue') ? _vm._l((_vm.FamilySituationType), function(v1) {
+      return _c('el-option', {
+        key: v1.familySituationTypeValue,
+        attrs: {
+          "value": v1.familySituationTypeValue,
+          "label": v1.familySituationTypeName
+        }
+      })
+    }) : (k == 'helpingSolutionTypeValue') ? _vm._l((_vm.HelpingSolutionType), function(v1) {
+      return _c('el-option', {
+        key: v1.helpingSolutionTypeValue,
+        attrs: {
+          "value": v1.helpingSolutionTypeValue,
+          "label": v1.helpingSolutionTypeName
+        }
+      })
+    }) : (k == 'relatedtoGuardianTypeValue') ? _vm._l((_vm.RelatedtoGuardianType), function(v1) {
+      return _c('el-option', {
+        key: v1.relatedtoGuardianTypeValue,
+        attrs: {
+          "value": v1.relatedtoGuardianTypeValue,
+          "label": v1.relatedtoGuardianTypeName
+        }
+      })
+    }) : _vm._e()], 2) : (k == 'crimeInf' || k == 'helpingInf') ? _c('el-input', {
+      attrs: {
+        "type": "textarea"
+      },
+      model: {
+        value: (_vm.MyForm[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.MyForm, k, $$v)
+        },
+        expression: "MyForm[k]"
+      }
+    }) : (k == 'isCrime') ? _c('el-radio-group', {
+      model: {
+        value: (_vm.MyForm[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.MyForm, k, $$v)
+        },
+        expression: "MyForm[k]"
+      }
+    }, [_c('el-radio-button', {
+      attrs: {
+        "label": "1"
+      }
+    }, [_vm._v("是")]), _vm._v(" "), _c('el-radio-button', {
+      attrs: {
+        "label": "0"
+      }
+    }, [_vm._v("否")])], 1) : (k == 'certifID' && _vm.usePath == 'update') ? _c('el-input', {
+      staticStyle: {
+        "width": "400px"
+      },
+      attrs: {
+        "disabled": ""
+      },
+      model: {
+        value: (_vm.MyForm[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.MyForm, k, $$v)
+        },
+        expression: "MyForm[k]"
+      }
+    }) : _c('el-input', {
+      staticStyle: {
+        "width": "400px"
+      },
+      model: {
+        value: (_vm.MyForm[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.MyForm, k, $$v)
+        },
+        expression: "MyForm[k]"
+      }
+    })], 1) : _vm._e()
+  }), _vm._v(" "), (_vm.showButton == true) ? _c('el-row', [_c('el-col', [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.add
+    }
+  }, [_vm._v(_vm._s(_vm.usePath == 'save' ? "保存" : "更新"))]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "warning"
+    },
+    on: {
+      "click": function($event) {
+        _vm.$router.push('/keyYoungerManager')
+      }
+    }
+  }, [_vm._v("返回")])], 1)], 1)], 1) : _vm._e()], 2)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-49904538","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/ZzOrgManage/keyYoungForm.vue
+// module id = CIhz
+// module chunks = 0 1 2 4 9 12 18 73 91 92

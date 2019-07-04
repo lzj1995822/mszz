@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"extendResident.vue","sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1d59a35e","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/components/ZzOrgManage/extendResident.vue
+// module id = oo1r
+// module chunks = 3 5 6 7 8 10 11 14 15 16

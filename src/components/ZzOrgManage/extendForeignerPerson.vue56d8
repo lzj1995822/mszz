@@ -1,0 +1,104 @@
+<template>
+  <div>
+    <el-form :model="Foreigner" label-width="140px" label-position="left" label-suffix=":">
+      <el-form-item>
+        <h2>境外人员</h2>
+      </el-form-item>
+      <el-form-item label="外文名(FamliyName)">
+        <el-input v-model="Foreigner.familyName"></el-input>
+      </el-form-item>
+      <el-form-item label="外文名(FirstName)">
+        <el-input v-model="Foreigner.firstName"></el-input>
+      </el-form-item>
+      <el-form-item label="中文名">
+        <el-input v-model="Foreigner.chineseName"></el-input>
+      </el-form-item>
+      <el-form-item label="性别">
+        <el-radio-group v-model="Foreigner.sex">
+          <el-radio :label="yes">男</el-radio>
+          <el-radio :label="no">女</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="出生日期">
+        <el-date-picker type="date" placeholder="选择日期" v-model="Foreigner.birthDate"></el-date-picker>
+         <!-- <input type="date" v-model="Foreigner.birthDate" /> -->
+      </el-form-item>
+      <el-form-item label="国籍">
+        <el-select v-model="Foreigner.nationality"></el-select>
+      </el-form-item>
+      <el-form-item label="宗教信仰">
+        <el-select v-model="Foreigner.religiousBelief"></el-select>
+      </el-form-item>
+      <el-form-item label="证件代码">
+        <el-select v-model="Foreigner.certificateCode">
+        </el-select>
+      </el-form-item>
+      <el-form-item label="证件号码">
+        <el-input v-model="Foreigner.certificateNumber"></el-input>
+      </el-form-item>
+      <el-form-item label="证件有效期">
+        <el-input v-model="Foreigner.certificateDueDate"></el-input>
+      </el-form-item>
+      <el-form-item label="联系方式">
+        <el-input v-model="Foreigner.contact"></el-input>
+      </el-form-item>
+      <el-form-item label="来华目的">
+        <el-select v-model="Foreigner.purposeTypeValue" placeholder="请选择">
+        </el-select>
+      </el-form-item>
+      <el-form-item label="职业类别">
+        <el-select v-model="Foreigner.careerType" placeholder="请选择">
+        </el-select>
+      </el-form-item>
+      <el-form-item label="职业">
+        <el-input v-model="Foreigner.career"></el-input>
+      </el-form-item>
+      <el-row v-if="showButton">
+          <el-col>
+              <el-form-item>
+                  <el-button type="primary" @click="onSubmit">保存</el-button>
+                  <!-- <el-button @click="onCancel">取消</el-button> -->
+              </el-form-item>
+          </el-col>
+      </el-row>
+    </el-form>
+  </div>
+</template>
+
+<script>
+export default {
+  props:{
+    Foreigner:{
+      type:Object,
+      default:{}
+    },
+    showButton:{
+      type:Boolean,
+      default:true
+    }
+  },
+  data(){
+    return{
+      yes:1,
+      no:0
+    }
+  },
+  methods:{
+    onSubmit(){
+
+    },
+    onCancel(){
+
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
+
+
+
+// WEBPACK FOOTER //
+// src/components/ZzOrgManage/extendForeignerPerson.vue?5bd1e6aa

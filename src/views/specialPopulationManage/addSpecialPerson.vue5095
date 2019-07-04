@@ -1,0 +1,343 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', {
+    staticStyle: {
+      "margin-left": "10%",
+      "margin-top": "10px"
+    }
+  }, [_c('el-col', {
+    attrs: {
+      "span": 23
+    }
+  }, [_c('el-steps', {
+    staticStyle: {
+      "margin-left": "10%",
+      "font-size": "39px",
+      "cursor": "pointer"
+    },
+    attrs: {
+      "active": _vm.step
+    }
+  }, [_c('el-step', {
+    staticStyle: {
+      "text-align": "center"
+    },
+    attrs: {
+      "title": "步骤 1",
+      "icon": "edit",
+      "description": "添加人员的特殊信息"
+    }
+  }), _vm._v(" "), _c('el-step', {
+    attrs: {
+      "title": "步骤 2",
+      "icon": "upload",
+      "description": "信息预览(提交)"
+    }
+  })], 1), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "margin-top": "30px"
+    }
+  }, [(_vm.step == 1) ? _c('div', [_c('el-row', {
+    staticStyle: {
+      "margin-left": "10%"
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "margin-bottom": "10px"
+    }
+  }, [_c('el-tag', {
+    staticStyle: {
+      "font-size": "20px",
+      "height": "25px"
+    },
+    attrs: {
+      "type": "danger"
+    }
+  }, [_vm._v("请选择要添加的人员类型(单选):")])], 1), _vm._v(" "), _c('el-radio-group', {
+    attrs: {
+      "size": "medium"
+    },
+    model: {
+      value: (_vm.specialValue),
+      callback: function($$v) {
+        _vm.specialValue = $$v
+      },
+      expression: "specialValue"
+    }
+  }, _vm._l((_vm.specialTypes), function(item) {
+    return (item.specialPopulationTypeValue != '04' && item.specialPopulationTypeValue != '05') ? _c('el-radio-button', {
+      key: item.specialPopulationTypeValue,
+      attrs: {
+        "label": item.specialPopulationTypeName
+      },
+      nativeOn: {
+        "click": function($event) {
+          _vm.changeValue(item.specialPopulationTypeValue)
+        }
+      }
+    }) : _vm._e()
+  }))], 1), _vm._v(" "), _c('el-row', [(_vm.specialId == '01') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('emancipist-form', {
+    attrs: {
+      "emancipistForm": _vm.Emancipist,
+      "DangerousEvaulationType": _vm.DangerousEvaulationType,
+      "ConnectionType": _vm.ConnectionType,
+      "PlacementType": _vm.PlacementType,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '02') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('community-correctioner-form', {
+    attrs: {
+      "communityCorrectionerForm": _vm.communityCorrectioner,
+      "CorrectingType": _vm.CorrectingType,
+      "AcceptType": _vm.AcceptType,
+      "GroupMemberType": _vm.GroupMemberType,
+      "StopCorrectionType": _vm.StopCorrectionType,
+      "CaseType": _vm.CaseType,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '03') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('severe-psychotic-form', {
+    attrs: {
+      "severePsychoticForm": _vm.SeverePsychotic,
+      "EconomicSituationType": _vm.EconomicSituationType,
+      "currentDiagnosisType": _vm.currentDiagnosisType,
+      "dangerousEvaulationLevelType": _vm.dangerousEvaulationLevelType,
+      "treatmentSituationType": _vm.treatmentSituationType,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '04') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('DrugAddictsForm', {
+    attrs: {
+      "DrugAddicts": _vm.DrugAddicts,
+      "ControlSituationType": _vm.controlSituationType,
+      "drugReasonType": _vm.drugReasonType,
+      "drugResultType": _vm.drugResultType,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '05') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('AIDSdiseaseForm', {
+    attrs: {
+      "AIDSdisease": _vm.AIDSdisease,
+      "InfectedWayType": _vm.InfectedWayType,
+      "AIDSAttentionType": _vm.AIDSAttentionType,
+      "AIDSReceiveCType": _vm.AIDSReceiveCType,
+      "CaseType": _vm.CaseType,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '06') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('key-young-form', {
+    attrs: {
+      "MyForm": _vm.keyYoungForms,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '07') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('key-petitioner', {
+    attrs: {
+      "form": _vm.KeyPetitioner,
+      "showButton": false
+    }
+  })], 1) : _vm._e()])], 1) : _vm._e(), _vm._v(" "), (_vm.step == 2) ? _c('div', [_c('el-tabs', {
+    staticStyle: {
+      "width": "90%"
+    },
+    attrs: {
+      "type": "border-card"
+    }
+  }, [_c('el-tab-pane', {
+    attrs: {
+      "label": "基本信息"
+    }
+  }, [_c('baisc-info-table', {
+    attrs: {
+      "memberInfo": _vm.form,
+      "imageUrl": _vm.imageUrl
+    }
+  })], 1), _vm._v(" "), _c('el-tab-pane', {
+    attrs: {
+      "label": "特殊信息"
+    }
+  }, [(_vm.specialId == '01') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('emancipist-form', {
+    attrs: {
+      "emancipistForm": _vm.Emancipist,
+      "DangerousEvaulationType": _vm.DangerousEvaulationType,
+      "ConnectionType": _vm.ConnectionType,
+      "PlacementType": _vm.PlacementType,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '02') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('community-correctioner-form', {
+    attrs: {
+      "communityCorrectionerForm": _vm.communityCorrectioner,
+      "CorrectingType": _vm.CorrectingType,
+      "AcceptType": _vm.AcceptType,
+      "GroupMemberType": _vm.GroupMemberType,
+      "StopCorrectionType": _vm.StopCorrectionType,
+      "CaseType": _vm.CaseType,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '03') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('severe-psychotic-form', {
+    attrs: {
+      "severePsychoticForm": _vm.SeverePsychotic,
+      "EconomicSituationType": _vm.EconomicSituationType,
+      "currentDiagnosisType": _vm.currentDiagnosisType,
+      "dangerousEvaulationLevelType": _vm.dangerousEvaulationLevelType,
+      "treatmentSituationType": _vm.treatmentSituationType,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '04') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('DrugAddictsForm', {
+    attrs: {
+      "DrugAddicts": _vm.DrugAddicts,
+      "ControlSituationType": _vm.controlSituationType,
+      "drugReasonType": _vm.drugReasonType,
+      "drugResultType": _vm.drugResultType,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '05') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('AIDSdiseaseForm', {
+    attrs: {
+      "AIDSdisease": _vm.AIDSdisease,
+      "InfectedWayType": _vm.InfectedWayType,
+      "AIDSAttentionType": _vm.AIDSAttentionType,
+      "AIDSReceiveCType": _vm.AIDSReceiveCType,
+      "CaseType": _vm.CaseType,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '06') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('key-young-form', {
+    attrs: {
+      "MyForm": _vm.keyYoungForms,
+      "showButton": false
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.specialId == '07') ? _c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('key-petitioner', {
+    attrs: {
+      "form": _vm.KeyPetitioner,
+      "showButton": false
+    }
+  })], 1) : _vm._e()])], 1)], 1) : _vm._e()])], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('div', {
+    staticClass: "preDiv"
+  }, [(_vm.step != 1) ? _c('i', {
+    staticClass: "fa fa-angle-double-left fa-5x",
+    on: {
+      "click": function($event) {
+        _vm.goPre()
+      }
+    }
+  }) : _vm._e(), _vm._v(" "), (_vm.step != 1) ? _c('div', {
+    staticClass: "directionFont",
+    on: {
+      "click": function($event) {
+        _vm.goPre()
+      }
+    }
+  }, [_vm._v("\n                    上一步\n                ")]) : _vm._e()]), _vm._v(" "), _c('div', {
+    staticClass: "nextDiv"
+  }, [(_vm.step != 2) ? _c('i', {
+    staticClass: "fa fa-angle-double-right fa-5x",
+    on: {
+      "click": _vm.goNext
+    }
+  }) : _vm._e(), _vm._v(" "), (_vm.step != 2) ? _c('div', {
+    staticClass: "directionFont",
+    on: {
+      "click": _vm.goNext
+    }
+  }, [_vm._v("\n                    下一步\n                ")]) : _vm._e(), _vm._v(" "), (_vm.step == 2) ? _c('i', {
+    staticClass: "fa fa-upload fa-5x",
+    on: {
+      "click": _vm.submit
+    }
+  }) : _vm._e(), _vm._v(" "), (_vm.step == 2) ? _c('div', {
+    staticClass: "directionFont",
+    on: {
+      "click": _vm.submit
+    }
+  }, [_vm._v("\n                    提交数据\n                ")]) : _vm._e()])])], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-94e0344c","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/specialPopulationManage/addSpecialPerson.vue
+// module id = Vo4c
+// module chunks = 4

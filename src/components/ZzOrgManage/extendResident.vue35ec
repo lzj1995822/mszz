@@ -1,0 +1,133 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-form', {
+    attrs: {
+      "model": _vm.Resident,
+      "label-width": "120px",
+      "label-position": "left",
+      "label-suffix": ":"
+    }
+  }, [_c('el-form-item', [_c('h2', [_vm._v("常住户籍人口")])]), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "身份证"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Resident.certifID),
+      callback: function($$v) {
+        _vm.Resident.certifID = $$v
+      },
+      expression: "Resident.certifID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "人户一致标识"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择"
+    },
+    model: {
+      value: (_vm.Resident.consistforPersonHouseTypeValue),
+      callback: function($$v) {
+        _vm.Resident.consistforPersonHouseTypeValue = $$v
+      },
+      expression: "Resident.consistforPersonHouseTypeValue"
+    }
+  }, _vm._l((_vm.ConsistforPersonHouseType), function(v, i) {
+    return _c('el-option', {
+      key: i,
+      attrs: {
+        "value": v.consistforPersonHouseTypeValue,
+        "label": v.consistforPersonHouseTypeName
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "与户主关系"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择"
+    },
+    model: {
+      value: (_vm.Resident.relationshipTypeWithHouseholder),
+      callback: function($$v) {
+        _vm.Resident.relationshipTypeWithHouseholder = $$v
+      },
+      expression: "Resident.relationshipTypeWithHouseholder"
+    }
+  }, _vm._l((_vm.options), function(item) {
+    return _c('el-option', {
+      key: item.value,
+      attrs: {
+        "label": item.label,
+        "value": item.value
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "户号"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Resident.houseCode),
+      callback: function($$v) {
+        _vm.Resident.houseCode = $$v
+      },
+      expression: "Resident.houseCode"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "户主身份证号码"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Resident.householderCertID),
+      callback: function($$v) {
+        _vm.Resident.householderCertID = $$v
+      },
+      expression: "Resident.householderCertID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "户主姓名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Resident.householderName),
+      callback: function($$v) {
+        _vm.Resident.householderName = $$v
+      },
+      expression: "Resident.householderName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "户主联系方式"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.Resident.householderContact),
+      callback: function($$v) {
+        _vm.Resident.householderContact = $$v
+      },
+      expression: "Resident.householderContact"
+    }
+  })], 1), _vm._v(" "), (_vm.showButton) ? _c('el-row', [_c('el-col', [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.onSubmit
+    }
+  }, [_vm._v(_vm._s(_vm.usepath == 'save' ? '保存' : '更新'))])], 1)], 1)], 1) : _vm._e()], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-1d59a35e","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/ZzOrgManage/extendResident.vue
+// module id = TR5m
+// module chunks = 3 5 6 7 8 10 11 14 15 16

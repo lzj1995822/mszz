@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".userInfoEditTable[data-v-069d652a],.userInfoEditTable td[data-v-069d652a]{border:1px solid #a9a9a9}td[data-v-069d652a]{text-align:left;padding:10px}.tb_label[data-v-069d652a]{width:12%}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/zongzhizuzhi/ServedForeignerDetail.vue"],"names":[],"mappings":"AACA,2EAEE,wBAA2B,CAC5B,AACD,oBACE,gBAAiB,AACjB,YAAc,CAEf,AACD,2BACE,SAAW,CACZ","file":"ServedForeignerDetail.vue","sourcesContent":["\n.userInfoEditTable[data-v-069d652a],\n.userInfoEditTable td[data-v-069d652a] {\n  border: 1px solid darkgrey;\n}\ntd[data-v-069d652a] {\n  text-align: left;\n  padding: 10px;\n  /* height: 30px; */\n}\n.tb_label[data-v-069d652a]{\n  width: 12%;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-069d652a","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/zongzhizuzhi/ServedForeignerDetail.vue
+// module id = ktlo
+// module chunks = 93

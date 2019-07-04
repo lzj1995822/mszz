@@ -1,0 +1,8 @@
+module.exports = __webpack_public_path__ + "static/img/wtsb.6676181.png";
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/assets/wtsb.png
+// module id = qi+c
+// module chunks = 172

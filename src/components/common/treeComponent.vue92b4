@@ -1,0 +1,87 @@
+<template>
+  <div v-if="$store.getters.user.userRole=='超级管理员'">
+    <el-tree
+      accordion
+      node-key="netGridID"
+      :data="datas"
+      :default-expanded-keys=[-1]
+      :props="defaultProps"
+      @node-click="handleNodeClick"
+    ></el-tree>
+    <!-- <dd class="Mytree">
+      <dl style="font-weight: bold;">茅山各村镇列表</dl>
+      <dl class="treeNode" v-for="v in datas" @click="handleNodeClick(v.id)" :key="v.id">{{v.label}}</dl>
+    </dd>-->
+  </div>
+</template>
+
+<script>
+import * as api from "@/api/orgManage";
+
+export default {
+  data() {
+    return {
+      datas: [],
+      defaultProps: {
+        children: "children",
+        label: "netGridName"
+      },
+      NetGrid: null
+    };
+  },
+  methods: {
+    handleNodeClick(data) {
+      let id = null;
+      if(data.netGridID!=-1&&data.netGridID!=-2){
+        id = data.netGridID;
+      }
+      this.$emit("GetNodeValue", id);
+    }
+  },
+  mounted() {
+    this.datas.push(this.$store.state.app.NetGrid);
+    // api.getOrgCode().then(res => {
+    //   let Grid = res.data.netGrid;
+    //   for (let i = 0; i < Grid.length; i++) {
+    //     var obj = {
+    //       id: Grid[i].netGridID,
+    //       label: Grid[i].netGridName
+    //     };
+    //     this.datas.push(obj);
+    //   }
+    // });
+  }
+};
+</script>
+
+<style>
+/* .is-current {
+  color: #1d8ce0;
+  font-weight: 1200;
+}
+.Mytree {
+  border: 1px solid #e5e9f2;
+  margin-right: 5%;
+  text-align: center;
+  margin-top: 52px;
+  border-radius: 2px;
+  background: #eff2f7;
+  margin-left: 0;
+}
+.treeNode {
+  cursor: pointer;
+  padding-top: 6px;
+  padding-bottom: 11px;
+  color: #1d8ce0;
+}
+.treeNode:hover {
+  color: purple;
+  font-weight: bold;
+} */
+</style>
+
+
+
+
+// WEBPACK FOOTER //
+// src/components/common/treeComponent.vue?5f5a81c1

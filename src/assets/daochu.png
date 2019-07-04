@@ -1,0 +1,8 @@
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAlklEQVQokZ2SMQoCMRBFH7IIVvaexVJP4BGsPIKV2Nh5JbESaxvBwjNYKcKyz2aispgl+CCQKf6f+ZOgkjknM/T4MAe2lBCuM7UOo3FH95txmarPEGw6BG9RBSyBPnAEdsDkx0B7oP4eL3HIBVeH7U6JBrhmojftRSzC7aKOSjKlYhXCszooWQTAGqiAO/Aofae/f0QxL71xRGeZN91uAAAAAElFTkSuQmCC"
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/assets/daochu.png
+// module id = M5Ns
+// module chunks = 0 1 2 3 6 7 8 17 18 48 49 55 56 76 77 78 79 80 110 118

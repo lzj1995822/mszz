@@ -1,0 +1,227 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 24,
+      "align": "right"
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "margin-top": "10px"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.addNewRecord
+    }
+  }, [_vm._v("添加队伍信息")]), _vm._v(" "), _c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    attrs: {
+      "placeholder": "请输入队伍名称"
+    },
+    model: {
+      value: (_vm.filters.processionName),
+      callback: function($$v) {
+        _vm.filters.processionName = $$v
+      },
+      expression: "filters.processionName"
+    }
+  }), _vm._v(" "), _c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    attrs: {
+      "placeholder": "请输入负责人名称"
+    },
+    model: {
+      value: (_vm.filters.processionLeaderName),
+      callback: function($$v) {
+        _vm.filters.processionLeaderName = $$v
+      },
+      expression: "filters.processionLeaderName"
+    }
+  }), _vm._v(" "), _c('el-select', {
+    attrs: {
+      "placeholder": "请选择寻查区域"
+    },
+    model: {
+      value: (_vm.filters.area),
+      callback: function($$v) {
+        _vm.filters.area = $$v
+      },
+      expression: "filters.area"
+    }
+  }, _vm._l((_vm.Types), function(v, i) {
+    return _c('el-option', {
+      key: i,
+      attrs: {
+        "value": v.id,
+        "label": v.regionName
+      }
+    })
+  })), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "icon": "search"
+    },
+    on: {
+      "click": _vm.getProcessionInfo
+    }
+  }, [_vm._v("搜索")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.flushAll
+    }
+  }, [_vm._v("刷新")])], 1), _vm._v(" "), _c('el-row', {
+    staticStyle: {
+      "margin-top": "20px"
+    }
+  }, [_c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-table', {
+    attrs: {
+      "data": _vm.list,
+      "border": ""
+    }
+  }, [_vm._l((_vm.props), function(v, k, i) {
+    return _c('el-table-column', {
+      key: i,
+      attrs: {
+        "label": _vm.labels[i],
+        "align": "center"
+      },
+      scopedSlots: _vm._u([{
+        key: "default",
+        fn: function(scope) {
+          return [(k !== 'url' || k != 'longitude' || k !== 'latitude') ? _c('span', [_vm._v("\n                                    " + _vm._s(scope.row[k]) + "\n                                ")]) : _vm._e()]
+        }
+      }])
+    })
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "align": "center"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.ckDetail(scope.row.id)
+            }
+          }
+        }, [_vm._v("查看详情")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.editProcession(scope.row.id)
+            }
+          }
+        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.deleteProcession(scope.row.id)
+            }
+          }
+        }, [_vm._v("删除")])]
+      }
+    }])
+  })], 2)], 1), _vm._v(" "), _c('el-col', {
+    staticStyle: {
+      "margin-top": "10px"
+    },
+    attrs: {
+      "span": 24,
+      "align": "right"
+    }
+  }, [_c('el-pagination', {
+    attrs: {
+      "layout": "prev, pager, next",
+      "total": _vm.totalInfo
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1)], 1)], 1)], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "巡防队伍详细信息",
+      "visible": _vm.visible
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.visible = $event
+      }
+    }
+  }, [_c('div', {
+    attrs: {
+      "id": "table"
+    }
+  }, [_c('table', {
+    staticClass: "userInfoEditTable",
+    staticStyle: {
+      "border-collapse": "collapse",
+      "background-color": "white"
+    },
+    attrs: {
+      "width": "100%",
+      "cellspacing": "0"
+    }
+  }, [_vm._l((_vm.form), function(v, k, i) {
+    return _c('tr', {
+      key: v
+    }, [_c('td', {
+      staticClass: "tb_label"
+    }, [_vm._v(_vm._s(_vm.labels2[i]))]), _vm._v(" "), _c('td', [_vm._v("\n                  " + _vm._s(v) + "\n              ")])])
+  }), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "colspan": "2",
+      "align": "center"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "text",
+      "size": "large"
+    },
+    on: {
+      "click": function($event) {
+        _vm.printTable('table')
+      }
+    }
+  }, [_vm._v("[打印]")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "text",
+      "size": "large"
+    },
+    on: {
+      "click": function($event) {
+        _vm.visible = false
+      }
+    }
+  }, [_vm._v("[关闭]")])], 1)])], 2)])])], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-3977d040","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/skynet/skyranks.vue
+// module id = vIPJ
+// module chunks = 82

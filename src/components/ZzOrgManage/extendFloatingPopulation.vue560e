@@ -1,0 +1,174 @@
+<template>
+  <div>
+    <el-form :model="floatingPopulation" label-width="128px" label-position="left" label-suffix=":">
+        <el-form-item>
+          <h2>流动人口</h2>
+        </el-form-item>
+        <el-form-item label="身份证">
+          <el-input v-model="floatingPopulation.certifID"></el-input>
+        </el-form-item>
+        <el-form-item label="流入原因">
+            <el-select v-model="floatingPopulation.folatingReasonTypeValue" placeholder="请选择流入原因">
+              <el-option v-for="v of FolatingReasonType" :key="v.id" :label="v.floatingReasonTypeName" :value="v.folatingReasonTypeValue">
+              </el-option>
+            </el-select>
+        </el-form-item>
+        <el-form-item label="办证类型">
+            <el-select v-model="floatingPopulation.certificateTypeValue" placeholder="请选择办证类型">
+              <el-option v-for="v of CertificateType" :key="v.id" :label="v.certificateTypeName" :value="v.certificateTypeValue">
+              </el-option>
+            </el-select>
+        </el-form-item>
+        <el-form-item label="证件号码">
+          <el-input v-model="floatingPopulation.identificationNumber"></el-input>
+        </el-form-item>
+        <el-form-item label="证件注册日期">
+          <!-- <input type="date" v-model="floatingPopulation.registerDate" /> -->
+          <el-date-picker v-model="floatingPopulation.registerDate" @change="ChangeDate" placeholder="">
+
+          </el-date-picker>
+        </el-form-item>
+        <el-form-item label="证件到期日期">
+          <!-- <input type="date" v-model="floatingPopulation.dueDate" /> -->
+          <el-date-picker v-model="floatingPopulation.dueDate" @change="ChangeDate2" placeholder=""></el-date-picker>
+        </el-form-item>
+        <el-form-item label="住所类型">
+          <el-select v-model="floatingPopulation.houseTypeValue" placeholder="请选择住所类型">
+            <el-option v-for="v of HouseType" :key="v.id" :label="v.houseTypeName" :value="v.houseTypeValue">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="是否落户">
+          <el-radio-group v-model="floatingPopulation.isSettled">
+            <el-radio :label="yes">是</el-radio>
+            <el-radio :label="no">否</el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item v-if="floatingPopulation.isSettled==0" label="未落户原因">
+          <el-select v-model="floatingPopulation.unSettledReason" placeholder="请选择未落户原因">
+            <!-- 待补充 -->
+            <el-option v-for="v of UnSettledReasonType" :key="v.id" :label="v.unSettledReasonName" :value="v.unSettledReason"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item  v-if="floatingPopulation.isSettled==0" label="未落户时间">
+          <el-date-picker type="date" placeholder="请选择未落户时间" @change="ChangeDate3" v-model="floatingPopulation.unSettledDate">
+          </el-date-picker>
+          <!-- <input type="date" v-model="floatingPopulation.unSettledDate" /> -->
+        </el-form-item>
+        <el-form-item label="是否重点关注对象">
+          <el-radio-group v-model="floatingPopulation.isFocusPerson">
+            <el-radio :label="yes">是</el-radio>
+            <el-radio :label="no">否</el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-row v-if="showButton">
+          <el-col>
+            <el-form-item>
+              <el-button type="primary" @click="onSubmit">{{usepath=='save'?'保存':'更新'}}</el-button>
+              <!-- <el-button @click="onCancel">取消</el-button> -->
+            </el-form-item>
+          </el-col>
+        </el-row>
+    </el-form>
+  </div>
+</template>
+
+<script>
+import * as api from "@/api/zonghezhili/duiwujianshe";
+
+export default {
+  props: {
+    floatingPopulation: {
+      type: Object,
+      default:function(){
+        return{
+
+        }
+      }
+    },
+    usepath: {
+      type: String,
+      default: "save"
+    },
+    FolatingReasonType: {
+      type: Array
+    },
+    CertificateType: {
+      type: Array
+    },
+    HouseType: {
+      type: Array
+    },
+    UnSettledReasonType: {
+      type: Array
+    },
+    showButton: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data() {
+    return {   
+      yes: 1,
+      no: 0,
+      areaRows: 5
+    };
+  },
+  methods: {
+    ChangeDate(val) {
+      this.floatingPopulation.registerDate = val;
+    },
+    ChangeDate2(val) {
+      this.floatingPopulation.dueDate = val;
+    },
+    ChangeDate3(val){
+      this.floatingPopulation.unSettledDate = val
+    },
+    onSubmit() {
+      if (this.usepath == "save") {
+        api.addFloatServedPersonInfo(this.floatingPopulation).then(res => {
+          if (res.code == 200) {
+            this.$notify({
+              title: "成功",
+              message: "保存成功",
+              type: "success"
+            });
+          } else {
+            this.$notify({
+              title: "失败",
+              message: res.message,
+              type: "error"
+            });
+          }
+        });
+      } else {
+        api.updateServedMemberInfo('02',this.floatingPopulation).then(res=>{
+          if(res.code==200){
+            this.$notify({
+              title: '成功',
+              message: '更新成功',
+              type: 'success'
+            })
+          }else{
+            this.$notify({
+              title: '失败',
+              message: '更新失败！',
+              type: 'error'
+            })
+          }
+        })
+      }
+    },
+    onCancel() {}
+  }
+};
+</script>
+
+<style scoped>
+
+</style>
+
+
+
+// WEBPACK FOOTER //
+// src/components/ZzOrgManage/extendFloatingPopulation.vue?5e913d88

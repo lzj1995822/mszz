@@ -1,0 +1,524 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-form', {
+    ref: "form2",
+    attrs: {
+      "rules": _vm.rules,
+      "model": _vm.communityCorrectionerForm,
+      "label-width": "150px"
+    }
+  }, [_c('el-form-item', [_c('h2', [_vm._v("社区矫正人员")])]), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "身份证号",
+      "prop": "certifID"
+    }
+  }, [(_vm.usePath == 'update') ? _c('el-input', {
+    attrs: {
+      "disabled": ""
+    },
+    model: {
+      value: (_vm.communityCorrectionerForm.certifID),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.certifID = $$v
+      },
+      expression: "communityCorrectionerForm.certifID"
+    }
+  }) : _c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.certifID),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.certifID = $$v
+      },
+      expression: "communityCorrectionerForm.certifID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "社区矫正人员编号"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.communityCorrectionerCode),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.communityCorrectionerCode = $$v
+      },
+      expression: "communityCorrectionerForm.communityCorrectionerCode"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "原来的羁押场所"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.originalDetentionPlace),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.originalDetentionPlace = $$v
+      },
+      expression: "communityCorrectionerForm.originalDetentionPlace"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "矫正类型编码"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.communityCorrectionerForm.correctingTypeValue),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.correctingTypeValue = $$v
+      },
+      expression: "communityCorrectionerForm.correctingTypeValue"
+    }
+  }, _vm._l((_vm.CorrectingType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.correctingTypeName,
+        "value": v.correctingTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "案件类别"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.communityCorrectionerForm.caseTypeValue),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.caseTypeValue = $$v
+      },
+      expression: "communityCorrectionerForm.caseTypeValue"
+    }
+  }, _vm._l((_vm.CaseType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.caseTypeName,
+        "value": v.caseTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "具体罪名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.concreteAccusation),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.concreteAccusation = $$v
+      },
+      expression: "communityCorrectionerForm.concreteAccusation"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "原判刑期"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.originalSentence),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.originalSentence = $$v
+      },
+      expression: "communityCorrectionerForm.originalSentence"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "原判刑期起止时间"
+    }
+  }, [_c('el-col', {
+    attrs: {
+      "span": 4
+    }
+  }, [_c('el-date-picker', {
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    on: {
+      "change": _vm.OriginalSentenceStartDate
+    },
+    model: {
+      value: (_vm.communityCorrectionerForm.originalSentenceStartDate),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.originalSentenceStartDate = $$v
+      },
+      expression: "communityCorrectionerForm.originalSentenceStartDate"
+    }
+  })], 1), _vm._v(" "), _c('el-col', {
+    staticClass: "line",
+    attrs: {
+      "span": 2
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "text-align": "center"
+    }
+  }, [_vm._v("\n                    -\n                ")])]), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 4
+    }
+  }, [_c('el-date-picker', {
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    on: {
+      "change": _vm.OriginalSentenceEndDate
+    },
+    model: {
+      value: (_vm.communityCorrectionerForm.originalSentenceEndDate),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.originalSentenceEndDate = $$v
+      },
+      expression: "communityCorrectionerForm.originalSentenceEndDate"
+    }
+  })], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "矫正起止时间"
+    }
+  }, [_c('el-col', {
+    attrs: {
+      "span": 4
+    }
+  }, [_c('el-date-picker', {
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    on: {
+      "change": _vm.CorrectionStartDate
+    },
+    model: {
+      value: (_vm.communityCorrectionerForm.correctionStartDate),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.correctionStartDate = $$v
+      },
+      expression: "communityCorrectionerForm.correctionStartDate"
+    }
+  })], 1), _vm._v(" "), _c('el-col', {
+    staticClass: "line",
+    attrs: {
+      "span": 2
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "text-align": "center"
+    }
+  }, [_vm._v("\n                    -\n                ")])]), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 4
+    }
+  }, [_c('el-date-picker', {
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    on: {
+      "change": _vm.CorrectionEndDate
+    },
+    model: {
+      value: (_vm.communityCorrectionerForm.correctionEndDate),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.correctionEndDate = $$v
+      },
+      expression: "communityCorrectionerForm.correctionEndDate"
+    }
+  })], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "接受方式编码"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.communityCorrectionerForm.acceptTypeValue),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.acceptTypeValue = $$v
+      },
+      expression: "communityCorrectionerForm.acceptTypeValue"
+    }
+  }, _vm._l((_vm.AcceptType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.acceptTypeName,
+        "value": v.acceptTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否是惯犯"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.communityCorrectionerForm.isRecidivist),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.isRecidivist = $$v
+      },
+      expression: "communityCorrectionerForm.isRecidivist"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": _vm.yes
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": _vm.no
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否建立矫正小组"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.communityCorrectionerForm.isCreatingCorrectionGroup),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.isCreatingCorrectionGroup = $$v
+      },
+      expression: "communityCorrectionerForm.isCreatingCorrectionGroup"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": _vm.yes
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": _vm.no
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "矫正小组成员编码"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.communityCorrectionerForm.groupMemberTypeValue),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.groupMemberTypeValue = $$v
+      },
+      expression: "communityCorrectionerForm.groupMemberTypeValue"
+    }
+  }, _vm._l((_vm.GroupMemberType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.groupMemberTypeName,
+        "value": v.groupMemberTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "矫正解除(终止)类型"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择"
+    },
+    model: {
+      value: (_vm.communityCorrectionerForm.stopCorrectionTypeValue),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.stopCorrectionTypeValue = $$v
+      },
+      expression: "communityCorrectionerForm.stopCorrectionTypeValue"
+    }
+  }, _vm._l((_vm.StopCorrectionType), function(item) {
+    return _c('el-option', {
+      key: item.value,
+      attrs: {
+        "label": item.stopCorrectionTypeName,
+        "value": item.stopCorrectionTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否有脱管"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.communityCorrectionerForm.isOutofControl),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.isOutofControl = $$v
+      },
+      expression: "communityCorrectionerForm.isOutofControl"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": _vm.yes
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": _vm.no
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "脱管原因"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.reasonforOutofControl),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.reasonforOutofControl = $$v
+      },
+      expression: "communityCorrectionerForm.reasonforOutofControl"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "检察监督脱管情况"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.checkingOutofControl),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.checkingOutofControl = $$v
+      },
+      expression: "communityCorrectionerForm.checkingOutofControl"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "脱管纠正情况"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.correctingOutofControl),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.correctingOutofControl = $$v
+      },
+      expression: "communityCorrectionerForm.correctingOutofControl"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否有漏管"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.communityCorrectionerForm.isMissingControl),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.isMissingControl = $$v
+      },
+      expression: "communityCorrectionerForm.isMissingControl"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": _vm.yes
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": _vm.no
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "漏管原因"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.reasonforMissingControl),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.reasonforMissingControl = $$v
+      },
+      expression: "communityCorrectionerForm.reasonforMissingControl"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "检察监督漏管情况"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.checkingMissingControl),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.checkingMissingControl = $$v
+      },
+      expression: "communityCorrectionerForm.checkingMissingControl"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "漏管纠正情况"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.correctingMissingControl),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.correctingMissingControl = $$v
+      },
+      expression: "communityCorrectionerForm.correctingMissingControl"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "奖惩情况"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.rewardandPunishment),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.rewardandPunishment = $$v
+      },
+      expression: "communityCorrectionerForm.rewardandPunishment"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "惩罚变更"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.changingPunishment),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.changingPunishment = $$v
+      },
+      expression: "communityCorrectionerForm.changingPunishment"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否重新犯罪"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.communityCorrectionerForm.isRecidivism),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.isRecidivism = $$v
+      },
+      expression: "communityCorrectionerForm.isRecidivism"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": _vm.yes
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": _vm.no
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "重新犯罪罪名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.communityCorrectionerForm.recidivismCharge),
+      callback: function($$v) {
+        _vm.communityCorrectionerForm.recidivismCharge = $$v
+      },
+      expression: "communityCorrectionerForm.recidivismCharge"
+    }
+  })], 1), _vm._v(" "), (_vm.showButton) ? _c('el-row', [_c('el-col', [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.onSubmit
+    }
+  }, [_vm._v(_vm._s(_vm.usePath == 'save' ? "保存" : "更新"))])], 1)], 1)], 1) : _vm._e()], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-b016403a","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/ZzOrgManage/extendCommunityCorrectioner.vue
+// module id = 710+
+// module chunks = 0 1 2 3 4 5 9 10 11 12

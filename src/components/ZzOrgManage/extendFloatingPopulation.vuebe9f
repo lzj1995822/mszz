@@ -1,0 +1,238 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-form', {
+    attrs: {
+      "model": _vm.floatingPopulation,
+      "label-width": "128px",
+      "label-position": "left",
+      "label-suffix": ":"
+    }
+  }, [_c('el-form-item', [_c('h2', [_vm._v("流动人口")])]), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "身份证"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.floatingPopulation.certifID),
+      callback: function($$v) {
+        _vm.floatingPopulation.certifID = $$v
+      },
+      expression: "floatingPopulation.certifID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "流入原因"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择流入原因"
+    },
+    model: {
+      value: (_vm.floatingPopulation.folatingReasonTypeValue),
+      callback: function($$v) {
+        _vm.floatingPopulation.folatingReasonTypeValue = $$v
+      },
+      expression: "floatingPopulation.folatingReasonTypeValue"
+    }
+  }, _vm._l((_vm.FolatingReasonType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.floatingReasonTypeName,
+        "value": v.folatingReasonTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "办证类型"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择办证类型"
+    },
+    model: {
+      value: (_vm.floatingPopulation.certificateTypeValue),
+      callback: function($$v) {
+        _vm.floatingPopulation.certificateTypeValue = $$v
+      },
+      expression: "floatingPopulation.certificateTypeValue"
+    }
+  }, _vm._l((_vm.CertificateType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.certificateTypeName,
+        "value": v.certificateTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "证件号码"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.floatingPopulation.identificationNumber),
+      callback: function($$v) {
+        _vm.floatingPopulation.identificationNumber = $$v
+      },
+      expression: "floatingPopulation.identificationNumber"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "证件注册日期"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "placeholder": ""
+    },
+    on: {
+      "change": _vm.ChangeDate
+    },
+    model: {
+      value: (_vm.floatingPopulation.registerDate),
+      callback: function($$v) {
+        _vm.floatingPopulation.registerDate = $$v
+      },
+      expression: "floatingPopulation.registerDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "证件到期日期"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "placeholder": ""
+    },
+    on: {
+      "change": _vm.ChangeDate2
+    },
+    model: {
+      value: (_vm.floatingPopulation.dueDate),
+      callback: function($$v) {
+        _vm.floatingPopulation.dueDate = $$v
+      },
+      expression: "floatingPopulation.dueDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "住所类型"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择住所类型"
+    },
+    model: {
+      value: (_vm.floatingPopulation.houseTypeValue),
+      callback: function($$v) {
+        _vm.floatingPopulation.houseTypeValue = $$v
+      },
+      expression: "floatingPopulation.houseTypeValue"
+    }
+  }, _vm._l((_vm.HouseType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.houseTypeName,
+        "value": v.houseTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否落户"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.floatingPopulation.isSettled),
+      callback: function($$v) {
+        _vm.floatingPopulation.isSettled = $$v
+      },
+      expression: "floatingPopulation.isSettled"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": _vm.yes
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": _vm.no
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), (_vm.floatingPopulation.isSettled == 0) ? _c('el-form-item', {
+    attrs: {
+      "label": "未落户原因"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择未落户原因"
+    },
+    model: {
+      value: (_vm.floatingPopulation.unSettledReason),
+      callback: function($$v) {
+        _vm.floatingPopulation.unSettledReason = $$v
+      },
+      expression: "floatingPopulation.unSettledReason"
+    }
+  }, _vm._l((_vm.UnSettledReasonType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.unSettledReasonName,
+        "value": v.unSettledReason
+      }
+    })
+  }))], 1) : _vm._e(), _vm._v(" "), (_vm.floatingPopulation.isSettled == 0) ? _c('el-form-item', {
+    attrs: {
+      "label": "未落户时间"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "date",
+      "placeholder": "请选择未落户时间"
+    },
+    on: {
+      "change": _vm.ChangeDate3
+    },
+    model: {
+      value: (_vm.floatingPopulation.unSettledDate),
+      callback: function($$v) {
+        _vm.floatingPopulation.unSettledDate = $$v
+      },
+      expression: "floatingPopulation.unSettledDate"
+    }
+  })], 1) : _vm._e(), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否重点关注对象"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.floatingPopulation.isFocusPerson),
+      callback: function($$v) {
+        _vm.floatingPopulation.isFocusPerson = $$v
+      },
+      expression: "floatingPopulation.isFocusPerson"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": _vm.yes
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": _vm.no
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), (_vm.showButton) ? _c('el-row', [_c('el-col', [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.onSubmit
+    }
+  }, [_vm._v(_vm._s(_vm.usepath == 'save' ? '保存' : '更新'))])], 1)], 1)], 1) : _vm._e()], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-3a60b034","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/ZzOrgManage/extendFloatingPopulation.vue
+// module id = KOk9
+// module chunks = 3 5 6 7 8 10 11 14 15 16

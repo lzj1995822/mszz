@@ -1,0 +1,469 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', {
+    staticStyle: {
+      "padding": "20px",
+      "margin-top": "20px"
+    }
+  }, [_c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-steps', {
+    staticStyle: {
+      "margin-left": "15%",
+      "font-size": "39px",
+      "cursor": "pointer"
+    },
+    attrs: {
+      "active": _vm.step
+    }
+  }, [_c('el-step', {
+    staticStyle: {
+      "text-align": "center"
+    },
+    attrs: {
+      "title": "步骤 1",
+      "icon": "edit",
+      "description": "添加事件的的基本信息"
+    }
+  }), _vm._v(" "), _c('el-step', {
+    attrs: {
+      "title": "步骤 2",
+      "icon": "edit",
+      "description": "添加当事人"
+    }
+  }), _vm._v(" "), _c('el-step', {
+    attrs: {
+      "title": "步骤 3",
+      "icon": "upload",
+      "description": "添加图片和视频"
+    }
+  })], 1)], 1), _vm._v(" "), (_vm.step == 1) ? _c('el-col', {
+    staticStyle: {
+      "margin-top": "30px",
+      "margin-left": "10%"
+    },
+    attrs: {
+      "span": 18
+    }
+  }, [_c('el-form', {
+    ref: "form",
+    attrs: {
+      "model": _vm.form,
+      "rules": _vm.rules,
+      "label-width": "200px"
+    }
+  }, _vm._l((_vm.form), function(v, k, i) {
+    return (k !== 'spEventID' && k !== 'spEventEndDateTime' && k !== 'spEventStatusTypeValue' && k !== 'currentResponsiblePersonCertID' && k !== 'currentResponsiblePersonName' && k !== 'currentResponsiblePersonContact') ? _c('el-form-item', {
+      key: v.id,
+      attrs: {
+        "label": _vm.labels[i],
+        "prop": k
+      }
+    }, [(k == 'spEventKind') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, [_c('el-option', {
+      attrs: {
+        "value": 3,
+        "label": "简单事件"
+      }
+    }), _vm._v(" "), _c('el-option', {
+      attrs: {
+        "value": 1,
+        "label": "一般事件"
+      }
+    }), _vm._v(" "), _c('el-option', {
+      attrs: {
+        "value": 2,
+        "label": "重大事件"
+      }
+    })], 1) : (k == 'spEventTypeValue') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.EventType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.speventTypeValue,
+          "label": v.speventTypeName
+        }
+      })
+    })) : (k == 'spEventStatusTypeValue') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.StatusType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.speventStatusTypeValue,
+          "label": v.speventStatusTypeName
+        }
+      })
+    })) : (k == 'netGridID') ? _c('el-cascader', {
+      attrs: {
+        "options": _vm.NetGrid,
+        "props": _vm.props
+      },
+      on: {
+        "change": _vm.changeVal
+      },
+      model: {
+        value: (_vm.selected),
+        callback: function($$v) {
+          _vm.selected = $$v
+        },
+        expression: "selected"
+      }
+    }) : (k == 'spEventStartDateTime' || k == 'spEventEndDateTime') ? _c('el-date-picker', {
+      attrs: {
+        "type": "datetime"
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }) : (k == 'currentRemarks' || k == 'spEventContent') ? _c('el-input', {
+      attrs: {
+        "type": "textarea",
+        "placeholder": ""
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }) : (k == 'sex') ? _c('el-radio-group', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, [_c('el-radio-button', {
+      attrs: {
+        "label": 1
+      }
+    }, [_vm._v("男")]), _vm._v(" "), _c('el-radio-button', {
+      attrs: {
+        "label": 0
+      }
+    }, [_vm._v("女")])], 1) : _c('el-input', {
+      staticStyle: {
+        "width": "600px"
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    })], 1) : _vm._e()
+  }))], 1) : (_vm.step == 2) ? _c('el-col', {
+    staticStyle: {
+      "margin-top": "20px"
+    },
+    attrs: {
+      "span": 18
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "margin-left": "25%"
+    }
+  }, [_c('fieldset', [_c('legend', {
+    staticStyle: {
+      "font-size": "20px"
+    }
+  }, [_vm._v("当事人列表")]), _vm._v(" "), _vm._l((_vm.Forms), function(saform, i) {
+    return _c('div', {
+      key: saform.id,
+      staticStyle: {
+        "margin-top": "10px"
+      }
+    }, [_c('el-alert', {
+      staticStyle: {
+        "font-size": "20px",
+        "color": "black"
+      },
+      attrs: {
+        "title": '当事人<' + (i + 1) + '>',
+        "type": "info",
+        "closable": false
+      }
+    }, [(i != _vm.Forms.length - 1) ? _c('el-button', {
+      staticStyle: {
+        "float": "right"
+      },
+      attrs: {
+        "type": "danger",
+        "size": "small"
+      },
+      on: {
+        "click": function($event) {
+          _vm.deletePerson(i)
+        }
+      }
+    }, [_vm._v("删除")]) : _vm._e()], 1), _vm._v(" "), _c('div', {
+      staticStyle: {
+        "border": "1px",
+        "background-color": "whitesmoke",
+        "padding": "5px",
+        "margin-top": "10px"
+      }
+    }, [_c('el-form', {
+      staticStyle: {
+        "border": "1px",
+        "margin-top": "5px"
+      },
+      attrs: {
+        "model": saform,
+        "label-width": "120px",
+        "label-suffix": "："
+      }
+    }, [_vm._l((saform), function(value, key, index) {
+      return (key !== 'spEventID') ? _c('el-form-item', {
+        key: index,
+        attrs: {
+          "label": _vm.label[index],
+          "prop": key
+        }
+      }, [_c('el-input', {
+        model: {
+          value: (saform[key]),
+          callback: function($$v) {
+            _vm.$set(saform, key, $$v)
+          },
+          expression: "saform[key]"
+        }
+      })], 1) : _vm._e()
+    }), _vm._v(" "), _c('el-form-item', [(i == _vm.Forms.length - 1) ? _c('el-button', {
+      staticStyle: {
+        "float": "right"
+      },
+      attrs: {
+        "type": "primary"
+      },
+      on: {
+        "click": function($event) {
+          _vm.addSAPerson()
+        }
+      }
+    }, [_c('i', {
+      staticClass: "fa fa-plus fa-lg"
+    }), _vm._v(" 新增当事人")]) : _vm._e()], 1)], 2)], 1)], 1)
+  })], 2)])]) : (_vm.step == 3) ? _c('el-col', {
+    staticStyle: {
+      "margin-top": "30px"
+    },
+    attrs: {
+      "span": 18
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "margin-left": "25%"
+    }
+  }, [_c('h4', [_vm._v("图片上传（支持多图）")]), _vm._v(" "), _c('el-upload', {
+    staticClass: "upload-demo",
+    attrs: {
+      "action": _vm.getDomain() + '/msmis/api/sp/addSPEventPictures?ID=' + _vm.form.spEventID,
+      "on-preview": _vm.handlePreview,
+      "headers": _vm.header,
+      "on-remove": _vm.handleRemove,
+      "file-list": _vm.fileList2,
+      "list-type": "picture"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "size": "small",
+      "type": "primary"
+    }
+  }, [_vm._v("点击上传")]), _vm._v(" "), _c('div', {
+    staticClass: "el-upload__tip",
+    slot: "tip"
+  }, [_vm._v("可上传jpg/jpeg/png文件")])], 1)], 1), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "margin-left": "25%",
+      "margin-top": "100px"
+    }
+  }, [_c('h4', [_vm._v("视频上传")]), _vm._v(" "), _c('el-upload', {
+    staticClass: "upload-demo",
+    attrs: {
+      "drag": "",
+      "headers": _vm.header,
+      "action": _vm.getDomain() + '/msmis/api/sp/addSPEventVideo?ID=' + _vm.form.spEventID,
+      "multiple": ""
+    }
+  }, [_c('i', {
+    staticClass: "el-icon-upload"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "el-upload__text"
+  }, [_vm._v("将视频拖到此处，或"), _c('em', [_vm._v("点击上传")])])])], 1)]) : (_vm.step == 4) ? _c('el-col', {
+    staticStyle: {
+      "margin-top": "30px"
+    },
+    attrs: {
+      "span": 18
+    }
+  }, [_c('el-form', {
+    attrs: {
+      "model": _vm.form2,
+      "label-width": "280px"
+    }
+  }, [_c('el-form-item', [_c('h1', [_vm._v("基本信息")])]), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "处理人ID"
+    }
+  }, [_c('el-input', {
+    staticStyle: {
+      "width": "400px"
+    },
+    attrs: {
+      "disabled": ""
+    },
+    model: {
+      value: (_vm.form2.dealingUserID),
+      callback: function($$v) {
+        _vm.form2.dealingUserID = $$v
+      },
+      expression: "form2.dealingUserID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "处理时间"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "datetime"
+    },
+    model: {
+      value: (_vm.form2.dealingTime),
+      callback: function($$v) {
+        _vm.form2.dealingTime = $$v
+      },
+      expression: "form2.dealingTime"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "处理情况"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea"
+    },
+    model: {
+      value: (_vm.form2.dealingInf),
+      callback: function($$v) {
+        _vm.form2.dealingInf = $$v
+      },
+      expression: "form2.dealingInf"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "备注"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea"
+    },
+    model: {
+      value: (_vm.form2.remark),
+      callback: function($$v) {
+        _vm.form2.remark = $$v
+      },
+      expression: "form2.remark"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.insertDealInfo
+    }
+  }, [_vm._v("提交，下一步上传图片、视频")])], 1), _vm._v(" "), (_vm.form2.skynetPatrolEventDealingID !== '') ? _c('el-form-item', [_c('h1', [_vm._v("图片、视频信息")])]) : _vm._e(), _vm._v(" "), (_vm.form2.skynetPatrolEventDealingID !== '') ? _c('el-form-item', [_c('el-upload', {
+    staticClass: "upload-demo",
+    attrs: {
+      "headers": _vm.header,
+      "action": _vm.getDomain() + '/msmis/api/sp/addSPEventDealingPictures?ID=' + _vm.form2.skynetPatrolEventDealingID,
+      "file-list": _vm.fileList,
+      "list-type": "picture"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "size": "small",
+      "type": "primary"
+    }
+  }, [_vm._v("点击上传")]), _vm._v(" "), _c('div', {
+    staticClass: "el-upload__tip",
+    slot: "tip"
+  }, [_vm._v("可上传jpg/jpeg/png文件")])], 1)], 1) : _vm._e(), _vm._v(" "), (_vm.form2.skynetPatrolEventDealingID !== '') ? _c('el-form-item', [_c('h4', [_vm._v("视频上传")]), _vm._v(" "), _c('el-upload', {
+    staticClass: "upload-demo",
+    attrs: {
+      "drag": "",
+      "headers": _vm.header,
+      "action": _vm.getDomain() + '/msmis/api/sp/addSPEventDealingVideo?ID=' + _vm.form2.skynetPatrolEventDealingID,
+      "multiple": ""
+    }
+  }, [_c('i', {
+    staticClass: "el-icon-upload"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "el-upload__text"
+  }, [_vm._v("将视频拖到此处，或"), _c('em', [_vm._v("点击上传")])])])], 1) : _vm._e()], 1)], 1) : _vm._e(), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('div', {
+    staticClass: "nextDiv"
+  }, [(_vm.step != _vm.steps) ? _c('i', {
+    staticClass: "fa fa-angle-double-right fa-5x",
+    on: {
+      "click": _vm.goNext
+    }
+  }) : _vm._e(), _vm._v(" "), (_vm.step != _vm.steps) ? _c('div', {
+    staticClass: "directionFont",
+    on: {
+      "click": _vm.goNext
+    }
+  }, [_vm._v("\n          添加,下一步\n        ")]) : _vm._e(), _vm._v(" "), (_vm.step == _vm.steps) ? _c('i', {
+    staticClass: "fa fa-history fa-5x",
+    on: {
+      "click": _vm.submit
+    }
+  }) : _vm._e(), _vm._v(" "), (_vm.step == _vm.steps) ? _c('div', {
+    staticClass: "directionFont",
+    on: {
+      "click": _vm.submit
+    }
+  }, [_vm._v("\n          完成\n        ")]) : _vm._e()])])], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-3138bbf3","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/skynet/addEvent.vue
+// module id = JiYE
+// module chunks = 28

@@ -1,0 +1,274 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', [_c('el-col', {
+    staticStyle: {
+      "margin-left": "200px"
+    },
+    attrs: {
+      "span": 16
+    }
+  }, [_c('fieldset', {
+    staticStyle: {
+      "width": "100%",
+      "padding": "40px"
+    }
+  }, [_c('legend', {
+    staticStyle: {
+      "margin-left": "40px"
+    }
+  }, [_c('h1', [_vm._v("案件基本信息")])]), _vm._v(" "), _c('el-form', {
+    ref: "form",
+    attrs: {
+      "model": _vm.form,
+      "label-width": "120px",
+      "label-suffix": ":"
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "案件编号"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "placeholder": "请输入案件编号   添加嫌疑人和受害人依然使用编码"
+    },
+    model: {
+      value: (_vm.form.code),
+      callback: function($$v) {
+        _vm.form.code = $$v
+      },
+      expression: "form.code"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "案件名称"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.name),
+      callback: function($$v) {
+        _vm.form.name = $$v
+      },
+      expression: "form.name"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "案件发生日期"
+    }
+  }, [_c('el-date-picker', {
+    model: {
+      value: (_vm.form.startTime),
+      callback: function($$v) {
+        _vm.form.startTime = $$v
+      },
+      expression: "form.startTime"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "侦察终结日期"
+    }
+  }, [_c('el-date-picker', {
+    model: {
+      value: (_vm.form.endTime),
+      callback: function($$v) {
+        _vm.form.endTime = $$v
+      },
+      expression: "form.endTime"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "简要情况"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea"
+    }
+  })], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+    staticStyle: {
+      "text-align": "right"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    }
+  }, [_vm._v("保存")]), _vm._v(" "), _c('el-button', [_vm._v("取消")])], 1)], 1)], 1), _vm._v(" "), _c('fieldset', {
+    staticStyle: {
+      "width": "100%",
+      "padding": "20px"
+    }
+  }, [_c('legend', {
+    staticStyle: {
+      "margin-left": "40px"
+    }
+  }, [_c('h1', [_vm._v("嫌疑人信息")])]), _vm._v(" "), _c('div', [_c('el-alert', {
+    staticStyle: {
+      "background-color": "black"
+    },
+    attrs: {
+      "title": "嫌疑人列表",
+      "type": "info",
+      "closable": false
+    }
+  }), _vm._v(" "), _c('div', [_vm._l((3), function(i) {
+    return _c('table', {
+      key: i,
+      staticClass: "userInfoEditTable",
+      staticStyle: {
+        "margin-top": "10px",
+        "border-collapse": "collapse",
+        "background-color": "white"
+      },
+      attrs: {
+        "width": "100%",
+        "cellspacing": "0"
+      }
+    }, [_c('tr', [_c('td', {
+      staticClass: "tb_label"
+    }, [_vm._v("姓名:")]), _vm._v(" "), _c('td', [_vm._v("张三")]), _vm._v(" "), _c('td', {
+      staticStyle: {
+        "width": "12%"
+      },
+      attrs: {
+        "rowspan": "4"
+      }
+    }, [(_vm.imageUrl) ? _c('img', {
+      attrs: {
+        "width": "120px",
+        "src": _vm.imageUrl
+      }
+    }) : _c('img', {
+      attrs: {
+        "width": "120px",
+        "src": require("../../assets/notx.jpg")
+      }
+    })])]), _vm._v(" "), _c('tr', [_c('td', {
+      staticClass: "tb_label"
+    }, [_vm._v("年龄:")]), _vm._v(" "), _c('td', [_vm._v("27")])]), _vm._v(" "), _c('tr', [_c('td', {
+      staticClass: "tb_label"
+    }, [_vm._v("证件号码:")]), _vm._v(" "), _c('td', [_vm._v("320xxxxxxxxxxxxxx")])]), _vm._v(" "), _c('tr', [_c('td', {
+      staticClass: "tb_label"
+    }, [_vm._v("操作")]), _vm._v(" "), _c('td', [_c('el-button', {
+      attrs: {
+        "type": "text"
+      }
+    }, [_vm._v("查看详情")]), _vm._v(" "), _c('el-button', {
+      attrs: {
+        "type": "text"
+      }
+    }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+      staticStyle: {
+        "color": "red"
+      },
+      attrs: {
+        "type": "text"
+      }
+    }, [_vm._v("删除")])], 1)])])
+  }), _vm._v(" "), _c('el-row', [_c('el-col', {
+    staticStyle: {
+      "margin-top": "20px",
+      "text-align": "right"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "danger"
+    }
+  }, [_vm._v("新增嫌疑人")])], 1)], 1)], 2)], 1)]), _vm._v(" "), _c('fieldset', {
+    staticStyle: {
+      "width": "100%",
+      "padding": "20px"
+    }
+  }, [_c('legend', {
+    staticStyle: {
+      "margin-left": "40px"
+    }
+  }, [_c('h1', [_vm._v("受害人信息")])]), _vm._v(" "), _c('el-alert', {
+    staticStyle: {
+      "background-color": "black"
+    },
+    attrs: {
+      "title": "受害人列表",
+      "type": "info",
+      "closable": false
+    }
+  }), _vm._v(" "), _vm._l((3), function(i) {
+    return _c('table', {
+      key: i,
+      staticClass: "userInfoEditTable",
+      staticStyle: {
+        "margin-top": "10px",
+        "border-collapse": "collapse",
+        "background-color": "white"
+      },
+      attrs: {
+        "width": "100%",
+        "cellspacing": "0"
+      }
+    }, [_c('tr', [_c('td', {
+      staticClass: "tb_label"
+    }, [_vm._v("姓名:")]), _vm._v(" "), _c('td', [_vm._v("李四")]), _vm._v(" "), _c('td', {
+      staticStyle: {
+        "width": "12%"
+      },
+      attrs: {
+        "rowspan": "4"
+      }
+    }, [(_vm.imageUrl) ? _c('img', {
+      attrs: {
+        "width": "120px",
+        "src": _vm.imageUrl
+      }
+    }) : _c('img', {
+      attrs: {
+        "width": "120px",
+        "src": require("../../assets/notx.jpg")
+      }
+    })])]), _vm._v(" "), _c('tr', [_c('td', {
+      staticClass: "tb_label"
+    }, [_vm._v("年龄:")]), _vm._v(" "), _c('td', [_vm._v("28")])]), _vm._v(" "), _c('tr', [_c('td', {
+      staticClass: "tb_label"
+    }, [_vm._v("证件号码:")]), _vm._v(" "), _c('td', [_vm._v("320xxxxxxxxxxxxxx")])]), _vm._v(" "), _c('tr', [_c('td', {
+      staticClass: "tb_label"
+    }, [_vm._v("操作")]), _vm._v(" "), _c('td', [_c('el-button', {
+      attrs: {
+        "type": "text"
+      }
+    }, [_vm._v("查看详情")]), _vm._v(" "), _c('el-button', {
+      attrs: {
+        "type": "text"
+      }
+    }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+      staticStyle: {
+        "color": "red"
+      },
+      attrs: {
+        "type": "text"
+      }
+    }, [_vm._v("删除")])], 1)])])
+  }), _vm._v(" "), _c('el-row', [_c('el-col', {
+    staticStyle: {
+      "margin-top": "20px",
+      "text-align": "right"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "danger"
+    }
+  }, [_vm._v("新增受害人")])], 1)], 1)], 2)])], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-ea237852","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/publicSecurityManage/addNewCase.vue
+// module id = ixPK
+// module chunks = 144

@@ -1,0 +1,341 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-tabs', {
+    attrs: {
+      "type": "border-card"
+    },
+    model: {
+      value: (_vm.activeName),
+      callback: function($$v) {
+        _vm.activeName = $$v
+      },
+      expression: "activeName"
+    }
+  }, [_c('el-tab-pane', {
+    attrs: {
+      "label": "数据统计",
+      "name": "sjtj"
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 18
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "width": "100%",
+      "height": "700px"
+    },
+    attrs: {
+      "align": "center",
+      "id": "histogram"
+    }
+  })]), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 6
+    }
+  }, [_c('div', {
+    staticClass: "tjInfo"
+  }, [_c('h2', {
+    staticStyle: {
+      "padding": "12px"
+    }
+  }, [_vm._v("数据统计")]), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "padding": "5px"
+    }
+  }, [_c('table', {
+    staticClass: "userInfoEditTable",
+    staticStyle: {
+      "border-collapse": "collapse",
+      "background-color": "white"
+    },
+    attrs: {
+      "width": "100%",
+      "cellspacing": "0"
+    }
+  }, [_c('tr', [_c('td', [_vm._v("地区")]), _vm._v(" "), _c('td', [_vm._v("重点信访人员")])]), _vm._v(" "), _vm._l((_vm.myobj), function(v, index) {
+    return _c('tr', {
+      key: index,
+      class: index % 2 == 0 ? 'mycolor' : ''
+    }, [_c('td', [_vm._v(_vm._s(v.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(v.value))])])
+  })], 2)])])])], 1)], 1), _vm._v(" "), _c('el-tab-pane', {
+    attrs: {
+      "label": "数据检索",
+      "name": "sjjs"
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": _vm.$store.getters.user.userRole == '超级管理员' ? 3 : 0
+    }
+  }, [_c('tree-component', {
+    on: {
+      "GetNodeValue": _vm.GetNodeValue
+    }
+  })], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": _vm.$store.getters.user.userRole == '超级管理员' ? 21 : 24
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 8
+    }
+  }, [_c('el-button', {
+    staticStyle: {
+      "float": "left"
+    },
+    attrs: {
+      "type": "success"
+    },
+    on: {
+      "click": _vm.exportData
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": require("../../assets/daoru.png"),
+      "alt": ""
+    }
+  }), _vm._v(" 导出\n              ")]), _vm._v(" "), _c('el-upload', {
+    staticStyle: {
+      "text-align": "left",
+      "display": "inline-block",
+      "width": "150px",
+      "height": "38px",
+      "overflow": "hidden",
+      "margin-left": "10px"
+    },
+    attrs: {
+      "action": "xxxxxxxxxx"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "success"
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": require("../../assets/daochu.png"),
+      "alt": ""
+    }
+  }), _vm._v(" EXCEL导入\n                ")])], 1)], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 16
+    }
+  }, [_c('div', {
+    attrs: {
+      "align": "right"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.addNewRecord
+    }
+  }, [_vm._v("添加重点信访人员")]), _vm._v(" "), _c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    attrs: {
+      "placeholder": "姓名"
+    },
+    model: {
+      value: (_vm.filters.name),
+      callback: function($$v) {
+        _vm.filters.name = $$v
+      },
+      expression: "filters.name"
+    }
+  }), _vm._v(" "), _c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    attrs: {
+      "placeholder": "身份证号"
+    },
+    model: {
+      value: (_vm.filters.certifID),
+      callback: function($$v) {
+        _vm.filters.certifID = $$v
+      },
+      expression: "filters.certifID"
+    }
+  }), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.getkeyPetitioner
+    }
+  }, [_vm._v("查询")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.showAll
+    }
+  }, [_vm._v("显示所有")])], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+    staticStyle: {
+      "padding-top": "10px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-table', {
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "data": _vm.dataList
+    }
+  }, [_vm._l((_vm.form), function(v, k, i) {
+    return _c('el-table-column', {
+      key: i,
+      class: k == 'certifID' ? _vm.width_Class : {},
+      attrs: {
+        "prop": k,
+        "align": "center",
+        "label": _vm.labels[i]
+      },
+      scopedSlots: _vm._u([{
+        key: "default",
+        fn: function(scope) {
+          return [(k == 'certifID') ? _c('span', [_vm._v("\n                        " + _vm._s(_vm.formatCertifID(scope.row[k])) + "\n                      ")]) : _c('span', [_vm._v("\n                        " + _vm._s(scope.row[k]) + "\n                      ")])]
+        }
+      }])
+    })
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "align": "center"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "type": "text",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              _vm.watchDetail(scope.row.certifID)
+            }
+          }
+        }, [_vm._v("\n                        查看详情")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              _vm.editDetail(scope.row.certifID)
+            }
+          }
+        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              _vm.deleteById(scope.row.tekeyPID)
+            }
+          }
+        }, [_vm._v("删除")])]
+      }
+    }])
+  })], 2)], 1), _vm._v(" "), _c('el-col', {
+    staticStyle: {
+      "margin-top": "10px"
+    },
+    attrs: {
+      "span": 24,
+      "align": "right"
+    }
+  }, [_c('el-pagination', {
+    attrs: {
+      "layout": "prev, pager, next",
+      "total": _vm.totalInfo
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1)], 1)], 1)], 1)], 1)], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "添加重点信访人员",
+      "visible": _vm.visible
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.visible = $event
+      }
+    }
+  }, [_c('key-petitioner', {
+    attrs: {
+      "form": _vm.infoForm
+    },
+    on: {
+      "closeDialog": _vm.closeDialog
+    }
+  })], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "编辑重点信访人员",
+      "visible": _vm.visible2
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.visible2 = $event
+      }
+    }
+  }, [_c('key-petitioner', {
+    attrs: {
+      "form": _vm.editForm,
+      "usePath": 'update'
+    },
+    on: {
+      "closeDialog": _vm.closeDialog
+    }
+  })], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "top": "2%",
+      "size": "large",
+      "title": "查看人员详情",
+      "visible": _vm.visible3
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.visible3 = $event
+      }
+    }
+  }, [_c('el-tabs', {
+    attrs: {
+      "type": "border-card"
+    }
+  }, [_c('el-tab-pane', {
+    attrs: {
+      "label": "特殊信息"
+    }
+  }, [_c('key-petitioner', {
+    attrs: {
+      "form": _vm.infoForm2,
+      "showButton": false
+    }
+  })], 1), _vm._v(" "), _c('el-tab-pane', {
+    attrs: {
+      "id": "userBasicInfo",
+      "label": "基本信息"
+    }
+  }, [_c('baisc-table', {
+    attrs: {
+      "memberInfo": _vm.infoBasic
+    }
+  })], 1)], 1)], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-06b72726","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/specialPopulationManage/keyPetitioner.vue
+// module id = pECQ
+// module chunks = 17

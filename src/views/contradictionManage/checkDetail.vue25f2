@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".userInfoEditTable[data-v-77e359e7],.userInfoEditTable td[data-v-77e359e7]{border:1px solid #a9a9a9;padding:10px}.tb_label[data-v-77e359e7]{width:20%;text-align:right}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/contradictionManage/checkDetail.vue"],"names":[],"mappings":"AACA,2EAEE,yBAA2B,AAC3B,YAAc,CACf,AACD,2BACE,UAAW,AACX,gBAAkB,CACnB","file":"checkDetail.vue","sourcesContent":["\n.userInfoEditTable[data-v-77e359e7],\n.userInfoEditTable td[data-v-77e359e7] {\n  border: 1px solid darkgrey;\n  padding: 10px;\n}\n.tb_label[data-v-77e359e7] {\n  width: 20%;\n  text-align: right;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-77e359e7","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/contradictionManage/checkDetail.vue
+// module id = LFec
+// module chunks = 13 31 41 42 43 61 155

@@ -1,0 +1,284 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-form', {
+    ref: "form",
+    attrs: {
+      "rules": _vm.rules,
+      "model": _vm.severePsychoticForm,
+      "label-width": "160px"
+    }
+  }, [_c('el-form-item', [_c('h2', [_vm._v("严重精神病患者")])]), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "身份证号",
+      "prop": "certifID"
+    }
+  }, [(_vm.usePath == 'update') ? _c('el-input', {
+    attrs: {
+      "disabled": ""
+    },
+    model: {
+      value: (_vm.severePsychoticForm.certifID),
+      callback: function($$v) {
+        _vm.severePsychoticForm.certifID = $$v
+      },
+      expression: "severePsychoticForm.certifID"
+    }
+  }) : _c('el-input', {
+    model: {
+      value: (_vm.severePsychoticForm.certifID),
+      callback: function($$v) {
+        _vm.severePsychoticForm.certifID = $$v
+      },
+      expression: "severePsychoticForm.certifID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "家庭经济状况类型编码"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.severePsychoticForm.familyEconomicSituationTypeValue),
+      callback: function($$v) {
+        _vm.severePsychoticForm.familyEconomicSituationTypeValue = $$v
+      },
+      expression: "severePsychoticForm.familyEconomicSituationTypeValue"
+    }
+  }, _vm._l((_vm.EconomicSituationType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.familyEconomicSituationTypeName,
+        "value": v.familyEconomicSituationTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否纳入低保"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.severePsychoticForm.isSubsistenceAllowances),
+      callback: function($$v) {
+        _vm.severePsychoticForm.isSubsistenceAllowances = $$v
+      },
+      expression: "severePsychoticForm.isSubsistenceAllowances"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "监护人身份证"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.severePsychoticForm.guardianCertifID),
+      callback: function($$v) {
+        _vm.severePsychoticForm.guardianCertifID = $$v
+      },
+      expression: "severePsychoticForm.guardianCertifID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "监护人姓名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.severePsychoticForm.guardianName),
+      callback: function($$v) {
+        _vm.severePsychoticForm.guardianName = $$v
+      },
+      expression: "severePsychoticForm.guardianName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "监护人联系方式"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.severePsychoticForm.guardianContact),
+      callback: function($$v) {
+        _vm.severePsychoticForm.guardianContact = $$v
+      },
+      expression: "severePsychoticForm.guardianContact"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "初次发病日期"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    on: {
+      "change": _vm.PrimaryAttackDate
+    },
+    model: {
+      value: (_vm.severePsychoticForm.primaryAttackDate),
+      callback: function($$v) {
+        _vm.severePsychoticForm.primaryAttackDate = $$v
+      },
+      expression: "severePsychoticForm.primaryAttackDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "当前诊断类型编码"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.severePsychoticForm.currentDiagnosisTypeValue),
+      callback: function($$v) {
+        _vm.severePsychoticForm.currentDiagnosisTypeValue = $$v
+      },
+      expression: "severePsychoticForm.currentDiagnosisTypeValue"
+    }
+  }, _vm._l((_vm.currentDiagnosisType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.currentDiagnosisTypeName,
+        "value": v.currentDiagnosisTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否有肇事肇祸历史"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.severePsychoticForm.isTroublemaking),
+      callback: function($$v) {
+        _vm.severePsychoticForm.isTroublemaking = $$v
+      },
+      expression: "severePsychoticForm.isTroublemaking"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "肇事肇祸次数"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0
+    },
+    model: {
+      value: (_vm.severePsychoticForm.troublemakingNumber),
+      callback: function($$v) {
+        _vm.severePsychoticForm.troublemakingNumber = $$v
+      },
+      expression: "severePsychoticForm.troublemakingNumber"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "上一次肇事肇祸时间"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    on: {
+      "change": _vm.LastTroublemakingDate
+    },
+    model: {
+      value: (_vm.severePsychoticForm.lastTroublemakingDate),
+      callback: function($$v) {
+        _vm.severePsychoticForm.lastTroublemakingDate = $$v
+      },
+      expression: "severePsychoticForm.lastTroublemakingDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "危险评估等级类型编码"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.severePsychoticForm.dangerousEvaulationLevelTypeValue),
+      callback: function($$v) {
+        _vm.severePsychoticForm.dangerousEvaulationLevelTypeValue = $$v
+      },
+      expression: "severePsychoticForm.dangerousEvaulationLevelTypeValue"
+    }
+  }, _vm._l((_vm.dangerousEvaulationLevelType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.dangerousEvaulationLevelTypeName,
+        "value": v.dangerousEvaulationLevelTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "治疗情况类型编码"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.severePsychoticForm.treatmentSituationTypeValue),
+      callback: function($$v) {
+        _vm.severePsychoticForm.treatmentSituationTypeValue = $$v
+      },
+      expression: "severePsychoticForm.treatmentSituationTypeValue"
+    }
+  }, _vm._l((_vm.treatmentSituationType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.treatmentSituationTypeName,
+        "value": v.treatmentSituationTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "治疗医院名称"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.severePsychoticForm.treatmentHospitalName),
+      callback: function($$v) {
+        _vm.severePsychoticForm.treatmentHospitalName = $$v
+      },
+      expression: "severePsychoticForm.treatmentHospitalName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "接受康复训练机构名称"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.severePsychoticForm.recoverOrganization),
+      callback: function($$v) {
+        _vm.severePsychoticForm.recoverOrganization = $$v
+      },
+      expression: "severePsychoticForm.recoverOrganization"
+    }
+  })], 1), _vm._v(" "), (_vm.showButton) ? _c('el-row', [_c('el-col', [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.onSubmit
+    }
+  }, [_vm._v(_vm._s(_vm.usePath == 'save' ? "保存" : "更新"))])], 1)], 1)], 1) : _vm._e()], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-a44e7a16","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/ZzOrgManage/extendSeverePsychotic.vue
+// module id = /pLH
+// module chunks = 0 1 2 3 4 5 9 10 11 12

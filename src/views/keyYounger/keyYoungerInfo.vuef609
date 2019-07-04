@@ -1,0 +1,78 @@
+<template>
+  <div>
+     <el-tabs type="border-card">
+            <el-tab-pane id="userBasicInfo" label="基本信息">
+                <baisc-info-table :memberInfo="memberInfo" :imageUrl="imageUrl"></baisc-info-table>
+                <div style="text-align:center">
+                    <el-button style="font-size:25px" type="text" @click="printTable('userBasicInfo')">[打印]</el-button>
+                </div>
+            </el-tab-pane>
+            <el-tab-pane id="personInfo" label="特殊信息">
+                <div style="width:80%;margin-left:5%;margin-top:20px">
+                    <key-young-form :MyForm='keyYoungForm' :showButton="false"></key-young-form>
+                </div>
+                <div style="text-align:center">
+                    <el-button style="font-size:25px" type="text" @click="printTable('personInfo')">[打印]</el-button>
+                </div>
+            </el-tab-pane>
+        </el-tabs>
+  </div>
+</template>
+
+<script>
+// 基本表格组件
+import BaiscInfoTable from "../../components/ZzOrgManage/servedBasicTable";
+import keyYoungForm from "../../components/ZzOrgManage/keyYoungForm";
+import * as api from "@/api/specialPopulation/index";
+export default {
+  components: {
+    keyYoungForm: keyYoungForm,
+    BaiscInfoTable: BaiscInfoTable
+  },
+  data() {
+    return {
+      imageUrl: "",
+      memberInfo: {
+        servedPersonTypeValue: "01"
+      },
+      keyYoungForm: {
+        keyYoungersID: "", //             int not null auto_increment,
+        certifID: "", //                  '身份证号. 编码应符合GB 11643',
+        populationTypeValue: "", //       '人员类型，编码见GBT 31000-2015文件之5.41',
+        familySituationTypeValue: "", //  '家庭情况，编码见GBT 31000-2015文件之5.42',
+        guardianCertifID: "", //          '监护人身份证号. 编码应符合GB 11643',
+        guardianName: "", //         varchar(50),
+        relatedtoGuardianTypeValue: "", // '与监护人关系，编码见GB/T 4761',
+        guardianContact: "", //            '监护人联系方式，手机号码或固定电话号码',
+        huardianAddressDetail: "", //      '监护人居住地详细地址',
+        isCrime: "", //                    '是否犯罪？0表示没有，1表示是',
+        crimeInf: "", //                   '违法犯罪情况',
+        helperName: "", //                 '帮扶人姓名',
+        helperContact: "", //              '帮扶人联系方式，手机号码或固定电话号码',
+        helpingSolutionTypeValue: "", //   '帮扶手段类型编码，见GBT 31000-2015文件之5.43',
+        helpingInf: "" //                  '帮扶情况',
+      }
+    };
+  },
+  props: ["id"],
+  watch: {
+    id: function(param) {
+      api.fetchSpecialPeronDetail(this.id, "06").then(res => {
+        this.memberInfo = res.data.basic[0];
+        this.keyYoungForm = res.data.special[0];
+      });
+    }
+  },
+  mounted() {
+    api.fetchSpecialPeronDetail(this.id, "06").then(res => {
+      this.memberInfo = res.data.basic[0];
+      this.keyYoungForm = res.data.special[0];
+    });
+  }
+};
+</script>
+
+
+
+// WEBPACK FOOTER //
+// src/views/keyYounger/keyYoungerInfo.vue?6856669c

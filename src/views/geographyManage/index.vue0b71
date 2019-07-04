@@ -1,0 +1,28 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('iframe', {
+    staticStyle: {
+      "width": "100%",
+      "height": "900px",
+      "scrolling": "no"
+    },
+    attrs: {
+      "frameborder": "no",
+      "border": "0",
+      "allowfullscreen": "true",
+      "allowtransparency": "true",
+      "src": "/msmis/map/map.html"
+    }
+  })])
+}]
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-9ce978aa","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/geographyManage/index.vue
+// module id = CePq
+// module chunks = 154

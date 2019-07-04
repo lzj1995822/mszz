@@ -1,0 +1,131 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticStyle: {
+      "padding": "3%"
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form', {
+    ref: "videoForm",
+    attrs: {
+      "model": _vm.form,
+      "label-width": "200px"
+    }
+  }, [_vm._l((_vm.form), function(v, k, i) {
+    return (k != 'id') ? _c('el-form-item', {
+      key: i,
+      attrs: {
+        "label": _vm.labels[i],
+        "prop": k
+      }
+    }, [(k == 'schoolRunningType') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.SchoolType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.schoolRunningTypeValue,
+          "label": v.schoolRunningTypeName
+        }
+      })
+    })) : (k == 'schoolNature') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.SchoolNature), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.value,
+          "label": v.type
+        }
+      })
+    })) : (k == 'netGridID') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.netGridType), function(v) {
+      return _c('el-option', {
+        key: v.id,
+        attrs: {
+          "value": v.netGridID,
+          "label": v.netGridName
+        }
+      })
+    })) : (k == 'schoolRegionalismCode') ? _c('v-distpicker', {
+      attrs: {
+        "province": _vm.Area.province.Name,
+        "city": _vm.Area.city.Name,
+        "area": _vm.Area.area.Name
+      },
+      on: {
+        "selected": _vm.getValue
+      }
+    }) : (k == 'stuNumbers' || k == 'securityNumbers' || k == 'schoolLongitude' || k == 'schoolLatitude') ? _c('el-input-number', {
+      attrs: {
+        "min": 0
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }) : _c('el-input', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    })], 1) : _vm._e()
+  }), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "align": "center"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.updateRecord
+    }
+  }, [_vm._v("更新")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "warning"
+    },
+    on: {
+      "click": function($event) {
+        _vm.$router.push('index')
+      }
+    }
+  }, [_vm._v("返回")])], 1)], 2)], 1)], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-6973e03b","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/schoolSecurityManage/editSchool.vue
+// module id = lRT9
+// module chunks = 98

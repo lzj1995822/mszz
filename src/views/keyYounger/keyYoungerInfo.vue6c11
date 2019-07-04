@@ -1,0 +1,75 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-tabs', {
+    attrs: {
+      "type": "border-card"
+    }
+  }, [_c('el-tab-pane', {
+    attrs: {
+      "id": "userBasicInfo",
+      "label": "基本信息"
+    }
+  }, [_c('baisc-info-table', {
+    attrs: {
+      "memberInfo": _vm.memberInfo,
+      "imageUrl": _vm.imageUrl
+    }
+  }), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "text-align": "center"
+    }
+  }, [_c('el-button', {
+    staticStyle: {
+      "font-size": "25px"
+    },
+    attrs: {
+      "type": "text"
+    },
+    on: {
+      "click": function($event) {
+        _vm.printTable('userBasicInfo')
+      }
+    }
+  }, [_vm._v("[打印]")])], 1)], 1), _vm._v(" "), _c('el-tab-pane', {
+    attrs: {
+      "id": "personInfo",
+      "label": "特殊信息"
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "width": "80%",
+      "margin-left": "5%",
+      "margin-top": "20px"
+    }
+  }, [_c('key-young-form', {
+    attrs: {
+      "MyForm": _vm.keyYoungForm,
+      "showButton": false
+    }
+  })], 1), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "text-align": "center"
+    }
+  }, [_c('el-button', {
+    staticStyle: {
+      "font-size": "25px"
+    },
+    attrs: {
+      "type": "text"
+    },
+    on: {
+      "click": function($event) {
+        _vm.printTable('personInfo')
+      }
+    }
+  }, [_vm._v("[打印]")])], 1)])], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-e7c0bd38","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/keyYounger/keyYoungerInfo.vue
+// module id = kNfa
+// module chunks = 18 73

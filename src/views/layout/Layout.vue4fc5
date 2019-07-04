@@ -1,0 +1,24 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "app-wrapper",
+    class: {
+      hideSidebar: !_vm.sidebar.opened
+    }
+  }, [_c('div', {
+    staticClass: "sidebar-wrapper"
+  }, [_c('sidebar', {
+    staticClass: "sidebar-container"
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "main-container"
+  }, [_c('navbar'), _vm._v(" "), _c('app-main')], 1)])])
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-73451c94","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/layout/Layout.vue
+// module id = UatA
+// module chunks = 172

@@ -1,0 +1,84 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', {
+    staticStyle: {
+      "padding": "20px"
+    }
+  }, [_c('el-col', {
+    attrs: {
+      "span": 16
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "width": "100%",
+      "height": "800px",
+      "margin-top": "20px"
+    },
+    attrs: {
+      "align": "center",
+      "id": "histogram2"
+    }
+  })]), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 8
+    }
+  }, [_c('div', {
+    staticClass: "tjInfo"
+  }, [_c('h2', {
+    staticStyle: {
+      "padding": "12px"
+    }
+  }, [_vm._v("数据统计")]), _vm._v(" "), _c('table', {
+    staticClass: "userInfoEditTable",
+    staticStyle: {
+      "width": "100%",
+      "border-collapse": "collapse",
+      "background-color": "white",
+      "height": "500px",
+      "margin-top": "60px"
+    },
+    attrs: {
+      "cellspacing": "0"
+    }
+  }, [_c('tr', [_c('td', [_vm._v("地区")]), _vm._v(" "), _c('td', [_vm._v("一般事件")]), _vm._v(" "), _c('td', [_vm._v("重大事件")]), _vm._v(" "), _c('td', [_vm._v("小计")])]), _vm._v(" "), _vm._l((_vm.area2), function(v, index) {
+    return _c('tr', {
+      key: v,
+      class: index % 2 == 0 ? 'mycolor' : ''
+    }, [_c('td', [_vm._v(_vm._s(v))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.common[index]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.great[index]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.common[index] + _vm.great[index]))])])
+  }), _vm._v(" "), _c('tr', {
+    staticClass: "mycolor"
+  }, [_c('td', [_vm._v("合计")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.getSum(_vm.common)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.getSum(_vm.great)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.getSum(_vm.common) + _vm.getSum(_vm.great)))])])], 2)])])], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "top": "5vh",
+      "visible": _vm.visible
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.visible = $event
+      }
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "width": "100%",
+      "height": "500px"
+    },
+    attrs: {
+      "id": "chart"
+    }
+  }), _vm._v(" "), _c('data-component', {
+    attrs: {
+      "area": _vm.subArea,
+      "common": _vm.subCommon,
+      "great": _vm.subGreat
+    }
+  })], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-53b85b0c","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/netManage/index.vue
+// module id = sNMK
+// module chunks = 33

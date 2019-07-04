@@ -1,0 +1,183 @@
+<template>
+  <div>
+    <el-tabs type="border-card">
+      <el-tab-pane label="基本信息">
+        <table class="userInfoEditTable" style="border-collapse:collapse;background-color:white;" width="100%" cellspacing="0">
+          <tr>
+            <td class="tb_label">姓名:</td>
+            <td>
+              {{memberInfo.name}}
+            </td>
+            <td align="center" style="width:12%" rowspan="6">
+              <img v-if="imageUrl" width="178px" :src="imageUrl">
+              <img v-else width="178px" src="../../assets/notx.jpg">
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">曾用名:</td>
+            <td>
+              {{memberInfo.nameUsed}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">性别</td>
+            <td>
+              {{memberInfo.sex}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">户籍类型</td>
+            <td>
+              {{memberInfo.servedPersonTypeName}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">民族:</td>
+            <td>
+              {{memberInfo.ethnicity}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">出生日期:</td>
+            <td>
+              {{memberInfo.birthDate}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">政治面貌:</td>
+            <td colspan="2">
+              {{memberInfo.politics}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">身份证号:</td>
+            <td colspan="2">
+              {{memberInfo.certifID}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">学历:</td>
+            <td colspan="2">
+              {{memberInfo.education}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">籍贯:</td>
+            <td colspan="2">
+              {{memberInfo.nativePlace}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">婚姻状况:</td>
+            <td colspan="2">
+              {{memberInfo.maritalStatus}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">职业类别:</td>
+            <td colspan="2">
+              {{memberInfo.careerType}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">职业:</td>
+            <td colspan="2">
+              {{memberInfo.career}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">移动电话:</td>
+            <td colspan="2">
+              {{memberInfo.mobileTel}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">固定电话:</td>
+            <td colspan="2">
+              {{memberInfo.fixedTel}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">是否特殊人群:</td>
+            <td colspan="2">
+              {{memberInfo.isSpecialPopulation?'是':'否'}}
+            </td>
+          </tr>
+          <tr>
+            <td>服务处所:</td>
+            <td colspan="2">
+              {{memberInfo.servedPlace}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">户籍地:</td>
+            <td colspan="2">
+              {{memberInfo.domicileAddress}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">户籍门(楼)详细地址:</td>
+            <td colspan="2">
+              {{memberInfo.domicileAddressDetail}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">现住地:</td>
+            <td colspan="2">
+              {{memberInfo.presentAddress}}
+            </td>
+          </tr>
+          <tr>
+            <td class="tb_label">现住地门(楼)详细地址:</td>
+            <td colspan="2">
+              {{memberInfo.presentAddressDetail}}
+            </td>
+          </tr>
+        </table>
+      </el-tab-pane>
+      <el-tab-pane label="境外人员">
+        <div style="width:80%;margin-left:5%">
+          <foreigner-form :Foreigner="foreigner"></foreigner-form>
+        </div>
+      </el-tab-pane>
+    </el-tabs>
+  </div>
+</template>
+
+<script>
+import ForeignerForm from '../../components/ZzOrgManage/extendForeignerPerson'
+
+export default {
+  data() {
+    return {
+      imageUrl:'',
+      memberInfo:'',
+      foreigner:{}
+    }
+  },
+  components: {
+    'ForeignerForm':ForeignerForm
+  },
+  mounted(){}
+}
+</script>
+
+<style scoped>
+.userInfoEditTable,
+.userInfoEditTable td {
+  border: 1px solid darkgrey;
+}
+td {
+  text-align: left;
+  padding: 10px;
+  /* height: 30px; */
+}
+.tb_label{
+  width: 12%;
+}
+</style>
+
+
+
+// WEBPACK FOOTER //
+// src/views/zongzhizuzhi/ServedForeignerDetail.vue?fac3e860

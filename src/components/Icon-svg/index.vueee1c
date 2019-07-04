@@ -1,0 +1,22 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('svg', {
+    staticClass: "svg-icon",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_c('use', {
+    attrs: {
+      "xlink:href": _vm.iconName
+    }
+  })])
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-3b318814","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/Icon-svg/index.vue
+// module id = 2H2d
+// module chunks = 172

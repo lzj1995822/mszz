@@ -1,0 +1,53 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 16
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "width": "100%",
+      "height": "800px",
+      "margin-top": "40px"
+    },
+    attrs: {
+      "id": "pphistogram"
+    }
+  })]), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 8
+    }
+  }, [_c('div', {
+    staticClass: "tjInfo"
+  }, [_c('h2', {
+    staticStyle: {
+      "text-intent": "2em"
+    }
+  }, [_vm._v("数据统计")]), _vm._v(" "), _c('div', [_c('table', {
+    staticClass: "userInfoEditTable",
+    staticStyle: {
+      "border-collapse": "collapse",
+      "background-color": "white"
+    },
+    attrs: {
+      "width": "100%",
+      "cellspacing": "0"
+    }
+  }, [_c('tr', [_c('td', [_vm._v("地区")]), _vm._v(" "), _c('td', [_vm._v("户籍人口")]), _vm._v(" "), _c('td', [_vm._v("流动人口")]), _vm._v(" "), _c('td', [_vm._v("留守人口")]), _vm._v(" "), _c('td', [_vm._v("境外人口")]), _vm._v(" "), _c('td', [_vm._v("小计")])]), _vm._v(" "), _vm._l((_vm.area), function(v, index) {
+    return _c('tr', {
+      key: index,
+      class: index % 2 == 0 ? 'mycolor' : ''
+    }, [_c('td', [_vm._v(_vm._s(v))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.huji[index]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.ld[index]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.ls[index]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.jw[index]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.huji[index] + _vm.ld[index] + _vm.ls[index] + _vm.jw[index]))])])
+  }), _vm._v(" "), _c('tr', {
+    staticClass: "mycolor"
+  }, [_c('td', [_vm._v("合计")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.getSum(_vm.huji)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.getSum(_vm.ld)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.getSum(_vm.ls)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.getSum(_vm.jw)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.getSum(_vm.huji) + _vm.getSum(_vm.ld) + _vm.getSum(_vm.ls) + _vm.getSum(_vm.jw)))])])], 2)])])])], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-6b184bbe","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/populationManage/index.vue
+// module id = BFAP
+// module chunks = 149

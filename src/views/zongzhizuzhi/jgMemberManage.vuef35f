@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".userInfoEditTable[data-v-656d1bbf],.userInfoEditTable td[data-v-656d1bbf]{border:1px solid #a9a9a9}td[data-v-656d1bbf]{text-align:left;padding:10px}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/zongzhizuzhi/jgMemberManage.vue"],"names":[],"mappings":"AACA,2EAEE,wBAA2B,CAC5B,AACD,oBACE,gBAAiB,AACjB,YAAc,CAEf","file":"jgMemberManage.vue","sourcesContent":["\n.userInfoEditTable[data-v-656d1bbf],\n.userInfoEditTable td[data-v-656d1bbf] {\n  border: 1px solid darkgrey;\n}\ntd[data-v-656d1bbf] {\n  text-align: left;\n  padding: 10px;\n  /* height: 30px; */\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-656d1bbf","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/zongzhizuzhi/jgMemberManage.vue
+// module id = n5TY
+// module chunks = 110

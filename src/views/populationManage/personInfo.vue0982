@@ -1,0 +1,192 @@
+<template>
+    <div>
+        <el-tabs type="border-card">
+            <el-tab-pane id="userBasicInfo" label="基本信息">
+                <baisc-info-table :memberInfo="memberInfo" :imageUrl="imageUrl"></baisc-info-table>
+                <div style="text-align:center">
+                    <el-button style="font-size:25px" type="text" @click="printTable('userBasicInfo')">[打印]</el-button>
+                </div>
+            </el-tab-pane>
+            <el-tab-pane id="personInfo" label="户籍信息">
+                <div v-if="memberInfo.servedPersonTypeName==='户籍人口'" style="width:80%;margin-left:5%">
+                    <resident-form v-if="resident!=''"
+                    :Resident="resident"
+                    :ConsistforPersonHouseType="ConsistforPersonHouseType"
+                    :showButton="false"></resident-form>
+                     <span v-else style="text-align:center;font-size:30px;color:grey;margin-left:50%">
+                        暂无户籍信息
+                    </span>
+                </div>
+                <div v-if="memberInfo.servedPersonTypeName==='流动人口'" style="width:80%;margin-left:5%">
+                    <floating-population-form v-if="floatingPopulation!=''" :floatingPopulation="floatingPopulation"
+                    :HouseType="HouseType"
+                    :CertificateType="CertificateType"
+                    :FolatingReasonType="FolatingReasonType"
+                    :UnSettledReasonType="UnSettledReasonType"
+                    :showButton="false">
+                    </floating-population-form>
+                    <span v-else style="text-align:center;font-size:30px;color:grey;margin-left:50%">
+                        暂无户籍信息
+                    </span>
+                </div>
+                <div v-if="memberInfo.servedPersonTypeName==='留守人员'" style="width:80%;margin-left:5%">
+                    <stayed-person-form v-if="StayedPerson!=''" :StayedPerson="StayedPerson"
+                    :ConsistforPersonHouseType="ConsistforPersonHouseType"
+                    :StayedPersonType="StayedPersonType"
+                    :HealthStatusType="HealthStatusType"
+                    :showButton="false">
+                    </stayed-person-form>
+                    <span v-else style="text-align:center;font-size:30px;color:grey;margin-left:50%">
+                        暂无户籍信息
+                    </span>
+                </div>
+                <div v-if="memberInfo.servedPersonTypeValue==='99'" style="width:80%;margin-left:5%">
+                    <foreigner-person-form
+                    :Foreigner='foreignerForm'
+                    :showButton="false">
+                    </foreigner-person-form>
+                </div>
+                <div style="text-align:center">
+                    <el-button style="font-size:25px" type="text" @click="printTable('personInfo')">[打印]</el-button>
+                </div>
+            </el-tab-pane>
+        </el-tabs>
+    </div>
+</template>
+
+<script>
+// 基本表格组件
+import BaiscInfoTable from "../../components/ZzOrgManage/servedBasicTable";
+// 人员类型组件
+import FloatingPopulationForm from "../../components/ZzOrgManage/extendFloatingPopulation";
+import ResidentForm from "../../components/ZzOrgManage/extendResident";
+import StayedPersonForm from "../../components/ZzOrgManage/extendStayedPerson";
+import ForeignerPersonForm from "../../components/ZzOrgManage/extendForeignerPerson";
+
+import * as api from "@/api/zonghezhili/duiwujianshe";
+
+export default {
+  components: {
+    FloatingPopulationForm: FloatingPopulationForm,
+    ResidentForm: ResidentForm,
+    StayedPersonForm: StayedPersonForm,
+    ForeignerPersonForm: ForeignerPersonForm,
+    BaiscInfoTable: BaiscInfoTable
+  },
+  data() {
+    return {
+      memberInfo: {
+        servedPersonTypeValue: "01"
+      },
+      imageUrl: "",
+      floatingPopulation: {},
+      resident: {},
+      StayedPerson: {},
+      foreignerForm: {},
+
+       specialTypes: [], // 特殊人口类型的编码等待服务器上传
+        CareerType:[], // 职业类别
+        ReligiousBeliefType:[], // 宗教信仰
+        EducationType:[], //  学历
+        // 常住人口
+        ConsistforPersonHouseType:[], //常住户籍人口编码
+        // 流动人口所需编码
+        UnSettledReasonType:[],// 未落户原因
+        FolatingReasonType:[],// 流入原因编码
+        CertificateType:[],// 办证类型编码
+        HouseType:[], //住所类型编码
+        // 留守人口所需编码表
+        StayedPersonType:[], // 留守人口类型
+        HealthStatusType:[], // 健康状况编码
+
+        // 特殊人群之艾滋病所需编码
+        InfectedWayType:[], // 感染途径类型编码
+        CaseType:[], // 案件类别
+        AIDSAttentionType: [], // 艾滋病关注类型编码
+        AIDSReceiveCType: [], // 艾滋病收治情况类型编码
+
+        // 特殊人群之吸毒记录
+        controlSituationType: [], // 管控类型编码
+        drugReasonType: [], // 吸毒原因类型编码(缺失)
+        drugResultType: [], // 吸毒后果编码(缺失)
+
+        // 特殊人群之刑满释放人员
+        DangerousEvaulationType: [],// 危险评估类型
+        ConnectionType:[], // 衔接情况类型
+        PlacementType:[], // 安置情况类型
+
+        // 特殊人群之社区矫正人员
+        CorrectingType:[], // 矫正类型编码
+        AcceptType:[], // 接收方式
+        GroupMemberType:[], // 矫正成员小组编码
+        StopCorrectionType:[], //终止矫正类型
+
+        // 特殊人群之精神病所需编码
+        EconomicSituationType:[],
+        currentDiagnosisType:[],
+        dangerousEvaulationLevelType:[],
+        treatmentSituationType:[],
+        Politics:[],
+        Marital:[],
+
+
+        NetGrid:[]
+    }
+  },
+  methods:{
+    printTable(div){
+        var div_print = document.getElementById(div)
+        var newStr = div_print.innerHTML
+        var oldStr = document.body.innerHTML
+        document.body.innerHTML = newStr
+        window.print()
+        window.location.reload();
+        window.body.innerHTML = oldStr
+        return false
+    },
+    getInfo(queryID){
+        api.fetchServedMemberInfoById(queryID).then(res=>{
+            this.memberInfo = res.data.basicDetailVOs[0]
+            this.imageUrl = res.data.path[0]
+            this.floatingPopulation = res.data.floatingPopulations.length>0?res.data.floatingPopulations[0]:''
+            this.resident = res.data.residents.length>0?res.data.residents[0]:''
+            this.StayedPerson = res.data.stayedPersons.length>0?res.data.stayedPersons[0]:''
+        })
+    }
+  },
+  props:['id'],
+  watch:{
+    id:function(val){
+      this.getInfo(this.id);
+    }
+  },
+  mounted() {
+    this.getInfo(this.id);
+
+    api.fetchServedPersonManageTypes().then(res => {
+      this.EducationType = res.data.codeEducationTypeMapper; // 学历
+      this.CareerType = res.data.codeCareerType; // 职业类别
+      this.CaseType = res.data.codeCaseType; // 案件类型
+      this.ReligiousBeliefType = res.data.codeReligiousBeliefType;
+      this.specialTypes = res.data.codeSpecialPopulationType; //特殊人员类型
+      this.ConsistforPersonHouseType = res.data.codeConsistforPersonHouseType; //常住户籍人口编码
+      this.FolatingReasonType = res.data.codeFloatingReasonType; // 流入原因编码
+      this.UnSettledReasonType = res.data.codeUnSettledReasonType; // 未落户原因
+      this.CertificateType = res.data.codeCertificateType; // 办证类型编码
+      this.HouseType = res.data.codeHouseType; // 住所类型编码
+      this.StayedPersonType = res.data.codeStayedPersonType; // 留守人口类型
+      this.HealthStatusType = res.data.codeHealthStatusType; // 健康状况编码
+    });
+  }
+};
+</script>
+
+<style scoped>
+
+</style>
+
+
+
+
+// WEBPACK FOOTER //
+// src/views/populationManage/personInfo.vue?2534d8c3

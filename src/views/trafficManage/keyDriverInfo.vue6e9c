@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".userInfoEditTable[data-v-4a442762],.userInfoEditTable td[data-v-4a442762]{border:1px solid #a9a9a9;padding:10px}.tb_label[data-v-4a442762]{width:18%;text-align:right}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/trafficManage/keyDriverInfo.vue"],"names":[],"mappings":"AACA,2EAEE,yBAA2B,AAC3B,YAAc,CACf,AACD,2BACE,UAAW,AACX,gBAAkB,CACnB","file":"keyDriverInfo.vue","sourcesContent":["\n.userInfoEditTable[data-v-4a442762],\n.userInfoEditTable td[data-v-4a442762] {\n  border: 1px solid darkgrey;\n  padding: 10px;\n}\n.tb_label[data-v-4a442762] {\n  width: 18%;\n  text-align: right;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-4a442762","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/trafficManage/keyDriverInfo.vue
+// module id = ORi3
+// module chunks = 94

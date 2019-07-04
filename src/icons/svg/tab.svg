@@ -1,0 +1,17 @@
+import SpriteSymbol from "svg-baker-runtime/browser-symbol";
+import sprite from "svg-sprite-loader/runtime/browser-sprite.build";
+var symbol = new SpriteSymbol({
+  "id": "icon-tab",
+  "use": "icon-tab-usage",
+  "viewBox": "0 0 1024 1024",
+  "content": "<symbol class=\"icon\" viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"icon-tab\"><defs><style type=\"text/css\"></style></defs><path d=\"M896 320H128V160c0-17.6 14.4-32 32-32h704c17.6 0 32 14.4 32 32v160zM320 896H160c-17.6 0-32-14.4-32-32V384h192v512zM864 896H384V384h512v480c0 17.6-14.4 32-32 32z\" p-id=\"8213\" /></symbol>"
+});
+var result = sprite.add(symbol);
+export default symbol
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/icons/svg/tab.svg
+// module id = Jysk
+// module chunks = 172

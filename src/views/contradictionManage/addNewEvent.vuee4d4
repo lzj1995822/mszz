@@ -1,0 +1,463 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticStyle: {
+      "padding": "20px"
+    }
+  }, [_c('el-row', [_c('el-col', {
+    staticStyle: {
+      "margin-bottom": "20px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-steps', {
+    staticStyle: {
+      "margin-left": "10%",
+      "font-size": "39px",
+      "cursor": "pointer"
+    },
+    attrs: {
+      "active": _vm.step
+    }
+  }, [_c('el-step', {
+    staticStyle: {
+      "text-align": "center"
+    },
+    attrs: {
+      "title": "步骤 1",
+      "icon": "edit",
+      "description": "添加事件的基本信息"
+    }
+  }), _vm._v(" "), _c('el-step', {
+    staticStyle: {
+      "text-align": "center"
+    },
+    attrs: {
+      "title": "步骤 2",
+      "icon": "edit",
+      "description": "添加事件当事人"
+    }
+  }), _vm._v(" "), _c('el-step', {
+    attrs: {
+      "title": "步骤 3",
+      "icon": "upload",
+      "description": "添加图片和视频"
+    }
+  })], 1)], 1), _vm._v(" "), (_vm.step == 1) ? _c('el-col', {
+    staticStyle: {
+      "margin-left": "60px"
+    },
+    attrs: {
+      "span": 16
+    }
+  }, [_c('el-form', {
+    ref: "form",
+    attrs: {
+      "model": _vm.form,
+      "label-width": "200px",
+      "rules": _vm.rules,
+      "label-suffix": ":"
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "事件名称",
+      "prop": "eventName"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.eventName),
+      callback: function($$v) {
+        _vm.form.eventName = $$v
+      },
+      expression: "form.eventName"
+    }
+  })], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "发生网格",
+      "prop": "netGridID"
+    }
+  }, [_c('el-cascader', {
+    attrs: {
+      "options": _vm.NetGrid,
+      "props": _vm.props
+    },
+    on: {
+      "change": _vm.changeVal
+    },
+    model: {
+      value: (_vm.selected),
+      callback: function($$v) {
+        _vm.selected = $$v
+      },
+      expression: "selected"
+    }
+  })], 1)], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "发生时间"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "datetime"
+    },
+    model: {
+      value: (_vm.form.eventDate),
+      callback: function($$v) {
+        _vm.form.eventDate = $$v
+      },
+      expression: "form.eventDate"
+    }
+  })], 1)], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "发生地点"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.eventPlace),
+      callback: function($$v) {
+        _vm.form.eventPlace = $$v
+      },
+      expression: "form.eventPlace"
+    }
+  })], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "事件规模"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择事件规模"
+    },
+    model: {
+      value: (_vm.form.evenScaleTypeValue),
+      callback: function($$v) {
+        _vm.form.evenScaleTypeValue = $$v
+      },
+      expression: "form.evenScaleTypeValue"
+    }
+  }, _vm._l((_vm.EventScale), function(v, i) {
+    return _c('el-option', {
+      key: i,
+      attrs: {
+        "value": v.eventScaleTypeValue,
+        "label": v.eventScaleTypeName
+      }
+    })
+  }))], 1)], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "事件类型"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择事件类型"
+    },
+    model: {
+      value: (_vm.form.eventTypeValue),
+      callback: function($$v) {
+        _vm.form.eventTypeValue = $$v
+      },
+      expression: "form.eventTypeValue"
+    }
+  }, _vm._l((_vm.EventType), function(v, i) {
+    return _c('el-option', {
+      key: i,
+      attrs: {
+        "label": v.eventTypeName,
+        "value": v.eventTypeValue
+      }
+    })
+  }))], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "涉及人数"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": _vm.zero
+    },
+    model: {
+      value: (_vm.form.numberofJoinning),
+      callback: function($$v) {
+        _vm.form.numberofJoinning = $$v
+      },
+      expression: "form.numberofJoinning"
+    }
+  })], 1)], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "事件描述"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea"
+    },
+    model: {
+      value: (_vm.form.eventIntroduction),
+      callback: function($$v) {
+        _vm.form.eventIntroduction = $$v
+      },
+      expression: "form.eventIntroduction"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "涉及单位"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea"
+    },
+    model: {
+      value: (_vm.form.relatedOrg),
+      callback: function($$v) {
+        _vm.form.relatedOrg = $$v
+      },
+      expression: "form.relatedOrg"
+    }
+  })], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "事发经度"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0
+    },
+    model: {
+      value: (_vm.form.longitude),
+      callback: function($$v) {
+        _vm.form.longitude = $$v
+      },
+      expression: "form.longitude"
+    }
+  })], 1)], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "事发纬度"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0
+    },
+    model: {
+      value: (_vm.form.latitude),
+      callback: function($$v) {
+        _vm.form.latitude = $$v
+      },
+      expression: "form.latitude"
+    }
+  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', {
+    staticStyle: {
+      "margin-top": "20px"
+    }
+  }, [_c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "align": "center"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.save
+    }
+  }, [_vm._v("保存,进入下一步")])], 1)], 1)], 1)], 1)], 1) : (_vm.step == 2) ? _c('el-col', {
+    staticStyle: {
+      "margin-top": "20px"
+    },
+    attrs: {
+      "span": 16
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "margin-left": "25%"
+    }
+  }, [_c('fieldset', [_c('legend', {
+    staticStyle: {
+      "font-size": "20px"
+    }
+  }, [_vm._v("主要当事人列表")]), _vm._v(" "), _vm._l((_vm.Forms), function(saform, i) {
+    return _c('div', {
+      key: saform.id,
+      staticStyle: {
+        "margin-top": "10px"
+      }
+    }, [_c('el-alert', {
+      staticStyle: {
+        "font-size": "20px",
+        "color": "black"
+      },
+      attrs: {
+        "title": '事件当事人<' + (i + 1) + '>',
+        "type": "info",
+        "closable": false
+      }
+    }, [(i != _vm.Forms.length - 1) ? _c('el-button', {
+      staticStyle: {
+        "float": "right"
+      },
+      attrs: {
+        "type": "danger",
+        "size": "small"
+      },
+      on: {
+        "click": function($event) {
+          _vm.deletePerson(i)
+        }
+      }
+    }, [_vm._v("删除")]) : _vm._e()], 1), _vm._v(" "), _c('div', {
+      staticStyle: {
+        "border": "1px",
+        "background-color": "whitesmoke",
+        "padding": "5px",
+        "margin-top": "10px"
+      }
+    }, [_c('el-form', {
+      staticStyle: {
+        "border": "1px",
+        "margin-top": "5px"
+      },
+      attrs: {
+        "model": saform,
+        "label-width": "120px",
+        "label-suffix": "："
+      }
+    }, [_vm._l((saform), function(value, key, index) {
+      return (key !== 'eventID') ? _c('el-form-item', {
+        key: index,
+        attrs: {
+          "label": _vm.label[index],
+          "prop": key
+        }
+      }, [_c('el-input', {
+        model: {
+          value: (saform[key]),
+          callback: function($$v) {
+            _vm.$set(saform, key, $$v)
+          },
+          expression: "saform[key]"
+        }
+      })], 1) : _vm._e()
+    }), _vm._v(" "), _c('el-form-item', [(i == _vm.Forms.length - 1) ? _c('el-button', {
+      staticStyle: {
+        "float": "right"
+      },
+      attrs: {
+        "type": "primary"
+      },
+      on: {
+        "click": function($event) {
+          _vm.addSAPerson()
+        }
+      }
+    }, [_c('i', {
+      staticClass: "fa fa-plus fa-lg"
+    }), _vm._v("新增当事人")]) : _vm._e()], 1)], 2)], 1)], 1)
+  }), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "margin-top": "20px"
+    },
+    attrs: {
+      "align": "right"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "warning"
+    },
+    on: {
+      "click": _vm.saveAll
+    }
+  }, [_vm._v("保存所有,下一步")])], 1)], 2)])]) : _vm._e(), _vm._v(" "), (_vm.step == 3) ? _c('el-col', {
+    attrs: {
+      "span": 16
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "margin-left": "15%"
+    }
+  }, [_c('h4', [_vm._v("图片上传（支持多图）")]), _vm._v(" "), _c('el-upload', {
+    staticClass: "upload-demo",
+    attrs: {
+      "action": _vm.getDomian() + '/msmis/api/dispute/addDisputeEventPictures?ID=' + _vm.form.disputeEventID,
+      "headers": _vm.header,
+      "file-list": _vm.fileList,
+      "list-type": "picture"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "size": "small",
+      "type": "primary"
+    }
+  }, [_vm._v("点击上传")]), _vm._v(" "), _c('div', {
+    staticClass: "el-upload__tip",
+    slot: "tip"
+  }, [_vm._v("只能上传jpg/png文件，且不超过500kb")])], 1)], 1), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "margin-left": "15%",
+      "margin-top": "100px"
+    }
+  }, [_c('h4', [_vm._v("视频上传")]), _vm._v(" "), _c('el-upload', {
+    staticClass: "upload-demo",
+    attrs: {
+      "drag": "",
+      "action": _vm.getDomian() + '/msmis/api/dispute/addDisputeEventVideo?ID=' + _vm.form.disputeEventID,
+      "headers": _vm.header,
+      "multiple": ""
+    }
+  }, [_c('i', {
+    staticClass: "el-icon-upload"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "el-upload__text"
+  }, [_vm._v("将视频拖到此处，或\n            "), _c('em', [_vm._v("点击上传")])])])], 1)]) : _vm._e(), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('div', {
+    staticClass: "nextDiv"
+  }, [(_vm.step == 3) ? _c('i', {
+    staticClass: "fa fa-history fa-5x",
+    on: {
+      "click": _vm.submit
+    }
+  }) : _vm._e(), _vm._v(" "), (_vm.step == 3) ? _c('div', {
+    staticClass: "directionFont",
+    on: {
+      "click": _vm.submit
+    }
+  }, [_vm._v("\n          完成\n        ")]) : _vm._e()])])], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-04a903ee","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/contradictionManage/addNewEvent.vue
+// module id = KqlZ
+// module chunks = 25

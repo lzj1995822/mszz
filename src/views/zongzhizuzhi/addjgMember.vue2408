@@ -1,0 +1,268 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticStyle: {
+      "padding": "20px"
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('table', {
+    staticClass: "userInfoEditTable",
+    staticStyle: {
+      "border-collapse": "collapse",
+      "background-color": "white"
+    },
+    attrs: {
+      "width": "80%",
+      "cellspacing": "0"
+    }
+  }, [_c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("姓名：")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "3"
+    }
+  }, [_c('el-input', {
+    staticStyle: {
+      "width": "400px"
+    },
+    model: {
+      value: (_vm.EditMemberInfo.name),
+      callback: function($$v) {
+        _vm.EditMemberInfo.name = $$v
+      },
+      expression: "EditMemberInfo.name"
+    }
+  })], 1)]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("所属机构：")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "3"
+    }
+  }, [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择"
+    },
+    model: {
+      value: (_vm.EditMemberInfo.orgID),
+      callback: function($$v) {
+        _vm.EditMemberInfo.orgID = $$v
+      },
+      expression: "EditMemberInfo.orgID"
+    }
+  })], 1)]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("性别：")]), _vm._v(" "), _c('td', [_c('el-radio-group', {
+    model: {
+      value: (_vm.EditMemberInfo.sex),
+      callback: function($$v) {
+        _vm.EditMemberInfo.sex = $$v
+      },
+      expression: "EditMemberInfo.sex"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": _vm.yes
+    }
+  }, [_vm._v("男")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": _vm.no
+    }
+  }, [_vm._v("女")])], 1)], 1), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("民族：")]), _vm._v(" "), _c('td', [_c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    model: {
+      value: (_vm.EditMemberInfo.ethnicity),
+      callback: function($$v) {
+        _vm.EditMemberInfo.ethnicity = $$v
+      },
+      expression: "EditMemberInfo.ethnicity"
+    }
+  })], 1)]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("政治面貌：")]), _vm._v(" "), _c('td', [_c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    model: {
+      value: (_vm.EditMemberInfo.politics),
+      callback: function($$v) {
+        _vm.EditMemberInfo.politics = $$v
+      },
+      expression: "EditMemberInfo.politics"
+    }
+  })], 1), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("身份证号：")]), _vm._v(" "), _c('td', [_c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    model: {
+      value: (_vm.EditMemberInfo.certID),
+      callback: function($$v) {
+        _vm.EditMemberInfo.certID = $$v
+      },
+      expression: "EditMemberInfo.certID "
+    }
+  })], 1)]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("出生日期：")]), _vm._v(" "), _c('td', [_c('el-date-picker', {
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    on: {
+      "change": _vm.changeDate
+    },
+    model: {
+      value: (_vm.EditMemberInfo.birthDate),
+      callback: function($$v) {
+        _vm.EditMemberInfo.birthDate = $$v
+      },
+      expression: "EditMemberInfo.birthDate"
+    }
+  })], 1), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("级别：")]), _vm._v(" "), _c('td', [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择"
+    },
+    model: {
+      value: (_vm.EditMemberInfo.levelTypeValue),
+      callback: function($$v) {
+        _vm.EditMemberInfo.levelTypeValue = $$v
+      },
+      expression: "EditMemberInfo.levelTypeValue"
+    }
+  }, _vm._l((_vm.PersonLevelTypes), function(v) {
+    return _c('el-option', {
+      key: v.personLevelTypeID,
+      attrs: {
+        "label": v.levelTypeName,
+        "value": v.levelTypeValue
+      }
+    })
+  }))], 1)]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("学历：")]), _vm._v(" "), _c('td', [_c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    attrs: {
+      "width": "200px"
+    },
+    model: {
+      value: (_vm.EditMemberInfo.education),
+      callback: function($$v) {
+        _vm.EditMemberInfo.education = $$v
+      },
+      expression: "EditMemberInfo.education"
+    }
+  })], 1), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("职务：")]), _vm._v(" "), _c('td', [_c('el-select', {
+    attrs: {
+      "placeholder": "请选择"
+    },
+    model: {
+      value: (_vm.EditMemberInfo.positionTypeValue),
+      callback: function($$v) {
+        _vm.EditMemberInfo.positionTypeValue = $$v
+      },
+      expression: "EditMemberInfo.positionTypeValue"
+    }
+  }, _vm._l((_vm.PersonPositionTypes), function(v) {
+    return _c('el-option', {
+      key: v.perPositionTypeID,
+      attrs: {
+        "label": v.positionTypeName,
+        "value": v.positionTypeValue
+      }
+    })
+  }))], 1)]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("移动电话：")]), _vm._v(" "), _c('td', [_c('el-input', {
+    attrs: {
+      "width": "200px"
+    },
+    model: {
+      value: (_vm.EditMemberInfo.mobileTel),
+      callback: function($$v) {
+        _vm.EditMemberInfo.mobileTel = $$v
+      },
+      expression: "EditMemberInfo.mobileTel"
+    }
+  })], 1), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("固定电话：")]), _vm._v(" "), _c('td', [_c('el-input', {
+    attrs: {
+      "width": "200px"
+    },
+    model: {
+      value: (_vm.EditMemberInfo.fixedTel),
+      callback: function($$v) {
+        _vm.EditMemberInfo.fixedTel = $$v
+      },
+      expression: "EditMemberInfo.fixedTel"
+    }
+  })], 1)]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("在职状态：")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "3"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.EditMemberInfo.status),
+      callback: function($$v) {
+        _vm.EditMemberInfo.status = $$v
+      },
+      expression: "EditMemberInfo.status"
+    }
+  }, [_c('el-radio', {
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("在职")]), _vm._v(" "), _c('el-radio', {
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("离职")])], 1)], 1)]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "colspan": "4"
+    }
+  }, [_c('div', {
+    attrs: {
+      "align": "right"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary",
+      "size": "large"
+    },
+    on: {
+      "click": _vm.save
+    }
+  }, [_vm._v("保存")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "size": "large"
+    },
+    on: {
+      "click": _vm.cancel
+    }
+  }, [_vm._v("取消")])], 1)])])])])], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-0d1087a5","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/zongzhizuzhi/addjgMember.vue
+// module id = osbk
+// module chunks = 159

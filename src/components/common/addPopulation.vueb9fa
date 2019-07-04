@@ -1,0 +1,293 @@
+<template>
+  <div>
+    <el-row>
+      <el-col :span="24">
+        <div style="width:100%;">
+          <el-form ref="form" :model="form" label-width="160px">
+            <div style="display:inline-block;width:40%;padding:10px">
+              <el-form-item label="头像上传">
+                <el-upload class="avatar-uploader" :headers="header" :action="getDomain()+'/msmis/api/served/image/upload'" :show-file-list="false"
+                  :on-success="handleAvatarSuccess">
+                  <img v-if="imageUrl" :src="imageUrl" class="avatar">
+                  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                </el-upload>
+              </el-form-item>
+              <el-form-item label="姓名">
+                <el-input v-model="form.name"></el-input>
+              </el-form-item>
+
+              <el-form-item label="曾用名">
+                <el-input v-model="form.nameUsed"></el-input>
+              </el-form-item>
+
+              <el-form-item label="性别">
+                <el-select v-model="form.sex">
+                 <el-option v-for="(v,i) in sexs" :key="i" :value="v.v" :label="v.l"></el-option>
+                </el-select>
+              </el-form-item>
+
+              <el-form-item label="身份证号">
+                <el-input v-model="form.certifID"></el-input>
+              </el-form-item>
+
+              <el-form-item label="人口类型">
+                <el-select v-model="form.servedPersonTypeValue" placeholder="请选择人口类型">
+                  <el-option label="户籍人口" value="01"></el-option>
+                  <el-option label="流动人口" value="02"></el-option>
+                  <el-option label="留守人口" value="03"></el-option>
+                  <el-option label="境外人口" value="99"></el-option>
+                </el-select>
+              </el-form-item>
+
+              <el-form-item label="出生日期">
+                <el-date-picker type="date" placeholder="选择日期" v-model="form.birthDate"></el-date-picker>
+              </el-form-item>
+
+              <el-form-item label="民族">
+                <el-select v-model="form.ethnicity" placeholder="请选择民族">
+                  <el-option label="汉族" value="1"></el-option>
+                  <el-option label="维吾尔族" value="2"></el-option>
+                </el-select>
+              </el-form-item>
+              <el-form-item label="籍贯">
+                <el-input v-model="form.nativePlace"></el-input>
+              </el-form-item>
+
+              <el-form-item label="政治面貌">
+                <el-select v-model="form.politics" placeholder="">
+                  <el-option v-for="(v,i) of Politics" :key="i" :value="v.politicsTypeValue" :label="v.politicsTypeName"></el-option>
+                </el-select>
+              </el-form-item>
+
+
+              <el-form-item label="婚姻状况">
+                <el-select v-model="form.maritalStatus" placeholder="请输入婚姻状况">
+                  <el-option v-for="(v,i) of Marital" :key="i" :value="v.maritalStatus" :label="v.maritalStatusName"></el-option>
+                </el-select>
+              </el-form-item>
+              <el-form-item label="学历">
+                <el-select v-model="form.education" placeholder="请选择学历">
+                  <el-option v-for="v of EducationType" :key="v.id" :label="v.educationTypeName" :value="v.education"></el-option>
+                </el-select>
+              </el-form-item>
+            </div>
+
+            <div style="display:inline-block;width:60%">
+              <el-form-item label="所属网格">
+                <el-select v-model="form.netGridID" placeholder="">
+                  <el-option v-for="(v,i) in NetGrid" :key="i" :value="v.netGridID" :label="v.netGridName"></el-option>
+                </el-select>
+              </el-form-item>
+              <el-form-item label="宗教信仰">
+                <!-- 等待类型编码 -->
+                <el-select v-model="form.religiousBelief" placeholder="请选择宗教信仰">
+                  <el-option v-for="v of ReligiousBeliefType" :key="v.id" :label="v.religiousBeliefName" :value="v.religiousBelief"></el-option>
+                </el-select>
+              </el-form-item>
+              <el-form-item label="职业类别">
+                <!-- 等待类型编码 -->
+                <el-select v-model="form.careerType" placeholder="请选择职业类别">
+                  <el-option v-for="v of CareerType" :key="v.id" :label="v.careerTypeName" :value="v.careerType"></el-option>
+                </el-select>
+              </el-form-item>
+
+              <el-form-item label="职业">
+                <el-input v-model="form.career"></el-input>
+              </el-form-item>
+
+              <el-form-item label="移动电话">
+                <el-input v-model="form.mobileTel"></el-input>
+              </el-form-item>
+
+              <el-form-item label="固定电话">
+                <el-input v-model="form.fixedTel"></el-input>
+              </el-form-item>
+
+              <el-form-item label="是否为特殊人群:">
+                <el-radio-group v-model="form.isSpecialPopulation">
+                  <el-radio :label="yes">是</el-radio>
+                  <el-radio :label="no">否</el-radio>
+                </el-radio-group>
+              </el-form-item>
+
+              <el-form-item label="服务处所:">
+                <el-input v-model="form.servedPlace"></el-input>
+              </el-form-item>
+
+              <el-form-item label="户籍地:">
+                <v-distpicker @selected="getValue"></v-distpicker>
+              </el-form-item>
+
+              <el-form-item label="户籍门(楼)详细地址:">
+                <el-input v-model="form.domicileAddressDetail"></el-input>
+              </el-form-item>
+
+              <el-form-item label="现住地:">
+                <v-distpicker @selected="getValue2"></v-distpicker>
+              </el-form-item>
+
+              <el-form-item label="现住地门(楼)详细地址:">
+                <el-input v-model="form.presentAddressDetail"></el-input>
+              </el-form-item>
+            </div>
+            <el-row v-if="showButton">
+              <el-col style="float:left" :span="24">
+                <el-form-item>
+                  <el-button type="primary" @click="onSubmit">保存</el-button>
+                  <el-button @click="onCancel">取消</el-button>
+                </el-form-item>
+              </el-col>
+            </el-row>
+          </el-form>
+        </div>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+import * as api from "@/api/zonghezhili/duiwujianshe";
+import VDistpicker from "v-distpicker";
+import { getToken } from '../../utils/auth';
+
+export default {
+  components: {
+    VDistpicker
+  },
+  props: {
+    form: {
+      type: Object,
+      default: function() {
+        return {
+          netGridID: ""
+        };
+      }
+    },
+    select: {
+      province: "广东省",
+      city: "广州市",
+      area: "海珠区"
+    },
+    showButton: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      header: {
+        'token':getToken()
+      },
+      sexs: [
+        {
+          v: "0",
+          l: "未知的性别"
+        },
+        {
+          v: "1",
+          l: "男性"
+        },
+        {
+          v: "2",
+          l: "女性"
+        },
+        {
+          v: "9",
+          l: "未说明性别"
+        }
+      ],
+      yes: 1,
+      no: 0,
+      imageUrl: null,
+      specialTypes: [], // 特殊人口类型的编码等待服务器上传
+      CareerType: [], // 职业类别
+      ReligiousBeliefType: [], // 宗教信仰
+      EducationType: [], //  学历
+      // 常住人口
+      ConsistforPersonHouseType: [], //常住户籍人口编码
+      // 流动人口所需编码
+      UnSettledReasonType: [], // 未落户原因
+      FolatingReasonType: [], // 流入原因编码
+      CertificateType: [], // 办证类型编码
+      HouseType: [], //住所类型编码
+      // 留守人口所需编码表
+      StayedPersonType: [], // 留守人口类型
+      HealthStatusType: [], // 健康状况编码
+      Politics: [],
+      Marital: [],
+      NetGrid: []
+    };
+  },
+  methods: {
+    getDomain() {
+      return 'http://' + window.location.host;
+    },
+    getValue(e) {
+      this.form.domicileAddress = e.area.code;
+    },
+    getValue2(e) {
+      this.form.presentAddress = e.area.code;
+    },
+    handleAvatarSuccess(res, file) {
+      this.form.imgId = res.data; // 保存头像的id
+      this.imageUrl = URL.createObjectURL(file.raw);
+      this.$emit("sendImageUrlToParent", this.imageUrl);
+    },
+    onSubmit() {},
+    onCancel() {}
+  },
+  mounted() {
+    api.fetchServedPersonManageTypes().then(res => {
+      this.EducationType = res.data.codeEducationTypeMapper; // 学历
+      this.CareerType = res.data.codeCareerType; // 职业类别
+      this.CaseType = res.data.codeCaseType; // 案件类型
+      this.ReligiousBeliefType = res.data.codeReligiousBeliefType;
+      this.specialTypes = res.data.codeSpecialPopulationType; //特殊人员类型
+      this.ConsistforPersonHouseType = res.data.codeConsistforPersonHouseType; //常住户籍人口编码
+      this.FolatingReasonType = res.data.codeFloatingReasonType; // 流入原因编码
+      this.UnSettledReasonType = res.data.codeUnSettledReasonType; // 未落户原因
+      this.CertificateType = res.data.codeCertificateType; // 办证类型编码
+      this.HouseType = res.data.codeHouseType; // 住所类型编码
+      this.StayedPersonType = res.data.codeStayedPersonType; // 留守人口类型
+      this.HealthStatusType = res.data.codeHealthStatusType; // 健康状况编码
+      this.Marital = res.data.codeMaritalStatusType;
+      this.Politics = res.data.codePoliticsType;
+      this.NetGrid = res.data.netGrid;
+    });
+  }
+};
+</script>
+
+<style>
+.avatar-uploader .el-upload {
+  border: 1px dashed black;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-uploader .el-upload:hover {
+  border-color: #20a0ff;
+}
+
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 178px;
+  height: 178px;
+  line-height: 178px;
+  text-align: center;
+}
+
+.avatar {
+  width: 178px;
+  height: 178px;
+  display: block;
+}
+</style>
+
+
+
+// WEBPACK FOOTER //
+// src/components/common/addPopulation.vue?06f66a8c

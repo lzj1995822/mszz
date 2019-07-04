@@ -1,0 +1,112 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('div', {
+    attrs: {
+      "id": "economyInfo"
+    }
+  }, [_c('table', {
+    staticClass: "userInfoEditTable",
+    staticStyle: {
+      "border-collapse": "collapse",
+      "background-color": "white"
+    },
+    attrs: {
+      "width": "100%",
+      "cellspacing": "0"
+    }
+  }, [_c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("统一社会信用代码:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.enterpriseUSCcode) + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("登记证号:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.registerNumber) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("成立日期:")]), _vm._v(" "), _c('td', [_vm._v("\n                    " + _vm._s(_vm.form.establishDate) + "\n                  ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("创建日期:")]), _vm._v(" "), _c('td', [_vm._v("\n                    " + _vm._s(_vm.form.creationDate) + "\n                  ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("登记管理机关代码：")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "3"
+    }
+  }, [_vm._v("\n                    " + _vm._s(_vm.form.registerManagOrgCode) + "\n                  ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("组织名称:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.societyOrgName) + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("关注程度")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.attentionTypeName) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("法定代表人姓名:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.headerName) + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("住所:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.livingHouse) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("批准日期:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.approvalDate) + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("社会组织类型:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.societyOrgTypeName) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("状态:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.status == '1' ? '是' : '否') + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("负责人证件代码:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.responsiblePersonCertTypeName) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("负责人证件号码:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.responsiblePersonCertifID) + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("负责人姓名:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.responsiblePersonName) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("负责人联系方式:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.responsiblePersonContact) + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("办公地址:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.officeAddress) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("行政区划代码:")]), _vm._v(" "), _c('td', [_vm._v("\n                    " + _vm._s(_vm.form.regionalismCode) + "\n                  ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("保卫负责人身份证:")]), _vm._v(" "), _c('td', [_vm._v("\n                    " + _vm._s(_vm.form.securityLeaderCertID) + "\n                  ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("治保负责人姓名:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.securityLeaderName) + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("治保负责人联系方式:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.securityLeaderContact) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("是否有中共党组织:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.hasCPC == '1' ? '是' : '否') + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("中共党员数量:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.numberofCPCMember) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("是否有工会:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.hasLabourUnion == '1' ? '是' : '否') + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("工会成员数量:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.numberofLUMember) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("是否有共青团:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.hasCYL == '1' ? '是' : '否') + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("共青团员数量:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.numberofLCYLMember) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("是否有妇联:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.hasWomenFederation == '1' ? '是' : '否') + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("妇女数量:")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.numberofWomen) + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("资金来源")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.sourceofFunds) + "\n                    ")]), _vm._v(" "), _c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("是否有境外背景")]), _vm._v(" "), _c('td', [_vm._v("\n                        " + _vm._s(_vm.form.isOverseasBackground == '1' ? '是' : '否') + "\n                    ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "colspan": "4",
+      "align": "center"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "text",
+      "size": "large"
+    },
+    on: {
+      "click": function($event) {
+        _vm.printTable('economyInfo')
+      }
+    }
+  }, [_vm._v("[打印]")])], 1)])])])])], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-76256238","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/socialOrganizationManage/socialOrgInfo.vue
+// module id = Z9XR
+// module chunks = 48 129

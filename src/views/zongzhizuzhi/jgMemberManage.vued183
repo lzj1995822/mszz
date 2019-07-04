@@ -1,0 +1,373 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 8
+    }
+  }, [_c('el-button', {
+    staticStyle: {
+      "float": "left"
+    },
+    attrs: {
+      "type": "success"
+    },
+    on: {
+      "click": _vm.exportData
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": require("../../assets/daoru.png"),
+      "alt": ""
+    }
+  }), _vm._v("\n              导出\n          ")]), _vm._v(" "), _c('el-upload', {
+    staticStyle: {
+      "text-align": "left",
+      "display": "inline-block",
+      "width": "150px",
+      "height": "38px",
+      "overflow": "hidden",
+      "margin-left": "10px"
+    },
+    attrs: {
+      "action": "xxxxxxxxxx"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "success"
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": require("../../assets/daochu.png"),
+      "alt": ""
+    }
+  }), _vm._v("\n                  EXCEL导入\n              ")])], 1)], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 16,
+      "align": "right"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.addMember
+    }
+  }, [_c('i', {
+    staticClass: "el-icon-plus"
+  }), _vm._v("添加成员")]), _vm._v(" "), _c('el-input', {
+    staticStyle: {
+      "width": "230px"
+    },
+    attrs: {
+      "placeholder": "姓名"
+    },
+    model: {
+      value: (_vm.filters.name),
+      callback: function($$v) {
+        _vm.filters.name = $$v
+      },
+      expression: "filters.name"
+    }
+  }), _vm._v(" "), _c('el-select', {
+    attrs: {
+      "placeholder": "请选择职务"
+    },
+    model: {
+      value: (_vm.filters.positionTypeValue),
+      callback: function($$v) {
+        _vm.filters.positionTypeValue = $$v
+      },
+      expression: "filters.positionTypeValue"
+    }
+  }, _vm._l((_vm.PersonPositionTypes), function(v) {
+    return _c('el-option', {
+      key: v.perPositionTypeID,
+      attrs: {
+        "label": v.positionTypeName,
+        "value": v.perPositionTypeID
+      }
+    })
+  })), _vm._v(" "), _c('el-select', {
+    attrs: {
+      "placeholder": "在职状态"
+    },
+    model: {
+      value: (_vm.filters.status),
+      callback: function($$v) {
+        _vm.filters.status = $$v
+      },
+      expression: "filters.status"
+    }
+  }, _vm._l((_vm.isOnWork), function(v) {
+    return _c('el-option', {
+      key: v.value,
+      attrs: {
+        "label": v.label,
+        "value": v.value
+      }
+    })
+  })), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "icon": "search",
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.searchInfo
+    }
+  }, [_vm._v("查询")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.findAll
+    }
+  }, [_vm._v("显示所有")])], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+    staticStyle: {
+      "padding-top": "10px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-table', {
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "data": _vm.dataInfo
+    }
+  }, [_c('el-table-column', {
+    attrs: {
+      "label": "编号",
+      "prop": "orgMemberID",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "姓名",
+      "prop": "name",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "性别",
+      "prop": "sex",
+      "align": "center"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_vm._v("\n                " + _vm._s(scope.row.sex == 1 ? '男' : '女') + "\n              ")]
+      }
+    }])
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "民族",
+      "prop": "ethnicity",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "政治面貌",
+      "prop": "politics",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "身份证号",
+      "prop": "certID",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "出生日期",
+      "prop": "birthDate",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "职务",
+      "prop": "positionTypeName",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "手机号码",
+      "prop": "mobileTel",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "在职状态",
+      "prop": "status",
+      "align": "center"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_vm._v("\n                " + _vm._s(scope.row.status == 1 ? '在职' : '离职') + "\n              ")]
+      }
+    }])
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "fixed": "right",
+      "width": "300",
+      "align": "center"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "type": "text",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              _vm.WatchInfo(scope.row)
+            }
+          }
+        }, [_vm._v("查看详情")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              _vm.editMemberInfo(scope.row)
+            }
+          }
+        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              _vm.changeMemberInfo(scope.row.orgMemberID, scope.row.status)
+            }
+          }
+        }, [_vm._v("\n                  " + _vm._s(scope.row.status == 1 ? '离职' : '复员') + "\n                ")])]
+      }
+    }])
+  })], 1)], 1), _vm._v(" "), _c('el-col', {
+    staticStyle: {
+      "margin-top": "10px"
+    },
+    attrs: {
+      "span": 24,
+      "align": "right"
+    }
+  }, [_c('el-pagination', {
+    attrs: {
+      "layout": "prev, pager, next",
+      "total": _vm.totalInfo
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1)], 1)], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "人员详情",
+      "visible": _vm.dialogVisible
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.dialogVisible = $event
+      }
+    }
+  }, [_c('table', {
+    staticClass: "userInfoEditTable",
+    staticStyle: {
+      "border-collapse": "collapse",
+      "background-color": "white"
+    },
+    attrs: {
+      "width": "100%",
+      "cellspacing": "0"
+    }
+  }, [_c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("编号:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.orgMemberID) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("姓名:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.name) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("所属机构:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.orgName) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("性别")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.sex == 1 ? '男' : '女') + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("民族:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.ethnicity) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("政治面貌:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.politics) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("身份证号:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.certID) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("出生日期:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.birthDate) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("学历:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.education) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("级别:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.levelTypeName) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("职务类型:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.positionTypeName) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("移动电话:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.mobileTel) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("固定电话:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.fixedTel) + "\n          ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    attrs: {
+      "width": "20%"
+    }
+  }, [_vm._v("在职状态:")]), _vm._v(" "), _c('td', [_vm._v("\n            " + _vm._s(_vm.memberInfo.status == 1 ? '在职' : '离职') + "\n          ")])])]), _vm._v(" "), _c('span', {
+    staticClass: "dialog-footer",
+    slot: "footer"
+  }, [_c('el-button', {
+    on: {
+      "click": function($event) {
+        _vm.dialogVisible = false
+      }
+    }
+  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": function($event) {
+        _vm.dialogVisible = false
+      }
+    }
+  }, [_vm._v("确 定")])], 1)])], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-656d1bbf","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/zongzhizuzhi/jgMemberManage.vue
+// module id = 8GXN
+// module chunks = 110

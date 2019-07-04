@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".divStyle{border:1px solid #000}.avatar-uploader .el-upload{border:1px dashed #000;border-radius:6px;cursor:pointer;position:relative;overflow:hidden}.avatar-uploader .el-upload:hover{border-color:#20a0ff}.avatar-uploader-icon{font-size:28px;color:#8c939d;width:178px;height:178px;line-height:178px;text-align:center}.avatar{width:178px;height:178px;display:block}.tb_header{border:2px solid #eee;background-color:#f5f5f5;padding:1px;text-indent:1em;border-left:4px solid #20a0ff;border-left-width:5px;width:80%}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/zongzhizuzhi/ServedPersonEdit.vue"],"names":[],"mappings":"AACA,UACE,qBAAwB,CACzB,AACD,4BACE,uBAAyB,AACzB,kBAAmB,AACnB,eAAgB,AAChB,kBAAmB,AACnB,eAAiB,CAClB,AACD,kCACE,oBAAsB,CACvB,AACD,sBACE,eAAgB,AAChB,cAAe,AACf,YAAa,AACb,aAAc,AACd,kBAAmB,AACnB,iBAAmB,CACpB,AACD,QACE,YAAa,AACb,aAAc,AACd,aAAe,CAChB,AACD,WACE,sBAA0B,AAC1B,yBAA6B,AAC7B,YAAa,AACb,gBAAiB,AACjB,8BAA+B,AAC/B,sBAAuB,AACvB,SAAW,CACZ","file":"ServedPersonEdit.vue","sourcesContent":["\n.divStyle {\n  border: 1px solid black;\n}\n.avatar-uploader .el-upload {\n  border: 1px dashed black;\n  border-radius: 6px;\n  cursor: pointer;\n  position: relative;\n  overflow: hidden;\n}\n.avatar-uploader .el-upload:hover {\n  border-color: #20a0ff;\n}\n.avatar-uploader-icon {\n  font-size: 28px;\n  color: #8c939d;\n  width: 178px;\n  height: 178px;\n  line-height: 178px;\n  text-align: center;\n}\n.avatar {\n  width: 178px;\n  height: 178px;\n  display: block;\n}\n.tb_header {\n  border: 2px solid #eeeeee;\n  background-color: whitesmoke;\n  padding: 1px;\n  text-indent: 1em;\n  border-left: 4px solid #20a0ff;\n  border-left-width: 5px;\n  width: 80%;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-e0ea9292","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/zongzhizuzhi/ServedPersonEdit.vue
+// module id = Nxut
+// module chunks = 11

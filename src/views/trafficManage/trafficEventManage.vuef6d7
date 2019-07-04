@@ -1,0 +1,196 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": _vm.$store.getters.user.userRole == '超级管理员' ? 3 : 0
+    }
+  }, [_c('treeComponent', {
+    staticStyle: {
+      "margin-top": "-52px"
+    },
+    on: {
+      "GetNodeValue": _vm.GetNodeValue
+    }
+  })], 1), _vm._v(" "), _c('el-col', {
+    staticStyle: {
+      "margin-left": "10px"
+    },
+    attrs: {
+      "span": _vm.$store.getters.user.userRole == '超级管理员' ? 20 : 23
+    }
+  }, [_c('el-tabs', {
+    attrs: {
+      "type": "border-card"
+    }
+  }, [_c('el-tab-pane', {
+    attrs: {
+      "label": "事件处理"
+    }
+  }, [_c('el-row', [_c('el-col', {
+    staticStyle: {
+      "margin-bottom": "10px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.addNewEvent
+    }
+  }, [_vm._v("新增事故")]), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "display": "inline-block",
+      "float": "right"
+    }
+  }, [_c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    attrs: {
+      "placeholder": "事故名称"
+    },
+    model: {
+      value: (_vm.filters.name),
+      callback: function($$v) {
+        _vm.filters.name = $$v
+      },
+      expression: "filters.name"
+    }
+  }), _vm._v(" "), _c('el-select', {
+    staticStyle: {
+      "width": "200px"
+    },
+    attrs: {
+      "placeholder": "事故类型"
+    },
+    model: {
+      value: (_vm.filters.type),
+      callback: function($$v) {
+        _vm.filters.type = $$v
+      },
+      expression: "filters.type"
+    }
+  }, _vm._l((_vm.AccidentType), function(n, i) {
+    return _c('el-option', {
+      key: i,
+      attrs: {
+        "value": n.trafficAccidentTypeValue,
+        "label": n.trafficAccidentTypeName
+      }
+    })
+  })), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "icon": "search"
+    },
+    on: {
+      "click": _vm.getInfo
+    }
+  }, [_vm._v("查询")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.flush
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-refresh fa-spin"
+  }), _vm._v("刷新")])], 1)], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-table', {
+    attrs: {
+      "data": _vm.needDealEvents,
+      "border": ""
+    }
+  }, [_vm._l((_vm.props), function(v, k, i) {
+    return _c('el-table-column', {
+      key: v.id,
+      attrs: {
+        "label": _vm.labels[i],
+        "align": "center"
+      },
+      scopedSlots: _vm._u([{
+        key: "default",
+        fn: function(scope) {
+          return [_vm._v("\n                                        " + _vm._s(scope.row[k]) + "\n                                    ")]
+        }
+      }])
+    })
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "width": "200",
+      "align": "center"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.checkEventDetail(scope.row.trafficAccidentID)
+            }
+          }
+        }, [_vm._v("查看详情")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.editTrafficEvent(scope.row.trafficAccidentID)
+            }
+          }
+        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.deleteEvent(scope.row.trafficAccidentID)
+            }
+          }
+        }, [_vm._v("删除")])]
+      }
+    }])
+  })], 2)], 1), _vm._v(" "), _c('el-col', {
+    staticStyle: {
+      "margin-top": "10px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-pagination', {
+    staticStyle: {
+      "float": "right"
+    },
+    attrs: {
+      "layout": "prev, pager, next",
+      "total": _vm.totalNeedDeal
+    }
+  })], 1)], 1)], 1), _vm._v(" "), _c('el-tab-pane', {
+    attrs: {
+      "label": "报表统计"
+    }
+  }), _vm._v(" "), _c('el-tab-pane', {
+    attrs: {
+      "label": "事件处理流程"
+    }
+  })], 1)], 1)], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-205b4c90","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/trafficManage/trafficEventManage.vue
+// module id = /NCJ
+// module chunks = 81

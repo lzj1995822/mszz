@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".btn_color{display:block;margin:30px;width:150px}.btn_color,.btn_color2{background-color:#cd5555;color:#fff;text-align:center;border-radius:5px;padding:13px;font-size:15px;cursor:pointer}.btn_color2{display:inline-block;margin:5px 25px;width:120px}.btn_active{background-color:#3a5fcd;border:1px solid #3a5fcd;color:#fff}.userInfoEditTable,.userInfoEditTable td{border:1px solid #a9a9a9;padding:10px;border-collapse:collapse;background-color:#fff}.tb_label{width:20%;text-align:right}.photo_label{text-align:center;width:100%;height:25px;background-color:#f0f8ff;padding:5px;position:relative;top:-30px;font-weight:700;opacity:.4}.class1{text-align:center;font-size:20px;color:#cd5555;padding:50px}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/netManage/netGrid.vue"],"names":[],"mappings":"AACA,WAKE,cAAe,AACf,YAAa,AAEb,WAAa,CAGd,AACD,uBAXE,yBAA0B,AAC1B,WAAa,AACb,kBAAmB,AACnB,kBAAmB,AAGnB,aAAc,AAEd,eAAgB,AAChB,cAAgB,CAajB,AAXD,YACE,qBAAsB,AAKtB,gBAAiB,AAEjB,WAAa,CAGd,AACD,YACE,yBAA0B,AAC1B,yBAA0B,AAC1B,UAAa,CACd,AACD,yCAEE,yBAA2B,AAC3B,aAAc,AACd,yBAA0B,AAC1B,qBAAwB,CACzB,AACD,UACE,UAAW,AACX,gBAAkB,CACnB,AACD,aACE,kBAAmB,AACnB,WAAY,AACZ,YAAa,AACb,yBAA4B,AAC5B,YAAa,AACb,kBAAmB,AACnB,UAAW,AACX,gBAAkB,AAClB,UAAa,CACd,AACD,QACE,kBAAmB,AACnB,eAAgB,AAChB,cAAe,AACf,YAAc,CAEf","file":"netGrid.vue","sourcesContent":["\n.btn_color {\n  background-color: #cd5555;\n  color: white;\n  text-align: center;\n  border-radius: 5px;\n  display: block;\n  margin: 30px;\n  padding: 13px;\n  width: 150px;\n  font-size: 15px;\n  cursor: pointer;\n}\n.btn_color2 {\n  display: inline-block;\n  background-color: #cd5555;\n  color: white;\n  text-align: center;\n  border-radius: 5px;\n  margin: 5px 25px;\n  padding: 13px;\n  width: 120px;\n  font-size: 15px;\n  cursor: pointer;\n}\n.btn_active {\n  background-color: #3a5fcd;\n  border: 1px solid #3a5fcd;\n  color: white;\n}\n.userInfoEditTable,\n.userInfoEditTable td {\n  border: 1px solid darkgrey;\n  padding: 10px;\n  border-collapse: collapse;\n  background-color: white;\n}\n.tb_label {\n  width: 20%;\n  text-align: right;\n}\n.photo_label {\n  text-align: center;\n  width: 100%;\n  height: 25px;\n  background-color: aliceblue;\n  padding: 5px;\n  position: relative;\n  top: -30px;\n  font-weight: bold;\n  opacity: 0.4;\n}\n.class1 {\n  text-align: center;\n  font-size: 20px;\n  color: #cd5555;\n  padding: 50px;\n  /* background-color: #cd5555; */\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-52023886","scoped":false,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/netManage/netGrid.vue
+// module id = 8moK
+// module chunks = 99

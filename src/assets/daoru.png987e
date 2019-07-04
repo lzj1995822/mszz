@@ -1,0 +1,8 @@
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAfklEQVQokbWRMQrCQBBF35rkAoJVenMIIR7VPqfIMbyA9oKpn4UjLGHNYuGHYeDPf+wMm1QKKpoAu2+DX4A9cAUW4AykqHhb19WoF996qmP4WgiXoId6+ADt1oHABJyALl9pS7foc22lYxa+q0MNmFfh6tF9QEPmqZr890+/AHneBTWb1RREAAAAAElFTkSuQmCC"
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/assets/daoru.png
+// module id = 1/Wg
+// module chunks = 0 1 2 3 6 7 8 17 18 48 49 55 56 76 77 78 79 80 110 118

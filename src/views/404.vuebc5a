@@ -1,0 +1,69 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticStyle: {
+      "background": "#f0f2f5",
+      "margin-top": "-20px"
+    }
+  }, [_c('div', {
+    staticClass: "wscn-http404"
+  }, [_c('div', {
+    staticClass: "pic-404"
+  }, [_c('img', {
+    staticClass: "pic-404__parent",
+    attrs: {
+      "src": _vm.img_404,
+      "alt": "404"
+    }
+  }), _vm._v(" "), _c('img', {
+    staticClass: "pic-404__child left",
+    attrs: {
+      "src": _vm.img_404_cloud,
+      "alt": "404"
+    }
+  }), _vm._v(" "), _c('img', {
+    staticClass: "pic-404__child mid",
+    attrs: {
+      "src": _vm.img_404_cloud,
+      "alt": "404"
+    }
+  }), _vm._v(" "), _c('img', {
+    staticClass: "pic-404__child right",
+    attrs: {
+      "src": _vm.img_404_cloud,
+      "alt": "404"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "bullshit"
+  }, [_c('div', {
+    staticClass: "bullshit__oops"
+  }, [_vm._v("OOPS!")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "bullshit__headline"
+  }, [_vm._v(_vm._s(_vm.message))]), _vm._v(" "), _c('div', {
+    staticClass: "bullshit__info"
+  }, [_vm._v("请检查您输入的网址是否正确，请点击以下按钮返回主页或者发送错误报告")]), _vm._v(" "), _c('a', {
+    staticClass: "bullshit__return-home",
+    attrs: {
+      "href": "/"
+    }
+  }, [_vm._v("返回首页")])])])])
+}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "bullshit__info"
+  }, [_vm._v("版权所有"), _c('a', {
+    staticClass: "link-type",
+    attrs: {
+      "href": "https://wallstreetcn.com",
+      "target": "_blank"
+    }
+  }, [_vm._v("茅山")])])
+}]
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-daad0942","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/404.vue
+// module id = CH67
+// module chunks = 123

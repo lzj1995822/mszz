@@ -1,0 +1,13 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div')
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-210b2973","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/zongzhizuzhi/ForeignerManage.vue
+// module id = S8vI
+// module chunks = 170

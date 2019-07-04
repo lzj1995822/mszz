@@ -1,0 +1,17 @@
+import SpriteSymbol from "svg-baker-runtime/browser-symbol";
+import sprite from "svg-sprite-loader/runtime/browser-sprite.build";
+var symbol = new SpriteSymbol({
+  "id": "icon-zujian",
+  "use": "icon-zujian-usage",
+  "viewBox": "0 0 1024 1024",
+  "content": "<symbol class=\"icon\" viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"icon-zujian\"><defs><style type=\"text/css\"></style></defs><path d=\"M568.6 0h454.9v454.9H568.6V0z m0 568.6h454.9v454.9H568.6V568.6zM0 568.6h454.9v454.9H0V568.6zM0 0h454.9v454.9H0V0z\" fill=\"\" p-id=\"10531\" /></symbol>"
+});
+var result = sprite.add(symbol);
+export default symbol
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/icons/svg/zujian.svg
+// module id = ILQa
+// module chunks = 172

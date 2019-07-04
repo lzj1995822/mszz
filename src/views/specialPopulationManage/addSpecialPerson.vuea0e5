@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".preDiv[data-v-94e0344c]{left:-11%;margin-left:10px}.nextDiv[data-v-94e0344c],.preDiv[data-v-94e0344c]{position:absolute;top:300px;cursor:pointer;color:#58b7ff;text-align:center}.nextDiv[data-v-94e0344c]{right:0;margin-right:10px}.directionFont[data-v-94e0344c]{color:#1d8ce0;font-weight:700;text-align:center}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/specialPopulationManage/addSpecialPerson.vue"],"names":[],"mappings":"AACA,yBAGE,UAAW,AAIX,gBAAkB,CACnB,AACD,mDARE,kBAAmB,AACnB,UAAW,AAEX,eAAgB,AAChB,cAAe,AACf,iBAAmB,CAWpB,AARD,0BAGE,QAAS,AAIT,iBAAmB,CACpB,AACD,gCACE,cAAe,AACf,gBAAkB,AAClB,iBAAmB,CACpB","file":"addSpecialPerson.vue","sourcesContent":["\n.preDiv[data-v-94e0344c] {\n  position: absolute;\n  top: 300px;\n  left: -11%;\n  cursor: pointer;\n  color: #58b7ff;\n  text-align: center;\n  margin-left: 10px;\n}\n.nextDiv[data-v-94e0344c] {\n  position: absolute;\n  top: 300px;\n  right: 0;\n  cursor: pointer;\n  color: #58b7ff;\n  text-align: center;\n  margin-right: 10px;\n}\n.directionFont[data-v-94e0344c] {\n  color: #1d8ce0;\n  font-weight: bold;\n  text-align: center;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-94e0344c","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/specialPopulationManage/addSpecialPerson.vue
+// module id = FEvO
+// module chunks = 4

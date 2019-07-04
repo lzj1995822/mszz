@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".tjInfo[data-v-4ae37c9a]{background-color:#f0f8ff;width:100%;height:800px;padding:10px}.userInfoEditTable[data-v-4ae37c9a],.userInfoEditTable td[data-v-4ae37c9a]{border:1px solid #a9a9a9;padding:10px;text-align:center}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/populationManage/foreignerPopulation.vue"],"names":[],"mappings":"AACA,yBAEE,yBAA4B,AAC5B,WAAY,AACZ,aAAc,AACd,YAAc,CAEf,AACD,2EAGE,yBAA2B,AAC3B,aAAc,AACd,iBAAmB,CACpB","file":"foreignerPopulation.vue","sourcesContent":["\n.tjInfo[data-v-4ae37c9a] {\n  /* margin-top: 50px; */\n  background-color: aliceblue;\n  width: 100%;\n  height: 800px;\n  padding: 10px;\n  /* text-indent: 2em; */\n}\n.userInfoEditTable[data-v-4ae37c9a],\n.userInfoEditTable td[data-v-4ae37c9a] {\n  /* font-size: 8px; */\n  border: 1px solid darkgrey;\n  padding: 10px;\n  text-align: center;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-4ae37c9a","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/populationManage/foreignerPopulation.vue
+// module id = OFX5
+// module chunks = 79

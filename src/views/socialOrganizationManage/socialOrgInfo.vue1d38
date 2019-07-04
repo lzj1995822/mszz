@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".userInfoEditTable[data-v-76256238],.userInfoEditTable td[data-v-76256238]{border:1px solid #a9a9a9;padding:10px}.tb_label[data-v-76256238]{width:15%;text-align:right}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/socialOrganizationManage/socialOrgInfo.vue"],"names":[],"mappings":"AACA,2EAEE,yBAA2B,AAC3B,YAAc,CACf,AACD,2BACE,UAAW,AACX,gBAAkB,CACnB","file":"socialOrgInfo.vue","sourcesContent":["\n.userInfoEditTable[data-v-76256238],\n.userInfoEditTable td[data-v-76256238] {\n  border: 1px solid darkgrey;\n  padding: 10px;\n}\n.tb_label[data-v-76256238] {\n  width: 15%;\n  text-align: right;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-76256238","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/socialOrganizationManage/socialOrgInfo.vue
+// module id = J+3L
+// module chunks = 48 129

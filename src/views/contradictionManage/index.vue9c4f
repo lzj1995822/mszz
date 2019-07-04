@@ -1,0 +1,86 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 18
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "width": "100%",
+      "height": "800px",
+      "margin-top": "20px"
+    },
+    attrs: {
+      "id": "stackchart"
+    }
+  })]), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 6
+    }
+  }, [_c('div', {
+    staticClass: "tjInfo"
+  }, [_c('h2', {
+    staticStyle: {
+      "padding": "12px"
+    }
+  }, [_vm._v("数据统计")]), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "padding": "5px"
+    }
+  }, [_c('table', {
+    staticClass: "userInfoEditTable",
+    staticStyle: {
+      "border-collapse": "collapse",
+      "background-color": "white"
+    },
+    attrs: {
+      "width": "100%",
+      "cellspacing": "0"
+    }
+  }, [_c('tr', [_c('td', {
+    attrs: {
+      "colspan": "3"
+    }
+  }, [_vm._v("矛盾纠纷事件")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("地区")]), _vm._v(" "), _c('td', [_vm._v("已办事项")]), _vm._v(" "), _c('td', [_vm._v("待办事项")])]), _vm._v(" "), _vm._l((_vm.area), function(v, index) {
+    return _c('tr', {
+      key: v,
+      class: index % 2 == 0 ? 'mycolor' : ''
+    }, [_c('td', [_vm._v(_vm._s(v))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.hadDone[index]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.needDoList[index]))])])
+  }), _vm._v(" "), _c('tr', {
+    staticClass: "mycolor"
+  }, [_c('td', [_vm._v("合计")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.getHadDoneCount(_vm.hadDone)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.getNeedDoList(_vm.needDoList)))])])], 2)])])])], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "top": "5vh",
+      "visible": _vm.visible
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.visible = $event
+      }
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "width": "100%",
+      "height": "500px"
+    },
+    attrs: {
+      "id": "chart"
+    }
+  }), _vm._v(" "), _c('data-component', {
+    attrs: {
+      "title": ['已办', '待办'],
+      "area": _vm.subArea,
+      "common": _vm.subHadDone,
+      "great": _vm.subNeedDone
+    }
+  })], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-0da0b980","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/contradictionManage/index.vue
+// module id = qHWp
+// module chunks = 70

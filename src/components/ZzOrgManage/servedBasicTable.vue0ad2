@@ -1,0 +1,144 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('table', {
+    staticClass: "userInfoEditTable",
+    staticStyle: {
+      "border-collapse": "collapse",
+      "background-color": "white"
+    },
+    attrs: {
+      "width": "100%",
+      "cellspacing": "0"
+    }
+  }, [_c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("姓名:")]), _vm._v(" "), _c('td', [_vm._v("\n                " + _vm._s(_vm.memberInfo.name) + "\n            ")]), _vm._v(" "), _c('td', {
+    staticStyle: {
+      "width": "12%"
+    },
+    attrs: {
+      "align": "center",
+      "rowspan": "7"
+    }
+  }, [(_vm.imageUrl) ? _c('img', {
+    attrs: {
+      "width": "178px",
+      "height": "220px",
+      "src": _vm.imageUrl
+    }
+  }) : _c('img', {
+    attrs: {
+      "width": "178px",
+      "src": require("../../assets/notx.jpg")
+    }
+  })])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("所属网格")]), _vm._v(" "), _c('td', [_vm._v("\n                " + _vm._s(_vm.memberInfo.netGridName) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("曾用名:")]), _vm._v(" "), _c('td', [_vm._v("\n                " + _vm._s(_vm.memberInfo.nameUsed) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("性别")]), _vm._v(" "), _c('td', [_vm._v("\n                " + _vm._s(_vm.memberInfo.sex == '1' ? '男' : '女') + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("户籍类型")]), _vm._v(" "), _c('td', [_vm._v("\n                " + _vm._s(_vm.memberInfo.servedPersonTypeName) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("民族:")]), _vm._v(" "), _c('td', [_vm._v("\n                " + _vm._s(_vm.memberInfo.ethnicityName) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("出生日期:")]), _vm._v(" "), _c('td', [_vm._v("\n                " + _vm._s(_vm.memberInfo.birthDate) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("政治面貌:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.politics) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("身份证号:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.certifID) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("学历:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.educationTypeName) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("籍贯:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.nativePlace) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("婚姻状况:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.maritalStatus) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("职业类别:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.careerTypeName) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("职业:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.career) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("移动电话:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.mobileTel) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("固定电话:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.fixedTel) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("是否特殊人群:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.isSpecialPopulation ? '是' : '否') + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("服务处所:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.servedPlace) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("户籍地:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.domicileAddress) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("户籍门(楼)详细地址:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.domicileAddressDetail) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("现住地:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.presentAddress) + "\n            ")])]), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "tb_label"
+  }, [_vm._v("现住地门(楼)详细地址:")]), _vm._v(" "), _c('td', {
+    attrs: {
+      "colspan": "2"
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.memberInfo.presentAddressDetail) + "\n            ")])])])])
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-0c4f0848","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/ZzOrgManage/servedBasicTable.vue
+// module id = erh6
+// module chunks = 0 1 2 3 4 5 6 7 8 9 14 16 17 18 73

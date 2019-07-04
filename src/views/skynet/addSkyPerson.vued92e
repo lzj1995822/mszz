@@ -1,0 +1,216 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticStyle: {
+      "padding": "3%"
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form', {
+    ref: "videoForm",
+    attrs: {
+      "model": _vm.form,
+      "label-width": "200px",
+      "label-suffix": "："
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "上传头像"
+    }
+  }, [_c('el-upload', {
+    staticClass: "avatar-uploader",
+    attrs: {
+      "action": _vm.getDomain() + '/msmis/api/sp/uploadProcessionPersonPhoto',
+      "show-file-list": false,
+      "headers": _vm.header,
+      "on-success": _vm.handleAvatarSuccess
+    }
+  }, [(_vm.imageUrl) ? _c('img', {
+    staticClass: "avatar",
+    attrs: {
+      "src": _vm.imageUrl
+    }
+  }) : _c('i', {
+    staticClass: "el-icon-plus avatar-uploader-icon"
+  })])], 1), _vm._v(" "), _vm._l((_vm.form), function(v, k, i) {
+    return _c('el-form-item', {
+      key: v.id,
+      attrs: {
+        "label": _vm.labels[i],
+        "prop": k
+      }
+    }, [(k == 'ethnicity') ? _c('el-select', {
+      attrs: {
+        "filterable": ""
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.EthnicityType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.ethnicity,
+          "label": v.ethnicityName
+        }
+      })
+    })) : (k == 'politics') ? _c('el-select', {
+      attrs: {
+        "filterable": ""
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.Politics), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.politicsTypeValue,
+          "label": v.politicsTypeName
+        }
+      })
+    })) : (k == 'maritalStatus') ? _c('el-select', {
+      attrs: {
+        "filterable": ""
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.Marital), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.maritalStatus,
+          "label": v.maritalStatusName
+        }
+      })
+    })) : (k == 'education') ? _c('el-select', {
+      attrs: {
+        "filterable": ""
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.EducationType), function(v) {
+      return _c('el-option', {
+        key: v.id,
+        attrs: {
+          "label": v.educationTypeName,
+          "value": v.education
+        }
+      })
+    })) : (k == 'religiousBelief') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.ReligiousBeliefType), function(v) {
+      return _c('el-option', {
+        key: v.id,
+        attrs: {
+          "label": v.religiousBeliefName,
+          "value": v.religiousBelief
+        }
+      })
+    })) : (k == 'processionID') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, _vm._l((_vm.Processions), function(v) {
+      return _c('el-option', {
+        key: v.id,
+        attrs: {
+          "value": v.id,
+          "label": v.processionName
+        }
+      })
+    })) : (k == 'birthDate') ? _c('el-date-picker', {
+      attrs: {
+        "placeholder": ""
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }) : (k == 'sex') ? _c('el-radio-group', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, [_c('el-radio', {
+      attrs: {
+        "label": 1
+      }
+    }, [_vm._v("男")]), _vm._v(" "), _c('el-radio', {
+      attrs: {
+        "label": 0
+      }
+    }, [_vm._v("女")])], 1) : _c('el-input', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    })], 1)
+  }), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "align": "center"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "warning"
+    },
+    on: {
+      "click": _vm.reset
+    }
+  }, [_vm._v("重置")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.addNewRecord
+    }
+  }, [_vm._v("添加")])], 1)], 2)], 1)], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-2501aaaf","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/skynet/addSkyPerson.vue
+// module id = i6gZ
+// module chunks = 139

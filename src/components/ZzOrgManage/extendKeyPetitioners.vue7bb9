@@ -1,0 +1,120 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-form', {
+    attrs: {
+      "model": _vm.form,
+      "label-width": "160px",
+      "label-suffix": ":",
+      "rules": _vm.rules
+    }
+  }, [_c('el-form-item', [_c('h2', [_vm._v("重点上访人员")])]), _vm._v(" "), _vm._l((_vm.prop), function(v, k, i) {
+    return (k != 'tEKeyPID') ? _c('el-form-item', {
+      key: i,
+      attrs: {
+        "label": _vm.labels[i],
+        "prop": k
+      }
+    }, [(k == 'activityCode' || k == 'measuresCode' ||
+      k == 'economicSourceCode' || k == 'steadyStateCode' ||
+      k == 'steadyGradeCode' || k == 'petitionTypeCode' || k == 'petitionStatusCode') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, [(k == 'petitionStatusCode') ? _vm._l((_vm.PetitionStatus), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.value,
+          "label": v.name
+        }
+      })
+    }) : (k == 'activityCode') ? _vm._l((_vm.ActivityType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.activityTypeValue,
+          "label": v.activityTypeName
+        }
+      })
+    }) : (k == 'measuresCode') ? _vm._l((_vm.MeasuresType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.measuresTypeValue,
+          "label": v.measuresTypeName
+        }
+      })
+    }) : (k == 'economicSourceCode') ? _vm._l((_vm.EconomicSourceType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.economicSourceTypeValue,
+          "label": v.economicSourceTypeName
+        }
+      })
+    }) : (k == 'steadyStateCode') ? _vm._l((_vm.SteadyStateType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.steadyStateTypeValue,
+          "label": v.steadyStateTypeName
+        }
+      })
+    }) : (k == 'steadyGradeCode') ? _vm._l((_vm.SteadyGradeType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": v.steadyGradeTypeValue,
+          "label": v.steadyGradeTypeName
+        }
+      })
+    }) : _vm._e()], 2) : (k == 'reasonsPetitionReasons' || k == 'detailSituation' ||
+      k == 'treatmentDetailSituation' || k == 'workCoordinationDetails' ||
+      k == 'talkEducationAdmonitionDetails') ? _c('el-input', {
+      staticStyle: {
+        "width": "600px"
+      },
+      attrs: {
+        "type": "textarea"
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }) : _c('el-input', {
+      staticStyle: {
+        "width": "400px"
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    })], 1) : _vm._e()
+  }), _vm._v(" "), (_vm.showButton) ? _c('el-row', [_c('el-col', [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.onSubmit
+    }
+  }, [_vm._v(_vm._s(_vm.usePath == 'save' ? '保存' : '更新'))])], 1)], 1)], 1) : _vm._e()], 2)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-e902ed6c","hasScoped":false}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/ZzOrgManage/extendKeyPetitioners.vue
+// module id = 01UD
+// module chunks = 0 1 2 4 9 12 17

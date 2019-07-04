@@ -1,0 +1,263 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": _vm.$store.getters.user.userRole == '超级管理员' ? 3 : 0
+    }
+  }, [_c('tree-component', {
+    on: {
+      "GetNodeValue": _vm.GetNodeValue
+    }
+  })], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": _vm.$store.getters.user.userRole == '超级管理员' ? 21 : 24
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 8
+    }
+  }, [_c('el-button', {
+    staticStyle: {
+      "float": "left"
+    },
+    attrs: {
+      "type": "success"
+    },
+    on: {
+      "click": _vm.exportData
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": require("../../assets/daoru.png"),
+      "alt": ""
+    }
+  }), _vm._v(" 导出\n          ")]), _vm._v(" "), _c('el-upload', {
+    staticStyle: {
+      "text-align": "left",
+      "display": "inline-block",
+      "width": "150px",
+      "height": "38px",
+      "overflow": "hidden",
+      "margin-left": "10px"
+    },
+    attrs: {
+      "action": "xxxxxxxxxx"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "success"
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": require("../../assets/daochu.png"),
+      "alt": ""
+    }
+  }), _vm._v(" EXCEL导入\n            ")])], 1)], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 16
+    }
+  }, [_c('div', {
+    attrs: {
+      "align": "right"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.addEconomyOrg
+    }
+  }, [_c('i', {
+    staticClass: "el-icon-plus"
+  }, [_vm._v("添加物流企业")])]), _vm._v(" "), _c('el-input', {
+    staticStyle: {
+      "width": "200px"
+    },
+    attrs: {
+      "placeholder": "企业名称"
+    },
+    model: {
+      value: (_vm.filters.name),
+      callback: function($$v) {
+        _vm.filters.name = $$v
+      },
+      expression: "filters.name"
+    }
+  }), _vm._v(" "), _c('el-select', {
+    attrs: {
+      "placeholder": "请输入企业类型"
+    },
+    model: {
+      value: (_vm.filters.type),
+      callback: function($$v) {
+        _vm.filters.type = $$v
+      },
+      expression: "filters.type"
+    }
+  }, _vm._l((_vm.Types), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.enterpriseTypeName,
+        "value": v.enterpriseTypeValue
+      }
+    })
+  })), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "icon": "search"
+    },
+    on: {
+      "click": _vm.getEconomyInfo
+    }
+  }, [_vm._v("查询")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.showAll
+    }
+  }, [_vm._v("显示所有")])], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+    staticStyle: {
+      "padding-top": "10px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-table', {
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "border": "",
+      "data": _vm.dataList
+    }
+  }, [_c('el-table-column', {
+    staticStyle: {
+      "width": "50px"
+    },
+    attrs: {
+      "label": "统一社会信用代码",
+      "prop": "enterpriseUSCcode",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "企业名称",
+      "prop": "enterpriseName",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "企业类别",
+      "prop": "enterpriseTypeName",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "企业地址",
+      "prop": "enterpriseAddress",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "法人姓名",
+      "prop": "enterpriseLeaderName",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "法人联系方式",
+      "prop": "enterpriseLeaderContact",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "治保负责人联系方式",
+      "prop": "securityLeaderContact",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "width": "300",
+      "align": "center"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "type": "text",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              _vm.watchDetail(scope.row.enterpriseUSCcode)
+            }
+          }
+        }, [_vm._v("查看详情")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              _vm.editForm(scope.row.enterpriseUSCcode)
+            }
+          }
+        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "text",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              _vm.deleteForm(scope.row.enterpriseUSCcode)
+            }
+          }
+        }, [_vm._v("删除")])]
+      }
+    }])
+  })], 1)], 1), _vm._v(" "), _c('el-col', {
+    staticStyle: {
+      "margin-top": "10px"
+    },
+    attrs: {
+      "span": 24,
+      "align": "right"
+    }
+  }, [_c('el-pagination', {
+    attrs: {
+      "layout": "prev, pager, next",
+      "total": _vm.totalInfo
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1)], 1)], 1)], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "top": "5%",
+      "title": "查看详情",
+      "visible": _vm.visible
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.visible = $event
+      }
+    }
+  }, [_c('info', {
+    attrs: {
+      "id": _vm.id
+    }
+  })], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-579c377e","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/publicSecurityManage/deliveryManage.vue
+// module id = 8tB5
+// module chunks = 55

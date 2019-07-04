@@ -1,0 +1,8 @@
+module.exports = __webpack_public_path__ + "static/img/neiye_bg.1eb42cf.png";
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/assets/neiye/neiye_bg.png
+// module id = i6lA
+// module chunks = 100

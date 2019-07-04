@@ -1,0 +1,17 @@
+import SpriteSymbol from "svg-baker-runtime/browser-symbol";
+import sprite from "svg-sprite-loader/runtime/browser-sprite.build";
+var symbol = new SpriteSymbol({
+  "id": "icon-from",
+  "use": "icon-from-usage",
+  "viewBox": "0 0 1024 1024",
+  "content": "<symbol class=\"icon\" viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"icon-from\"><defs><style type=\"text/css\"></style></defs><path d=\"M960 256v64H64v-64c0-35.2 28.8-64 64-64h768c35.2 0 64 28.8 64 64z m0 128v384c0 35.2-28.8 64-64 64H128c-35.2 0-64-28.8-64-64V384h896zM256 640H128v32h128v-32z m128-64H128v32h256v-32z\" p-id=\"8100\" /></symbol>"
+});
+var result = sprite.add(symbol);
+export default symbol
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/icons/svg/from.svg
+// module id = 41Of
+// module chunks = 172

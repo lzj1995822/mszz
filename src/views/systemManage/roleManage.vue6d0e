@@ -1,0 +1,97 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 24,
+      "align": "left"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.add
+    }
+  }, [_vm._v("添加角色")])], 1), _vm._v(" "), _c('el-col', {
+    staticStyle: {
+      "margin-top": "10px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-table', {
+    attrs: {
+      "data": _vm.List
+    }
+  }, [_c('el-table-column', {
+    attrs: {
+      "type": "index"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "角色名称",
+      "prop": "roleName",
+      "align": "center"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "align": "center"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [(scope.row.roleName != '超级管理员' && scope.row.roleName != 'APP') ? _c('el-button', {
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.watch(scope.row)
+            }
+          }
+        }, [_vm._v("查看详情/编辑")]) : _vm._e(), _vm._v(" "), (scope.row.roleName != '超级管理员' && scope.row.roleName != 'APP') ? _c('el-button', {
+          staticStyle: {
+            "color": "red"
+          },
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              _vm.del(scope.row.roleID)
+            }
+          }
+        }, [_vm._v("删除")]) : _vm._e(), _vm._v(" "), (scope.row.roleName == '超级管理员') ? _c('el-button', {
+          staticStyle: {
+            "color": "blue"
+          },
+          attrs: {
+            "type": "text"
+          },
+          on: {
+            "click": function($event) {
+              return;
+            }
+          }
+        }, [_vm._v("超级管理员默认拥有全部权限")]) : _vm._e(), _vm._v(" "), (scope.row.roleName == 'APP') ? _c('el-button', {
+          staticStyle: {
+            "color": "blue"
+          },
+          attrs: {
+            "type": "text"
+          }
+        }, [_vm._v("APP端无法登陆本系统")]) : _vm._e()]
+      }
+    }])
+  })], 1)], 1)], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-2a75039d","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/systemManage/roleManage.vue
+// module id = mcI5
+// module chunks = 126

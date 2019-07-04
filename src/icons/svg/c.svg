@@ -1,0 +1,17 @@
+import SpriteSymbol from "svg-baker-runtime/browser-symbol";
+import sprite from "svg-sprite-loader/runtime/browser-sprite.build";
+var symbol = new SpriteSymbol({
+  "id": "icon-c",
+  "use": "icon-c-usage",
+  "viewBox": "0 0 1131 1024",
+  "content": "<symbol class=\"icon\" viewBox=\"0 0 1131 1024\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"icon-c\"><defs><style type=\"text/css\"></style></defs><path d=\"M0 0h53.894737v970.105263H0zM269.473684 431.157895h53.894737v538.947368H269.473684zM538.947368 161.684211h53.894737v808.421052h-53.894737zM808.421053 646.736842h53.894736v323.368421h-53.894736zM1077.894737 323.368421h53.894737v646.736842h-53.894737z\" fill=\"\" p-id=\"8787\" /></symbol>"
+});
+var result = sprite.add(symbol);
+export default symbol
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/icons/svg/c.svg
+// module id = PloX
+// module chunks = 172

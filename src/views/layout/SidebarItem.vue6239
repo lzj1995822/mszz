@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.id, ".svg-icon[data-v-1e8dcf33]{margin-right:10px}.hideSidebar .menu-indent[data-v-1e8dcf33]{display:block;text-indent:10px}", ""]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?minimize!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1e8dcf33","scoped":true,"hasInlineConfig":false}!./~/sass-loader/lib/loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/layout/SidebarItem.vue
+// module id = vGrA
+// module chunks = 172

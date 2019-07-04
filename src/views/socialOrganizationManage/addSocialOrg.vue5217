@@ -1,0 +1,694 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('el-row', {
+    staticStyle: {
+      "padding": "20px",
+      "margin-top": "20px"
+    }
+  }, [_c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-steps', {
+    staticStyle: {
+      "margin-left": "20%",
+      "font-size": "39px",
+      "cursor": "pointer"
+    },
+    attrs: {
+      "active": _vm.step
+    }
+  }, [_c('el-step', {
+    staticStyle: {
+      "text-align": "center"
+    },
+    attrs: {
+      "title": "步骤 1",
+      "icon": "edit",
+      "description": "添加组织的基本信息"
+    }
+  }), _vm._v(" "), _c('el-step', {
+    attrs: {
+      "title": "步骤 2",
+      "icon": "upload",
+      "description": "添加图片"
+    }
+  })], 1)], 1), _vm._v(" "), (_vm.step == 1) ? _c('el-col', {
+    staticStyle: {
+      "margin-top": "30px"
+    },
+    attrs: {
+      "span": 18
+    }
+  }, [_c('el-form', {
+    ref: "form",
+    attrs: {
+      "model": _vm.form,
+      "rules": _vm.rules,
+      "label-width": "200px",
+      "label-suffix": "："
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "组织名称",
+      "prop": "societyOrgName"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.societyOrgName),
+      callback: function($$v) {
+        _vm.form.societyOrgName = $$v
+      },
+      expression: "form.societyOrgName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "成立日期",
+      "prop": "establishDate"
+    }
+  }, [_c('el-date-picker', {
+    model: {
+      value: (_vm.form.establishDate),
+      callback: function($$v) {
+        _vm.form.establishDate = $$v
+      },
+      expression: "form.establishDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "登记证号",
+      "prop": "registerNumber"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.registerNumber),
+      callback: function($$v) {
+        _vm.form.registerNumber = $$v
+      },
+      expression: "form.registerNumber"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "登记管理机关代码",
+      "prop": "registerManagOrgCode"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.registerManagOrgCode),
+      callback: function($$v) {
+        _vm.form.registerManagOrgCode = $$v
+      },
+      expression: "form.registerManagOrgCode"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "法定代表人姓名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.headerName),
+      callback: function($$v) {
+        _vm.form.headerName = $$v
+      },
+      expression: "form.headerName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "批准日期"
+    }
+  }, [_c('el-date-picker', {
+    on: {
+      "change": _vm.changeDate
+    },
+    model: {
+      value: (_vm.form.approvalDate),
+      callback: function($$v) {
+        _vm.form.approvalDate = $$v
+      },
+      expression: "form.approvalDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "状态"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.form.status),
+      callback: function($$v) {
+        _vm.form.status = $$v
+      },
+      expression: "form.status"
+    }
+  }, [_c('el-radio-button', {
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio-button', {
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "负责人证件号码"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.responsiblePersonCertifID),
+      callback: function($$v) {
+        _vm.form.responsiblePersonCertifID = $$v
+      },
+      expression: "form.responsiblePersonCertifID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "行政区划代码"
+    }
+  }, [_c('v-distpicker', {
+    on: {
+      "selected": _vm.getValue
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "负责人联系方式"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.responsiblePersonContact),
+      callback: function($$v) {
+        _vm.form.responsiblePersonContact = $$v
+      },
+      expression: "form.responsiblePersonContact"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "治保负责人姓名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.securityLeaderName),
+      callback: function($$v) {
+        _vm.form.securityLeaderName = $$v
+      },
+      expression: "form.securityLeaderName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "关注程度"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.form.attentionTypeValue),
+      callback: function($$v) {
+        _vm.form.attentionTypeValue = $$v
+      },
+      expression: "form.attentionTypeValue"
+    }
+  }, _vm._l((_vm.AttentionType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "value": v.attentionTypeValue,
+        "label": v.attentionTypeName
+      }
+    })
+  }))], 1), _vm._v(" "), (_vm.form.isCanConstructCPC == 1) ? _c('el-form-item', {
+    attrs: {
+      "label": "是否有中共党组织"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.form.hasCPC),
+      callback: function($$v) {
+        _vm.form.hasCPC = $$v
+      },
+      expression: "form.hasCPC"
+    }
+  }, [_c('el-radio-button', {
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio-button', {
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("否")])], 1)], 1) : _vm._e(), _vm._v(" "), (_vm.form.hasCPC == 1) ? _c('el-form-item', {
+    attrs: {
+      "label": "中共党员数量"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0
+    },
+    model: {
+      value: (_vm.form.numberofCPCMember),
+      callback: function($$v) {
+        _vm.form.numberofCPCMember = $$v
+      },
+      expression: "form.numberofCPCMember"
+    }
+  })], 1) : _vm._e(), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否有工会"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.form.hasLabourUnion),
+      callback: function($$v) {
+        _vm.form.hasLabourUnion = $$v
+      },
+      expression: "form.hasLabourUnion"
+    }
+  }, [_c('el-radio-button', {
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio-button', {
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), (_vm.form.hasLabourUnion == 1) ? _c('el-form-item', {
+    attrs: {
+      "label": "工会成员数量"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0
+    },
+    model: {
+      value: (_vm.form.numberofLUMember),
+      callback: function($$v) {
+        _vm.form.numberofLUMember = $$v
+      },
+      expression: "form.numberofLUMember"
+    }
+  })], 1) : _vm._e(), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否有妇联"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.form.hasWomenFederation),
+      callback: function($$v) {
+        _vm.form.hasWomenFederation = $$v
+      },
+      expression: "form.hasWomenFederation"
+    }
+  }, [_c('el-radio-button', {
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio-button', {
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), (_vm.form.hasWomenFederation) ? _c('el-form-item', {
+    attrs: {
+      "label": "妇女数量"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0
+    },
+    model: {
+      value: (_vm.form.numberofWomen),
+      callback: function($$v) {
+        _vm.form.numberofWomen = $$v
+      },
+      expression: "form.numberofWomen"
+    }
+  })], 1) : _vm._e(), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "资金来源"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.sourceofFunds),
+      callback: function($$v) {
+        _vm.form.sourceofFunds = $$v
+      },
+      expression: "form.sourceofFunds"
+    }
+  })], 1)], 1), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 12
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "统一社会信用代码"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.enterpriseUSCcode),
+      callback: function($$v) {
+        _vm.form.enterpriseUSCcode = $$v
+      },
+      expression: "form.enterpriseUSCcode"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "创建日期",
+      "prop": "creationDate"
+    }
+  }, [_c('el-date-picker', {
+    model: {
+      value: (_vm.form.creationDate),
+      callback: function($$v) {
+        _vm.form.creationDate = $$v
+      },
+      expression: "form.creationDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "所属网格"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.form.netGridID),
+      callback: function($$v) {
+        _vm.form.netGridID = $$v
+      },
+      expression: "form.netGridID"
+    }
+  }, _vm._l((_vm.GridID), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "value": v.netGridID,
+        "label": v.netGridName
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "住所"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.livingHouse),
+      callback: function($$v) {
+        _vm.form.livingHouse = $$v
+      },
+      expression: "form.livingHouse"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "社会组织类型"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.form.societyOrgTypeValue),
+      callback: function($$v) {
+        _vm.form.societyOrgTypeValue = $$v
+      },
+      expression: "form.societyOrgTypeValue"
+    }
+  }, _vm._l((_vm.SocietyOrgType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "value": v.societyOrgTypeValue,
+        "label": v.societyOrgTypeName
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "负责人证件代码"
+    }
+  }, [_c('el-select', {
+    model: {
+      value: (_vm.form.responsiblePersonCertTypeValue),
+      callback: function($$v) {
+        _vm.form.responsiblePersonCertTypeValue = $$v
+      },
+      expression: "form.responsiblePersonCertTypeValue"
+    }
+  }, _vm._l((_vm.personType), function(v) {
+    return _c('el-option', {
+      key: v.id,
+      attrs: {
+        "label": v.enterpriseLeaderCertTypeName,
+        "value": v.enterpriseLeaderCertTypeValue
+      }
+    })
+  }))], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "负责人姓名"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.responsiblePersonName),
+      callback: function($$v) {
+        _vm.form.responsiblePersonName = $$v
+      },
+      expression: "form.responsiblePersonName"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "保卫负责人身份证"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.securityLeaderCertID),
+      callback: function($$v) {
+        _vm.form.securityLeaderCertID = $$v
+      },
+      expression: "form.securityLeaderCertID"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "办公地址"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.officeAddress),
+      callback: function($$v) {
+        _vm.form.officeAddress = $$v
+      },
+      expression: "form.officeAddress"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "治保负责人联系方式"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.securityLeaderContact),
+      callback: function($$v) {
+        _vm.form.securityLeaderContact = $$v
+      },
+      expression: "form.securityLeaderContact"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "否具备建立中共党组织条件"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.form.isCanConstructCPC),
+      callback: function($$v) {
+        _vm.form.isCanConstructCPC = $$v
+      },
+      expression: "form.isCanConstructCPC"
+    }
+  }, [_c('el-radio-button', {
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio-button', {
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否有共青团"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.form.hasCYL),
+      callback: function($$v) {
+        _vm.form.hasCYL = $$v
+      },
+      expression: "form.hasCYL"
+    }
+  }, [_c('el-radio-button', {
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio-button', {
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), (_vm.form.hasCYL) ? _c('el-form-item', {
+    attrs: {
+      "label": "共青团员数量"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0
+    },
+    model: {
+      value: (_vm.form.numberofLCYLMember),
+      callback: function($$v) {
+        _vm.form.numberofLCYLMember = $$v
+      },
+      expression: "form.numberofLCYLMember"
+    }
+  })], 1) : _vm._e(), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "是否有境外背景"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.form.isOverseasBackground),
+      callback: function($$v) {
+        _vm.form.isOverseasBackground = $$v
+      },
+      expression: "form.isOverseasBackground"
+    }
+  }, [_c('el-radio-button', {
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("是")]), _vm._v(" "), _c('el-radio-button', {
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("否")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "经度"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "placeholder": "请输入经度"
+    },
+    model: {
+      value: (_vm.form.longitude),
+      callback: function($$v) {
+        _vm.form.longitude = $$v
+      },
+      expression: "form.longitude"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "纬度"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "placeholder": "请输入纬度"
+    },
+    model: {
+      value: (_vm.form.latitude),
+      callback: function($$v) {
+        _vm.form.latitude = $$v
+      },
+      expression: "form.latitude"
+    }
+  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 20,
+      "align": "center"
+    }
+  }, [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "warning"
+    },
+    on: {
+      "click": function($event) {
+        _vm.resetForm('form')
+      }
+    }
+  }, [_vm._v("重置")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": function($event) {
+        _vm.saveForm('form')
+      }
+    }
+  }, [_vm._v("保存")])], 1)], 1)], 1)], 1)], 1) : (_vm.step == 2) ? _c('el-col', {
+    staticStyle: {
+      "margin-top": "30px"
+    },
+    attrs: {
+      "span": 18
+    }
+  }, [_c('div', {
+    staticStyle: {
+      "margin-left": "25%"
+    }
+  }, [_c('h4', [_vm._v("社会组织图片上传（支持多图）")]), _vm._v(" "), _c('el-upload', {
+    staticClass: "upload-demo",
+    attrs: {
+      "headers": _vm.header,
+      "header": _vm.header,
+      "action": _vm.getDomain() + '/msmis/api/Nonpublic/uploadEnterprisePicture?code=' + _vm.form.enterpriseUSCcode,
+      "on-preview": _vm.handlePreview,
+      "on-remove": _vm.handleRemove,
+      "file-list": _vm.fileList2,
+      "list-type": "picture"
+    }
+  }, [_c('el-button', {
+    attrs: {
+      "size": "small",
+      "type": "primary"
+    }
+  }, [_vm._v("点击上传")]), _vm._v(" "), _c('div', {
+    staticClass: "el-upload__tip",
+    slot: "tip"
+  }, [_vm._v("只能上传jpg/png文件，且不超过500kb")])], 1)], 1)]) : _vm._e(), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('div', {
+    staticClass: "preDiv"
+  }, [(_vm.step != 1) ? _c('i', {
+    staticClass: "fa fa-angle-double-left fa-5x",
+    on: {
+      "click": function($event) {
+        _vm.goPre()
+      }
+    }
+  }) : _vm._e(), _vm._v(" "), (_vm.step != 1) ? _c('div', {
+    staticClass: "directionFont",
+    on: {
+      "click": function($event) {
+        _vm.goPre()
+      }
+    }
+  }, [_vm._v("\n          上一步(继续添加信息)\n        ")]) : _vm._e()]), _vm._v(" "), _c('div', {
+    staticClass: "nextDiv"
+  }, [(_vm.step != 2) ? _c('i', {
+    staticClass: "fa fa-angle-double-right fa-5x",
+    on: {
+      "click": _vm.goNext
+    }
+  }) : _vm._e(), _vm._v(" "), (_vm.step != 2) ? _c('div', {
+    staticClass: "directionFont",
+    on: {
+      "click": _vm.goNext
+    }
+  }, [_vm._v("\n          下一步(上传企业图片)\n        ")]) : _vm._e(), _vm._v(" "), (_vm.step == 2) ? _c('i', {
+    staticClass: "fa fa-history fa-5x",
+    on: {
+      "click": _vm.submit
+    }
+  }) : _vm._e(), _vm._v(" "), (_vm.step == 2) ? _c('div', {
+    staticClass: "directionFont",
+    on: {
+      "click": _vm.submit
+    }
+  }, [_vm._v("\n          完成\n        ")]) : _vm._e()])])], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-91dad3f2","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/socialOrganizationManage/addSocialOrg.vue
+// module id = FSIh
+// module chunks = 132

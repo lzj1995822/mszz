@@ -1,0 +1,304 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticStyle: {
+      "padding": "20px"
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('fieldset', {
+    staticStyle: {
+      "width": "80%"
+    }
+  }, [_c('legend', {
+    staticStyle: {
+      "margin-left": "40px"
+    }
+  }, [_c('h1', [_vm._v("基本信息")])]), _vm._v(" "), _c('el-form', {
+    ref: "form",
+    attrs: {
+      "model": _vm.form,
+      "label-width": "200px",
+      "label-suffix": "："
+    }
+  }, [_vm._l((_vm.form), function(v, k, i) {
+    return (k !== 'ssEventID' && k !== 'ssEventEndDateTime') ? _c('el-form-item', {
+      key: i,
+      attrs: {
+        "label": _vm.labels[i],
+        "prop": k
+      }
+    }, [(k == 'ssEventKind') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, [_c('el-option', {
+      attrs: {
+        "label": "一般事件",
+        "value": 1
+      }
+    }), _vm._v(" "), _c('el-option', {
+      attrs: {
+        "label": "重大事件",
+        "value": 2
+      }
+    })], 1) : (k == 'ssEventTypeValue' || k == 'netGridID' || k == 'ssEventStatusTypeValue') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, [(k == 'ssEventTypeValue') ? _vm._l((_vm.EventType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "label": v.sseventTypeName,
+          "value": v.sseventTypeValue
+        }
+      })
+    }) : (k == 'netGridID') ? _vm._l((_vm.GridID), function(n, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": n.netGridID,
+          "label": n.netGridName
+        }
+      })
+    }) : (k == 'ssEventStatusTypeValue') ? _vm._l((_vm.EventStatusType), function(vs, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": vs.sseventStatusTypeValue,
+          "label": vs.sseventStatusTypeName
+        }
+      })
+    }) : _vm._e()], 2) : (k == 'ssEventContent' || k == 'currentRemarks') ? _c('el-input', {
+      attrs: {
+        "type": "textarea"
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }) : (k == 'ssEventStartDateTime') ? _c('el-date-picker', {
+      attrs: {
+        "type": "datetime"
+      },
+      on: {
+        "change": _vm.changeDate
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }) : _c('el-input', {
+      staticStyle: {
+        "width": "300px"
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    })], 1) : _vm._e()
+  }), _vm._v(" "), _c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 20,
+      "align": "center"
+    }
+  }, [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.updateRecord
+    }
+  }, [_vm._v("更新")])], 1)], 1)], 1)], 2)], 1)]), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('fieldset', {
+    staticStyle: {
+      "width": "80%"
+    }
+  }, [_c('legend', {
+    staticStyle: {
+      "margin-left": "40px"
+    }
+  }, [_c('h1', [_vm._v("当事人")])]), _vm._v(" "), _vm._l((_vm.invokePerson), function(saform, i) {
+    return _c('div', {
+      key: saform.id,
+      staticStyle: {
+        "margin-top": "10px"
+      }
+    }, [_c('el-alert', {
+      staticStyle: {
+        "font-size": "20px",
+        "color": "whitesmoke"
+      },
+      attrs: {
+        "title": '当事人(' + (i + 1) + ')',
+        "type": "info",
+        "closable": false
+      }
+    }, [_c('el-button', {
+      staticStyle: {
+        "float": "right"
+      },
+      attrs: {
+        "type": "danger",
+        "size": "small"
+      },
+      on: {
+        "click": function($event) {
+          _vm.deletePerson(saform.ssEPersonsID)
+        }
+      }
+    }, [_vm._v("删除")])], 1), _vm._v(" "), _c('div', {
+      staticStyle: {
+        "border": "1px",
+        "background-color": "whitesmoke",
+        "padding": "5px",
+        "margin-top": "10px"
+      }
+    }, [_c('el-form', {
+      staticStyle: {
+        "border": "1px",
+        "margin-top": "5px"
+      },
+      attrs: {
+        "model": saform,
+        "label-width": "120px",
+        "label-suffix": "："
+      }
+    }, [_vm._l((saform), function(value, key, index) {
+      return (key !== 'ssEPersonsID' && key !== 'ssEventID') ? _c('el-form-item', {
+        key: index,
+        attrs: {
+          "label": _vm.label[index],
+          "prop": key
+        }
+      }, [_c('el-input', {
+        model: {
+          value: (saform[key]),
+          callback: function($$v) {
+            _vm.$set(saform, key, $$v)
+          },
+          expression: "saform[key]"
+        }
+      })], 1) : _vm._e()
+    }), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+      attrs: {
+        "type": "danger"
+      },
+      on: {
+        "click": function($event) {
+          _vm.updateSA(saform)
+        }
+      }
+    }, [_vm._v("更新信息")]), _vm._v(" "), (i == _vm.invokePerson.length - 1) ? _c('el-button', {
+      staticStyle: {
+        "float": "right"
+      },
+      attrs: {
+        "type": "primary"
+      },
+      on: {
+        "click": function($event) {
+          _vm.addSAPerson()
+        }
+      }
+    }, [_c('i', {
+      staticClass: "fa fa-plus fa-lg"
+    }), _vm._v(" 新增当事人")]) : _vm._e()], 1)], 2)], 1)], 1)
+  })], 2)])], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "添加当事人",
+      "visible": _vm.dialogVisible,
+      "size": "tiny"
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.dialogVisible = $event
+      }
+    }
+  }, [_c('el-form', {
+    attrs: {
+      "model": _vm.SAForm,
+      "label-position": "left"
+    }
+  }, _vm._l((_vm.SAForm), function(v, k, i) {
+    return _c('el-form-item', {
+      key: i,
+      attrs: {
+        "label": _vm.label2[i]
+      }
+    }, [(k == 'ssEventID') ? _c('el-input', {
+      attrs: {
+        "disabled": "",
+        "placeholder": ""
+      },
+      model: {
+        value: (_vm.SAForm[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.SAForm, k, $$v)
+        },
+        expression: "SAForm[k]"
+      }
+    }) : _c('el-input', {
+      attrs: {
+        "placeholder": ""
+      },
+      model: {
+        value: (_vm.SAForm[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.SAForm, k, $$v)
+        },
+        expression: "SAForm[k]"
+      }
+    })], 1)
+  })), _vm._v(" "), _c('span', {
+    staticClass: "dialog-footer",
+    slot: "footer"
+  }, [_c('el-button', {
+    on: {
+      "click": function($event) {
+        _vm.dialogVisible = false
+      }
+    }
+  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": function($event) {
+        _vm.saveSA()
+      }
+    }
+  }, [_vm._v("保存")])], 1)], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-5c7f6f5d","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/netManage/editNetEvent.vue
+// module id = ItUd
+// module chunks = 121

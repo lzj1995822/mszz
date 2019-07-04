@@ -1,0 +1,185 @@
+<template>
+  <div>
+    <el-form :model="Resident" label-width="120px" label-position="left" label-suffix=":">
+      <el-form-item>
+        <h2>常住户籍人口</h2>
+      </el-form-item>
+      <el-form-item label="身份证">
+        <el-input v-model="Resident.certifID"></el-input>
+      </el-form-item>
+      <el-form-item label="人户一致标识">
+        <el-select v-model="Resident.consistforPersonHouseTypeValue" placeholder="请选择">
+          <el-option v-for="(v,i) of ConsistforPersonHouseType" :key="i"
+                    :value="v.consistforPersonHouseTypeValue" 
+                    :label="v.consistforPersonHouseTypeName">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="与户主关系">
+        <el-select v-model="Resident.relationshipTypeWithHouseholder" placeholder="请选择">
+          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="户号">
+        <el-input v-model="Resident.houseCode"></el-input>
+      </el-form-item>
+      <el-form-item label="户主身份证号码">
+        <el-input v-model="Resident.householderCertID"></el-input>
+      </el-form-item>
+      <el-form-item label="户主姓名">
+        <el-input v-model="Resident.householderName"></el-input>
+      </el-form-item>
+      <el-form-item label="户主联系方式">
+        <el-input v-model="Resident.householderContact"></el-input>
+      </el-form-item>
+      <el-row v-if="showButton">
+        <el-col>
+          <el-form-item>
+            <el-button type="primary" @click="onSubmit">{{usepath=='save'?'保存':'更新'}}</el-button>
+            <!-- <el-button @click="onCancel">取消</el-button> -->
+          </el-form-item>
+        </el-col>
+      </el-row>
+    </el-form>
+  </div>
+</template>
+
+<script>
+import * as api from "@/api/zonghezhili/duiwujianshe";
+
+export default {
+  data() {
+    return {
+      options: [
+        {
+          label: "配偶",
+          value: 1
+        },
+        {
+          label: "子",
+          value: 2
+        },
+        {
+          label: "女",
+          value: 3
+        },
+        {
+          label: "孙子",
+          value: 4
+        },
+        {
+          label: "孙女",
+          value: 5
+        },
+        {
+          label: "外孙子",
+          value: 6
+        },
+        {
+          label: "外孙女",
+          value: 7
+        },
+        {
+          label: "父亲",
+          value: 8
+        },
+        {
+          label: "母亲",
+          value: 9
+        },
+        {
+          label: "祖父母",
+          value: 10
+        },
+        {
+          label: "外祖父母",
+          value: 11
+        },
+        {
+          label: "兄弟",
+          value: 12
+        },
+        {
+          label: "姐妹",
+          value: 13
+        },
+        {
+          label: "其他",
+          value: 14
+        }
+      ]
+    };
+  },
+  props: {
+    Resident: {
+      type: Object,
+      default: function() {
+        return {
+          relationshipTypeWithHouseholder: null, // 与户主关系
+          consistforPersonHouseTypeValue: null // 人户一致编码
+        };
+      }
+    },
+    ConsistforPersonHouseType: {
+      type: Array
+    },
+    usepath: {
+      type: String,
+      default: "save"
+    },
+    showButton: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    onSubmit() {
+      if (this.usepath == "save") {
+        api.addResidentServedPersonInfo(this.Resident).then(res => {
+          console.log(res);
+          if (res.code == 200) {
+            this.$notify({
+              title: "成功",
+              message: "保存成功",
+              type: "success"
+            });
+          } else {
+            this.$notify({
+              title: "失败",
+              message: res.message,
+              type: "error"
+            });
+          }
+        });
+      }else{
+        api.updateServedMemberInfo('01',this.Resident).then(res=>{
+          if(res.code==200){
+            this.$notify({
+              title: '成功',
+              message: '更新成功',
+              type: 'success'
+            })
+          }else{
+            this.$notify({
+              title: '失败',
+              message: '更新失败！',
+              type: 'error'
+            })
+          }
+        })
+      }
+    },
+    onCancel() {}
+  }
+};
+</script>
+
+<style scoped>
+
+</style>
+
+
+
+// WEBPACK FOOTER //
+// src/components/ZzOrgManage/extendResident.vue?da21cb4c

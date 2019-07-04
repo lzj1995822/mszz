@@ -1,0 +1,291 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticStyle: {
+      "padding": "20px"
+    }
+  }, [_c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('fieldset', {
+    staticStyle: {
+      "width": "80%"
+    }
+  }, [_c('legend', {
+    staticStyle: {
+      "margin-left": "40px"
+    }
+  }, [_c('h1', [_vm._v("基本信息")])]), _vm._v(" "), _c('el-form', {
+    ref: "form",
+    attrs: {
+      "model": _vm.form,
+      "label-width": "200px",
+      "label-suffix": "："
+    }
+  }, [_vm._l((_vm.form), function(v, k, i) {
+    return (k !== 'trafficAccidentID' && k !== 'trafficAccidentEndDateTime') ? _c('el-form-item', {
+      key: i,
+      attrs: {
+        "label": _vm.labels[i],
+        "prop": k
+      }
+    }, [(k == 'trafficAccidentKind' || k == 'netGridID' || k == 'trafficAccidentTypeValue' || k == 'trafficAccidentStatusTypeValue') ? _c('el-select', {
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }, [(k == 'trafficAccidentTypeValue') ? _vm._l((_vm.EventType), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "label": v.trafficAccidentTypeName,
+          "value": v.trafficAccidentTypeValue
+        }
+      })
+    }) : (k == 'trafficAccidentKind') ? _vm._l((_vm.EventKind), function(v, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "label": v.trafficAccidentKindName,
+          "value": v.trafficAccidentKind
+        }
+      })
+    }) : (k == 'netGridID') ? _vm._l((_vm.GridID), function(n, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": n.netGridID,
+          "label": n.netGridName
+        }
+      })
+    }) : (k == 'trafficAccidentStatusTypeValue') ? _vm._l((_vm.EventStatusType), function(vs, i) {
+      return _c('el-option', {
+        key: i,
+        attrs: {
+          "value": vs.trafficAccidentStatusTypeValue,
+          "label": vs.trafficAccidentStatusTypeName
+        }
+      })
+    }) : _vm._e()], 2) : (k == 'trafficAccidentContent' || k == 'currentRemarks') ? _c('el-input', {
+      attrs: {
+        "type": "textarea"
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }) : (k == 'trafficAccidentStartDateTime') ? _c('el-date-picker', {
+      attrs: {
+        "type": "datetime"
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    }) : _c('el-input', {
+      staticStyle: {
+        "width": "300px"
+      },
+      model: {
+        value: (_vm.form[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.form, k, $$v)
+        },
+        expression: "form[k]"
+      }
+    })], 1) : _vm._e()
+  }), _vm._v(" "), _c('el-row', [_c('el-col', {
+    attrs: {
+      "span": 20,
+      "align": "center"
+    }
+  }, [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.updateRecord
+    }
+  }, [_vm._v("更新")])], 1)], 1)], 1)], 2)], 1)]), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 24
+    }
+  }, [_c('fieldset', {
+    staticStyle: {
+      "width": "80%"
+    }
+  }, [_c('legend', {
+    staticStyle: {
+      "margin-left": "40px"
+    }
+  }, [_c('h1', [_vm._v("当事人")])]), _vm._v(" "), _vm._l((_vm.invokePerson), function(saform, i) {
+    return _c('div', {
+      key: saform.id,
+      staticStyle: {
+        "margin-top": "10px"
+      }
+    }, [_c('el-alert', {
+      staticStyle: {
+        "font-size": "20px",
+        "color": "whitesmoke"
+      },
+      attrs: {
+        "title": '当事人(' + (i + 1) + ')',
+        "type": "info",
+        "closable": false
+      }
+    }, [_c('el-button', {
+      staticStyle: {
+        "float": "right"
+      },
+      attrs: {
+        "type": "danger",
+        "size": "small"
+      },
+      on: {
+        "click": function($event) {
+          _vm.deletePerson(saform.taccidentPersonsID)
+        }
+      }
+    }, [_vm._v("删除")])], 1), _vm._v(" "), _c('div', {
+      staticStyle: {
+        "border": "1px",
+        "background-color": "whitesmoke",
+        "padding": "5px",
+        "margin-top": "10px"
+      }
+    }, [_c('el-form', {
+      staticStyle: {
+        "border": "1px",
+        "margin-top": "5px"
+      },
+      attrs: {
+        "model": saform,
+        "label-width": "120px",
+        "label-suffix": "："
+      }
+    }, [_vm._l((saform), function(value, key, index) {
+      return (key !== 'trafficAccidentID' && key !== 'taccidentPersonsID') ? _c('el-form-item', {
+        key: index,
+        attrs: {
+          "label": _vm.label2[index],
+          "prop": key
+        }
+      }, [_c('el-input', {
+        model: {
+          value: (saform[key]),
+          callback: function($$v) {
+            _vm.$set(saform, key, $$v)
+          },
+          expression: "saform[key]"
+        }
+      })], 1) : _vm._e()
+    }), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+      attrs: {
+        "type": "danger"
+      },
+      on: {
+        "click": function($event) {
+          _vm.updateSA(saform)
+        }
+      }
+    }, [_vm._v("更新信息")]), _vm._v(" "), (i == _vm.invokePerson.length - 1) ? _c('el-button', {
+      staticStyle: {
+        "float": "right"
+      },
+      attrs: {
+        "type": "primary"
+      },
+      on: {
+        "click": function($event) {
+          _vm.addSAPerson()
+        }
+      }
+    }, [_c('i', {
+      staticClass: "fa fa-plus fa-lg"
+    }), _vm._v(" 新增当事人")]) : _vm._e()], 1)], 2)], 1)], 1)
+  })], 2)])], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "添加当事人",
+      "visible": _vm.dialogVisible,
+      "size": "tiny"
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.dialogVisible = $event
+      }
+    }
+  }, [_c('el-form', {
+    attrs: {
+      "model": _vm.SAForm,
+      "label-position": "left"
+    }
+  }, _vm._l((_vm.SAForm), function(v, k, i) {
+    return (k !== 'taccidentPersonsID') ? _c('el-form-item', {
+      key: i,
+      attrs: {
+        "label": _vm.label2[i]
+      }
+    }, [(k == 'trafficAccidentID') ? _c('el-input', {
+      attrs: {
+        "disabled": "",
+        "placeholder": ""
+      },
+      model: {
+        value: (_vm.SAForm[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.SAForm, k, $$v)
+        },
+        expression: "SAForm[k]"
+      }
+    }) : _c('el-input', {
+      attrs: {
+        "placeholder": ""
+      },
+      model: {
+        value: (_vm.SAForm[k]),
+        callback: function($$v) {
+          _vm.$set(_vm.SAForm, k, $$v)
+        },
+        expression: "SAForm[k]"
+      }
+    })], 1) : _vm._e()
+  })), _vm._v(" "), _c('span', {
+    staticClass: "dialog-footer",
+    slot: "footer"
+  }, [_c('el-button', {
+    on: {
+      "click": function($event) {
+        _vm.dialogVisible = false
+      }
+    }
+  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": function($event) {
+        _vm.saveSA()
+      }
+    }
+  }, [_vm._v("保存")])], 1)], 1)], 1)
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/vue-loader/lib/template-compiler?{"id":"data-v-4ec01a1d","hasScoped":true}!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/trafficManage/editTrafficEvent.vue
+// module id = khp3
+// module chunks = 20

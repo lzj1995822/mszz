@@ -1,0 +1,16 @@
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.id, ".userInfoEditTable[data-v-16c2cb38],.userInfoEditTable td[data-v-16c2cb38]{border:1px solid #a9a9a9;padding:10px}.tb_label[data-v-16c2cb38]{width:12%}", "", {"version":3,"sources":["/Users/liuyehua/Documents/new/new/src/views/zongzhizuzhi/MemberServedPersonRecord.vue"],"names":[],"mappings":"AACA,2EAEE,yBAA2B,AAC3B,YAAc,CACf,AACD,2BACE,SAAW,CACZ","file":"MemberServedPersonRecord.vue","sourcesContent":["\n.userInfoEditTable[data-v-16c2cb38],\n.userInfoEditTable td[data-v-16c2cb38] {\n  border: 1px solid darkgrey;\n  padding: 10px;\n}\n.tb_label[data-v-16c2cb38]{\n  width: 12%;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?{"minimize":true,"sourceMap":true}!./~/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-16c2cb38","scoped":true,"hasInlineConfig":false}!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/views/zongzhizuzhi/MemberServedPersonRecord.vue
+// module id = 20/d
+// module chunks = 80
